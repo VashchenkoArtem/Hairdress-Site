@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Ідеальне волосся для тебе!
+{% endblock %}
+
+{% block links %}
+    <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+{% endblock %}
+
+{% block content %}
+    <img src="{% static 'images/bg_hair.png' %}" alt="">
+    <h1>"Фарбування - це не просто зміна кольору.<br>Це трансформація!"</h1>
+    <div class = "frame-hat">
+        <div class = "hat">
+            <h1 class = "title-hat">Hair <span class = "grey-title-hat">Nool</span></h1>
+            <button class = "button-menu">MENU</button>
+        </div>
+        <hr class = "horizontal-line">
+    </div>
+    <h1>Ідеальне волосся для тебе...</h1>
+    <div class = "frame-consultation">
+        <h1 class = "title-button-consultation">Професійний підбір фарбування онлайн</h1>
+        <button class = "button Apply-for-consultation">Замовити консультацію</button>
+        <button class = "button button-next"> 
+            <img src="{% static 'images/buttons/button_next.png' %}" alt="">
+        </button>
+    </div>
+    <div class = "main-frame">
+        <div class = "description-frame">
+            <div class = "frame-description-titles">
+                <h1 class = "main-title-description">Колір, що личить саме тобі</h1>
+                <h2 class = "coloration-text">Фарбування - не про тренди. Це про тебе.<br>Ми врахуємо тон шкіри, форму обличчя та особливості зовнішності,<br> щоб порадити ідеальний відтінок.</h2>
+            </div>
+            <div>
+                <img class = "people-example" src="{% static 'images/people_example/people_example1.png' %}" alt="">
+                <img class = "people-example" src="{% static 'images/people_example/people_example2.png' %}" alt="">
+            </div>
+        </div>
+        <div class = "choosing-color">
+            <div class = "description-choosing-color">
+                <h1 class = "title-choose-color">Підбір кольору</h1>
+                <h2 class = "description-choose-color">Щоб підібрати колір, який справді підкреслить вашу зовнішність потрібен аналіз.<br>Ми врахуємо:<br>Відтінок шкіри, Структуру та стан пасм, Колір очей</h2>
+            </div>
+            <div class = "choosing-color-steps">
+                <div class = "step">
+                    <h1 class = "number-of-step">01</h1>
+                    <h2 class = "title-step">Заявка</h2>
+                    <h3 class = "description-step">Заповніть коротку форму, додайте фото та деталі</h3>
+                </div>
+                <div class = "step">
+                    <h1 class = "number-of-step">02</h1>
+                    <h2 class = "title-step">Аналіз</h2>
+                    <h3 class = "description-step">Проводжу індивідуальний розбір та створюю пропозицію кольору</h3>
+                </div>
+                <div class = "step">
+                    <h1 class = "number-of-step">03</h1>
+                    <h2 class = "title-step">Перевтілення</h2>
+                    <h3 class = "description-step">Ви отримуєте обраний варіант та рекомендації</h3>
+                </div>
+            </div>
+            <div class = "buttons-choose-color">
+                <button class = "button Apply-for-consultation">Замовити консультацію</button>
+                <button class = "button button-next"> <img src="{% static 'images/buttons/green_button_next.png'%}" alt=""></button>
+            </div>
+        </div>
+        <div class = "reason-hair">
+            <img src="{% static 'images/hair.png' %}" alt="">
+            <div class = "reasons">
+                <h1 class = "why-2-days">Чому підбір займає до 2 днів?</h1>
+                <h2 class = "2-days-title">Точність вимагає часу.</h2>
+                <h2 class = "2-days-description">Кожне фото ми уважно розглядаємо, підбираємо варіанти кольору та відтінку,<br>які будуть не просто красивими — а ідеальними саме для вас.<br>Цей процес займає до 48 годин, і він дійсно вартий очікування.</h2>
+            </div>
+        </div>
+        <div class = "result">
+            <div class = "result-title">
+                <h1 class = "result-h1">Результат, що вас здивує</h1>
+                <h2 class = "result-description">Дивіться як виглядає перевтілення за індивідуальним підбором</h2>
+            </div>
+            <div class = "result-body">
+                <div class = "result-text">
+                    <h1 class = "result-text-h1">Освітлення та м’яке моделювання обличчя через колір</h1>
+                    <h2 class = "result-text-description">Ми прибрали важкість темного відтінку, який робив риси суворішими.<br>Створили м’який контур через світлі пасма біля обличчя — це візуально<br>освіжає та відкриває погляд. Додали теплі акценти та об’ємне укладання, яке<br>підкреслює нову текстуру волосся. Зміна кольору відразу зробила вигляд<br>більш гармонійним і «дорогим».</h2>
+                </div>
+                <div class = "result-photos">
+                    <img class = "people-example" src="{% static 'images/people_example/people_example3.png'%}" alt="">
+                    <img class = "people-example" src="{% static 'images/people_example/people_example4.png'%}" alt="">
+                </div>
+                <div class = "result-buttons">
+                    <button class = 'button-circle button-left'>
+                        <img class = "button-next" src="{% static 'images/buttons/button_left.png'%}" alt="">
+                    </button>
+                    <button class = 'button-circle button-right'>
+                        <img class = "button-next" src="{% static 'images/buttons/button_right.png'%}" alt="">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
