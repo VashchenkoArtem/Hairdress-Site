@@ -4,3 +4,6 @@
     box-sizing: border-box;
     font-family: "Cormorant", "sans-serif";
 }
+body{
+    background-color: rgba(26, 28, 25, 1);
+}

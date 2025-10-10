@@ -10,7 +10,7 @@
 {% endblock %}
 
 {% block content %}
-    <img src="{% static 'images/bg_hair.png' %}" alt="">
+    <img class = "bg-image" src="{% static 'images/bg_hair.png' %}" alt="">
     <h1>"Фарбування - це не просто зміна кольору.<br>Це трансформація!"</h1>
     <div class = "frame-hat">
         <div class = "hat">
@@ -97,6 +97,83 @@
                 </div>
             </div>
         </div>
+        <div class = "my-bio">
+            <img src="{% static 'images/people_example/my_photo.png' %}" alt="">
+            <div class = "my-bio-frame">
+                <h1 class = "my-name">Привіт! Мене звати - Альона</h1>
+                <h2 class = "my-work">Працюю у Дніпрі та онлайн.<br>Допомагаю знайти свій ідеальний відтінок, спираючись на знання, а не інтуіцію.</h2>
+            </div>
+            <h1 class = "years-of-experience">Маю <span class = "count-of-years-exp">7+</span> років досвіду</h1>
+            <h1 class = "my-clients">Понад <span class = "my-clients-count">4К+</span> задоволених клієнтів</h1>
+            <div class = "buttons-my-bio">
+                <button class = "button apply-for-consultation">ЗАМОВИТИ КОНСУЛЬТАЦІЮ</button>
+                <button class = "button-next">
+                    <img src="{% static 'images/buttons/button_next.png' %}" alt="">
+                </button>
+            </div>
+        </div>
+        <div class = "others-opinion">
+            <div class = "opinion-container">
+                <div class = "hat-opinion">
+                    <h1 class = "hat-opinion-title">Що говорять інші</h1>
+                    <h2 class = "hat-opinion-description">Реальні історії перевтілень, відгуки клієнток після підбору кольору та фарбування.<br>
+    Їхні враження — найкраще підтвердження якості моєї роботи</h2>
+                </div>
+                <div class = "body-opinion">
+                    <div class = "opinion">
+                        <div class = "quotes">
+                            <img src="{% static 'images/quotes.png'%}" alt="">
+                        </div>
+                        <div class = "opinion-text">
+                            <h1 class = "opinion-review">Я довго не могла знайти відтінок, який би мені справді личив — або занадто<br>жовтий, або робив обличчя втомленим. <br><br>Альона провела детальний розбір, пояснила, чому мій теплий тон шкіри не <br>дружить з попелястим блондом, і запропонувала свій варіант. <br><br>Результат — це любов з першого погляду.<br>Волосся виглядає натурально, шкіра свіжа, і я отримую купу компліментів. Дуже <br>дякую за уважність і професійність!</h1>
+                        </div>
+                        <div class = "quotes">
+                            <img src="{% static 'images/quotes.png'%}" alt="">
+                        </div>
+                    </div>
+                    <h1 class = "opinion-name">Катерина, місто Дніпро</h1>
+                </div>
+            </div>
+            <div class = "buttons-direction">
+                <button class = "button-direction">
+                    <img class = "button-next" src="{% static 'images/buttons/button_left.png'%}" alt="">
+                </button>
+                <button class = "button-direction">
+                    <img class = "button-next" src="{% static 'images/buttons/button_right.png'%}" alt="">
+                </button>
+            </div>
+        </div>
     </div>
-
+    <div class = "review-frame">
+        <div class = "review">
+            <div class="review-hat">
+                <h1 class = "review-hat-title">Зв'яжімося - і підберемо твій колір</h1>
+                <h2 class = "review-hat-description">Залиш заявку або напиши мені напряму.<br>Відповім у найближчий час!</h2>
+            </div>
+            <div class = "contact-icons">
+                <a href="" class = "url-telegram">
+                    <img class = "url-icon" src="{% static 'images/icons/telegram.png' %}" alt="">
+                </a>
+                <a href="" class = "url-instagram">
+                    <img class = "url-icon" src="{% static 'images/icons/instagram.png' %}" alt="">
+                </a>
+                <a href="" class = "url-viber">
+                    <img class = "url-icon" src="{% static 'images/icons/viber.png' %}" alt="">
+                </a>
+            </div>
+            <div class = "review-form">
+                <form action="">
+                    {{ form.as_p}}
+                </form>
+            </div>
+            <div class = "buttons">
+                <button class = "apply-for-consultation">
+                    НАДІСЛАТИ
+                </button>
+                <button class = "button-next">
+                    <img src="{% static 'images/buttons/button_next.png' %}" alt="">
+                </button>
+            </div>
+        </div>
+    </div>
 {% endblock %}
