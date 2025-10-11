@@ -7,3 +7,135 @@
 body{
     background-color: rgba(26, 28, 25, 1);
 }
+.bg-image{
+    width: calc(20.5vw + 35.6vh);
+    height: calc(22.3vw + 39.6vh);
+    top: 0px;
+    left: 0px;
+    position: absolute;
+    left: calc(30.5vw + 65vh); 
+    z-index: 0;
+}
+.frame-hat{
+    position: relative;
+    padding: calc(0.9vw + 1.7vh) calc(1vw + 1.9vh);
+    display: flex;
+    flex-direction: column;
+    gap: calc(0.5vw + 0.9vh);
+    z-index: 2;
+}
+.hat{
+    display: flex;
+    justify-content: space-between;
+}
+.title-hat{
+    color: white;
+    font-size: calc(0.8vw + 1.4vh);
+    font-family: "Playfair", serif;
+}
+.grey-title-hat{
+    color: rgb(161, 161, 157);
+}
+.button-menu{
+    all: unset;
+    color: white;
+    font-size: calc(0.6vw + 1vh);
+}
+.ideal-hair-for-you{
+    font-size: calc(1.8vw + 3.5vh);
+    position: absolute;
+    top: calc(5.3vw + 9.6vh);
+    left: calc(15vw + 3.8vh);
+    text-align: center;
+    font-weight: 600;
+    font-style: semi-bold;
+    color: white;
+}
+.coloration{
+    font-family: "Bad Script", cursive;
+    color: white;
+    font-size: calc(0.7vw + 1.2vh);
+    font-weight: 400;
+    font-style: italic;
+    position: absolute;
+    left: calc(33.5vw + 65vh); 
+    top: calc(17vw + 30.2vh);
+}
+.frame-consultation{
+    position: absolute;
+    top: calc(17vw + 30.2vh);
+    left: calc(15vw + 3.8vh);
+    display: flex;
+    flex-direction: column;
+    gap: calc(0.6vw + 1.1vh);
+}
+.title-button-consultation{
+    color: white;
+    font-size: calc(0.6vw + 1.2vh);
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+}
+.Apply-for-consultation{
+    width: calc(10.9vw + 19.4vh);
+    height: calc(1.5vw + 2vh);
+    color: rgba(93, 61, 34, 1);
+    font-size: calc(0.9vw + 0.7vh);
+    font-family: "Inter", sans-serif;
+}
+.button{
+    background-color: rgba(200, 184, 168, 1);
+    border-radius: calc(2.6vw + 4.5vh);
+    border: calc(0.03vw + 0.05vh);
+    font-style: medium;
+    font-weight: 500;
+}
+.button-image{
+    height: calc(1.5vw + 2vh);    
+}
+.buttons{
+    display: flex;
+}
+.main-frame{
+    position: absolute;
+    top: calc(27.8vw + 49.4vh);
+    width: 100%;
+    display: flex;
+}
+.description-frame{
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.frame-description-titles{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.main-title-description{
+    color: white;
+    font-weight: 500;
+    text-align: center;
+    font-style: medium;
+    font-size: calc(1.5vw + 2vh);
+}
+.coloration-text{
+    color: white;
+    font-size: calc(0.7vw + 1.2vh);
+    font-weight: 500;
+    text-align: center;
+}
+.people-example{
+    width: calc(7.5vw + 13.3vh);
+    height: calc(10.4vw + 18.5vh);
+}
+.image-people-first{
+    margin-right: calc(5.5vw + 9.8vh);
+}
+.image-people{
+    position: absolute;
+    top: calc(10.3vw + 18.2vh);
+    left: calc(28vw + 40vh);
+}
