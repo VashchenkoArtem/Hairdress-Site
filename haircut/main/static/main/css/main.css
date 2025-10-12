@@ -1,19 +1,26 @@
+@font-face {
+  font-family: 'Gella Display';
+  src: url('../fonts/Slava Antipov - GellaDisplay-Light.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 *{
     padding:0px;
     margin: 0px;
     box-sizing: border-box;
-    font-family: "Cormorant", "sans-serif";
+    font-family: "Cormorant", serif;
 }
 body{
     background-color: rgba(26, 28, 25, 1);
 }
 .bg-image{
-    width: calc(20.5vw + 35.6vh);
-    height: calc(22.3vw + 39.6vh);
+    width: 50%;
+    height: 100%;
     top: 0px;
     left: 0px;
     position: absolute;
-    left: calc(30.5vw + 65vh); 
+    left: calc(18.6vw + 65vh);  
     z-index: 0;
 }
 .frame-hat{
@@ -30,22 +37,22 @@ body{
 }
 .title-hat{
     color: white;
-    font-size: calc(0.8vw + 1.4vh);
+    font-size: calc(1.5vw + 1.4vh);
     font-family: "Playfair", serif;
 }
 .grey-title-hat{
-    color: rgb(161, 161, 157);
+    color: rgba(200, 184, 168, 1);
 }
 .button-menu{
     all: unset;
     color: white;
-    font-size: calc(0.6vw + 1vh);
+    font-size: calc(1vw + 1vh);
 }
 .ideal-hair-for-you{
-    font-size: calc(1.8vw + 3.5vh);
+    font-size: calc(4vw + 3.5vh);
     position: absolute;
     top: calc(5.3vw + 9.6vh);
-    left: calc(15vw + 3.8vh);
+    width: 50%;
     text-align: center;
     font-weight: 600;
     font-style: semi-bold;
@@ -54,32 +61,41 @@ body{
 .coloration{
     font-family: "Bad Script", cursive;
     color: white;
-    font-size: calc(0.7vw + 1.2vh);
+    font-size: calc(1vw + 1.2vh);
     font-weight: 400;
     font-style: italic;
     position: absolute;
-    left: calc(33.5vw + 65vh); 
-    top: calc(17vw + 30.2vh);
+    width: 50%;
+    height: 100%;
+    left: 50%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end; 
+    top: 0px;
+    padding: calc(1vw + 1vh) calc(2.2vw + 1vh);
 }
 .frame-consultation{
     position: absolute;
-    top: calc(17vw + 30.2vh);
-    left: calc(15vw + 3.8vh);
+    top: calc(24vw + 30.2vh);
+    width: 50%;
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: calc(0.6vw + 1.1vh);
 }
 .title-button-consultation{
     color: white;
-    font-size: calc(0.6vw + 1.2vh);
+    font-size: calc(1.5vw + 1.2vh);
     font-family: 'Inter', sans-serif;
     font-weight: 400;
+    font-style: regular;
 }
 .Apply-for-consultation{
-    width: calc(10.9vw + 19.4vh);
-    height: calc(1.5vw + 2vh);
+    width: calc(26vw + 20vh);
+    height: calc(2.5vw + 2vh);
     color: rgba(93, 61, 34, 1);
-    font-size: calc(0.9vw + 0.7vh);
+    font-size: calc(1vw + 0.7vh);
+    font-style: medium;
     font-family: "Inter", sans-serif;
 }
 .button{
@@ -90,16 +106,18 @@ body{
     font-weight: 500;
 }
 .button-image{
-    height: calc(1.5vw + 2vh);    
+    height: calc(2.5vw + 2vh);    
 }
 .buttons{
     display: flex;
 }
 .main-frame{
     position: absolute;
-    top: calc(27.8vw + 49.4vh);
+    top: calc(31vw + 55vh);
     width: 100%;
     display: flex;
+    flex-direction: column;
+    gap: calc(8vw + 2vh);
 }
 .description-frame{
     width: 100%;
@@ -107,12 +125,14 @@ body{
     display: flex;
     align-items: center;
     flex-direction: column;
+    gap: calc(1vw + 1vh);
 }
 .frame-description-titles{
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: calc(1vw + 0.7vh);
 }
 .main-title-description{
     color: white;
@@ -127,15 +147,86 @@ body{
     font-weight: 500;
     text-align: center;
 }
-.people-example{
-    width: calc(7.5vw + 13.3vh);
-    height: calc(10.4vw + 18.5vh);
-}
 .image-people-first{
-    margin-right: calc(5.5vw + 9.8vh);
+    width: calc(20vw + 26.6vh);
+    height: calc(23vw + 37vh);
 }
-.image-people{
-    position: absolute;
-    top: calc(10.3vw + 18.2vh);
-    left: calc(28vw + 40vh);
+.choosing-color{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: calc(1.5vw + 3vh);
+}
+.description-choosing-color{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: calc(0.7vw + 1.5vh);
+}
+.title-choose-color{
+    color: white;
+    font-weight: 500;
+    font-size: calc(1.5vw + 3vh);
+}
+.description-choose-color{
+    color: white;
+    text-align: center;
+    font-size: calc(0.7vw + 1.2vh);
+    font-weight: 400;
+    font-family: 'Inter', sans-serif;
+}
+.choosing-color-steps{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding:  0px calc(1vw + 3vh);
+}
+.step{
+    display: flex;
+    flex-direction: column;
+    width: calc(20vw + 22vh);
+    background-color: rgba(103, 111, 99, 1);
+    border-radius: calc(0.2vw + 0.4vh);
+    padding: calc(0.5vw + 1vh);
+    gap: calc(0.5vw + 1vh);
+}
+.number-of-step{
+    color: rgba(255, 255, 255, 0.5);
+    font-size: calc(2vw + 4vh);
+    font-family: 'Gella Display', sans-serif;
+    font-weight: 300;
+}
+.title-step{
+    color: white;
+    font-size: calc(0.7vw + 1.2vh);    
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+}
+.description-step{
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 300;
+    font-style: italic;
+    line-height: 130%;
+    font-size: calc(0.8vw + 1.2vh);
+}
+.button-green{
+    color: white;
+    background-color: rgba(26, 28, 25, 1);
+    border-color: white;
+    height: calc(2.5vw + 2vh);
+    font-size: calc(1vw + 0.7vh);
+    font-style: medium;
+    font-family: "Inter", sans-serif;
+}
+.button-green-consultation{
+    border: calc(0.03vw + 0.05vh) white solid;
+    width: calc(26vw + 20vh);
+}
+.buttons-choose-color{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.image-next{
+    height: calc(2.5vw + 2vh);
 }
