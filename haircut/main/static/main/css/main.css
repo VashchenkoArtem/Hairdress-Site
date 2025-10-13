@@ -5,14 +5,46 @@
   font-style: normal;
   font-display: swap;
 }
+@font-face {
+  font-family: 'Cormorant';
+  src: url('../fonts/Cormorant/static/Cormorant-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('../fonts/Inter/Inter-VariableFont_opsz\,wght.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Bad Script';
+  src: url('../fonts/Bad_Script/BadScript-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Playfair';
+  src: url('../fonts/Playfair/Playfair-VariableFont_opsz\,wdth\,wght.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 *{
     padding:0px;
     margin: 0px;
     box-sizing: border-box;
     font-family: "Cormorant", serif;
+    color: white;
+    scrollbar-width: none;
+    overflow-y: scroll;
 }
 body{
     background-color: rgba(26, 28, 25, 1);
+
 }
 .bg-image{
     width: 50%;
@@ -20,7 +52,7 @@ body{
     top: 0px;
     left: 0px;
     position: absolute;
-    left: calc(18.6vw + 65vh);  
+    left: calc(19vw + 65vh);  
     z-index: 0;
 }
 .frame-hat{
@@ -36,7 +68,6 @@ body{
     justify-content: space-between;
 }
 .title-hat{
-    color: white;
     font-size: calc(1.5vw + 1.4vh);
     font-family: "Playfair", serif;
 }
@@ -45,7 +76,6 @@ body{
 }
 .button-menu{
     all: unset;
-    color: white;
     font-size: calc(1vw + 1vh);
 }
 .ideal-hair-for-you{
@@ -55,12 +85,9 @@ body{
     width: 50%;
     text-align: center;
     font-weight: 600;
-    font-style: semi-bold;
-    color: white;
 }
 .coloration{
     font-family: "Bad Script", cursive;
-    color: white;
     font-size: calc(1vw + 1.2vh);
     font-weight: 400;
     font-style: italic;
@@ -84,7 +111,6 @@ body{
     gap: calc(0.6vw + 1.1vh);
 }
 .title-button-consultation{
-    color: white;
     font-size: calc(1.5vw + 1.2vh);
     font-family: 'Inter', sans-serif;
     font-weight: 400;
@@ -135,17 +161,16 @@ body{
     gap: calc(1vw + 0.7vh);
 }
 .main-title-description{
-    color: white;
     font-weight: 500;
     text-align: center;
     font-style: medium;
-    font-size: calc(1.5vw + 2vh);
+    font-size: calc(2vw + 4vh);
 }
 .coloration-text{
-    color: white;
-    font-size: calc(0.7vw + 1.2vh);
+    font-size: calc(1vw + 1.2vh);
     font-weight: 500;
     text-align: center;
+    font-family: 'Inter', sans-serif;
 }
 .image-people-first{
     width: calc(20vw + 26.6vh);
@@ -164,14 +189,12 @@ body{
     gap: calc(0.7vw + 1.5vh);
 }
 .title-choose-color{
-    color: white;
     font-weight: 500;
-    font-size: calc(1.5vw + 3vh);
+    font-size: calc(2vw + 4vh);
 }
 .description-choose-color{
-    color: white;
     text-align: center;
-    font-size: calc(0.7vw + 1.2vh);
+    font-size: calc(1vw + 1.2vh);
     font-weight: 400;
     font-family: 'Inter', sans-serif;
 }
@@ -197,20 +220,19 @@ body{
     font-weight: 300;
 }
 .title-step{
-    color: white;
     font-size: calc(0.7vw + 1.2vh);    
     font-family: 'Inter', sans-serif;
     font-weight: 500;
 }
 .description-step{
     color: rgba(255, 255, 255, 0.5);
-    font-weight: 300;
+    font-weight: 100;
     font-style: italic;
+    font-family: 'Inter', sans-serif;
     line-height: 130%;
     font-size: calc(0.8vw + 1.2vh);
 }
 .button-green{
-    color: white;
     background-color: rgba(26, 28, 25, 1);
     border-color: white;
     height: calc(2.5vw + 2vh);
@@ -229,4 +251,206 @@ body{
 }
 .image-next{
     height: calc(2.5vw + 2vh);
+}
+.reason-hair{
+    display: flex;
+    gap: calc(0.5vw + 1vh);
+}
+.reason-image{
+    width: 45%;
+    height: 100%;
+}
+.reasons{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 55%;
+    justify-content: center;
+    gap: calc(1vw + 1vh);
+}
+.why-2-days{
+    text-align: center;
+    font-size: calc(2vw + 4vh);
+    font-weight: 500;
+    font-style: medium;
+}
+.days-title{
+    font-size: calc(1.1vw + 1vh);
+    font-weight: 400;
+    font-family: 'Inter', sans-serif;
+}
+.days-description{
+    text-align: center;
+    font-size: calc(0.7vw + 1.2vh);
+    font-weight: 400;
+    font-family: 'Inter', sans-serif;
+}
+.result{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: calc(0.5vw + 1vh);
+}
+.result-title{
+    display: flex;
+    flex-direction: column;
+    gap: calc(0.5vw + 1vh);
+    align-items: center;
+}
+.result-h1{
+    font-weight: 500;
+    font-size: calc(2vw + 4vh);
+}
+.result-description{
+    font-size: calc(0.9vw + 1.2vh);
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+}
+.result-body{
+    display: flex;
+    flex-direction: column;
+    gap: calc(1.1vw + 1vh);
+}
+.result-text{
+    width: calc(50vw + 10vh);
+    height: calc(9.7vw + 8vh);
+    background-color: rgba(103, 111, 99, 1);
+    padding: calc(0.9vw + 1vh);
+    display: flex;
+    flex-direction: column;
+    gap: calc(0.5vw + 1vh);
+    border-radius: calc(0.3vw + 1vh);
+}
+.result-text-h1{
+    font-size: calc(1vw + 1.2vh);
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+}
+.result-text-description{
+    font-size: calc(0.8vw + 1.2vh);   
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.5);
+}
+.result-photos{
+    display: flex;
+    justify-content: center;
+    gap: calc(0.1vw + 0.2vh);
+}
+.people-example{
+    width: calc(25vw + 4.5vh);
+}
+.button-circle{
+    all: unset;
+}
+.result-buttons{
+    display: flex;
+    justify-content: center;
+    width: calc(50vw + 10vh);
+    gap: calc(1vw + 2vh);
+}
+.my-bio{
+    display: flex;
+    gap: calc(1vw + 1vh);
+    align-items: center;
+}
+.my-bio-info{
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: calc(3vw + 3vh);
+}
+.my-photo{
+    width: 45%;
+
+}
+.my-bio-frame{
+    display: flex;
+    flex-direction: column;
+    gap: calc(1vw + 1vh);
+    align-items: center;
+}
+.my-name{
+    font-size: calc(1vw + 4vh);
+    font-weight: 500;
+}
+.my-work{
+    font-size: calc(0.6vw + 1vh);
+    font-weight: 400;
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+}
+.my-expereance{
+    font-size: calc(0.6vw + 1vh);
+    font-weight: 100;
+    font-family: 'Inter', sans-serif;
+}
+.highlighted{
+    font-size: calc(2vw + 2vh);
+    font-weight: 600;
+}
+.others-opinion{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: calc(1.1vw + 1vh);
+}
+.hat-opinion{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: calc(1vw + 1vh);
+}
+.hat-opinion-title{
+    font-size: calc(2vw + 4vh);
+    font-weight: 500;
+    font-style: medium;
+}
+.hat-opinion-description{
+    font-size: calc(1vw + 1vh);
+    font-weight: 400;
+    text-align: center;
+}
+.opinion-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: calc(1.2vw + 1vh);
+}
+.body-opinion{
+    width: calc(50vw + 90vh);
+    border-radius: calc(1vw + 1vh);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: calc(1vw + 2vh) calc(5vw + 10vh) ;
+    background-color: rgba(103, 111, 99, 1);
+}
+.quotes{
+    width: 100%;
+    text-align: start;
+}
+.second-qoute{
+    transform: rotate(180deg);
+}
+.opinion-text{
+    margin: calc(0.5vw + 1vh) calc(1vw + 2vh);
+}
+.opinion-review{
+    text-align: center;
+    font-size: calc(1vw + 1.7vh);
+    font-weight: 300;
+    font-family: 'Inter', sans-serif;
+}
+.quote{
+    width: calc(1vw + 2vh);
+}
+.opinion-name{
+    font-size: calc(1vw + 3vh);
+    font-family: "Playfair", sans-serif;
+    font-style: italic;
+    font-weight: 600;
 }
