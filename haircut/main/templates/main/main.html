@@ -147,36 +147,47 @@
             </div>
         </div>
     </div>
-    <!-- <div class = "review-frame">
+    <div class = "review-frame">
+        <div class = 'blur-bg'></div>
         <div class = "review">
             <div class="review-hat">
                 <h1 class = "review-hat-title">Зв'яжімося - і підберемо твій колір</h1>
                 <h2 class = "review-hat-description">Залиш заявку або напиши мені напряму.<br>Відповім у найближчий час!</h2>
             </div>
             <div class = "contact-icons">
-                <a href="" class = "url-telegram">
+                <a href="" class = "url-telegram url-icon">
                     <img class = "url-icon" src="{% static 'images/icons/telegram.png' %}" alt="">
                 </a>
-                <a href="" class = "url-instagram">
+                <a href="" class = "url-instagram url-icon">
                     <img class = "url-icon" src="{% static 'images/icons/instagram.png' %}" alt="">
                 </a>
-                <a href="" class = "url-viber">
+                <a href="" class = "url-viber url-icon">
                     <img class = "url-icon" src="{% static 'images/icons/viber.png' %}" alt="">
                 </a>
             </div>
+            <form action="">
             <div class = "review-form">
-                <form action="">
-                    {{ form.as_p}}
-                </form>
-            </div>
+                    {% for field in form %}
+                        {% if field.field.widget.input_type == "file" %}
+                            <label for="id_photo" class = "field-image">
+                                <img class = "icon-field" src="{% static 'images/icons/field.png'%}" alt="">
+                                <h1 class = "title-field">Прикріпити фото</h1>
+                            </label>    
+                            <input type="file" id="id_photo"  accept="image/*" hidden>
+                        {% else %}
+                            {{ field }}
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </form>
             <div class = "buttons">
-                <button class = "apply-for-consultation">
+                <button class = "button Apply-for-consultation">
                     НАДІСЛАТИ
                 </button>
-                <button class = "button-next">
-                    <img src="{% static 'images/buttons/button_next.png' %}" alt="">
+                <button class = "button button-next"> 
+                    <img class = "button-image" src="{% static 'images/buttons/button_next.png' %}" alt="">
                 </button>
             </div>
         </div>
-    </div> -->
+    </div>
 {% endblock %}

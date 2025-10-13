@@ -1,16 +1,21 @@
 from django import forms
 
 class ReviewForm(forms.Form):
-    name = forms.CharField(label = "Ім'я та прізвище",max_length=256, widget = forms.Textarea(attrs={
-        "class": "input-form"
-    }))
-    phone_number = forms.CharField(label = "Номер телефону", widget = forms.Textarea(attrs={
+    name = forms.CharField(label = "",max_length=256, widget = forms.Textarea(attrs={
         "class": "input-form",
-        "type": "tel"
+        "placeholder": "Ім'я та прізвище"
     }))
-    email = forms.EmailField(label = "Пошта", widget = forms.EmailInput(attrs={
+    phone_number = forms.CharField(label = "",widget = forms.Textarea(attrs={
         "class": "input-form",
-        "type": "email"
+        "type": "tel",
+        "placeholder": "Номер телефону"
     }))
-    photo = forms.ImageField(label = "Прикріпити фото")
-    wishlist = forms.CharField(max_length = 5000, label = "Побажання до підбору")
+    email = forms.EmailField(label = "", widget = forms.EmailInput(attrs={
+        "class": "input-form",
+        "type": "email",
+        "placeholder": "Пошта"
+    }))
+    photo = forms.ImageField(label = "")
+    wishlist = forms.CharField(label = "",max_length = 5000, widget = forms.Textarea(attrs = {
+        "placeholder": "Побажання до підбору"
+    }))
