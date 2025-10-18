@@ -10,30 +10,30 @@
 {% endblock %}
 
 {% block content %}
-    <div class = "modal-hat-frame">
-        <a href = "" class = "modal-coloration">ПІДБІР ФАРБУВАННЯ</a>
-        <a href = "" class = "modal-my-works">МОЇ РОБОТИ</a>
-        <a href = "" class = "modal-about-me">ПРО МЕНЕ</a>
-        <a href = "" class = "modal-contacts">КОНТАКТИ</a>
-        <a href = "" class = "modal-apply-for">ЗАМОВИТИ КОНСУЛЬТАЦІЮ</a>
-        <div class = "button-cross">
+    <img class = "bg-image" src="{% static 'images/bg_hair.png' %}" alt="">
+    <div class = "modal-hat-frame hidden">
+        <a href = "" class = "modal-coloration modal-url">ПІДБІР ФАРБУВАННЯ</a>
+        <a href = "" class = "modal-my-works modal-url">МОЇ РОБОТИ</a>
+        <a href = "" class = "modal-about-me modal-url">ПРО МЕНЕ</a>
+        <a href = "" class = "modal-contacts modal-url">КОНТАКТИ</a>
+        <a href = "" class = "modal-apply-for modal-url">ЗАМОВИТИ КОНСУЛЬТАЦІЮ</a>
+        <div class = "button-cross button-open-close">
             <img class = "image-cross" src="{% static 'images/icons/cross.png' %}" alt="">
         </div>
     </div>
     <div class = "frame-hat">
         <div class = "hat">
             <h1 class = "title-hat">Hair <span class = "grey-title-hat">Nool</span></h1>
-            <button class = "button-menu">MENU</button>
+            <button class = "button-menu button-open-close">MENU</button>
         </div>
         <hr class = "horizontal-line">
     </div>
-    <img class = "bg-image" src="{% static 'images/bg_hair.png' %}" alt="">
     <h1 class = "coloration">"Фарбування - це не просто зміна кольору.<br>Це трансформація!"</h1>
     <h1 class = "ideal-hair-for-you">Ідеальне волосся<br> для тебе...</h1>
     <div class = "frame-consultation">
         <h1 class = "title-button-consultation">Професійний підбір фарбування онлайн</h1>
         <div class = "buttons">
-            <button class = "button Apply-for-consultation">ЗАМОВИТИ КОНСУЛЬТАЦІЮ</button>
+            <button class = "button Apply-for-consultation first-button">ЗАМОВИТИ КОНСУЛЬТАЦІЮ</button>
             <button class = "button button-next"> 
                 <img class = "button-image" src="{% static 'images/buttons/button_next.png' %}" alt="">
             </button>
@@ -118,7 +118,7 @@
                 <h1 class = "my-expereance years-of-experience">Маю <span class = "highlighted count-of-years-exp">7+</span> років досвіду</h1>
                 <h1 class = "my-expereance my-clients">Понад <span class = "highlighted my-clients-count">4К+</span> задоволених клієнтів</h1>
                 <div class = "buttons">
-                    <button class = "button Apply-for-consultation">ЗАМОВИТИ КОНСУЛЬТАЦІЮ</button>
+                    <button class = "button Apply-for-consultation first-button">ЗАМОВИТИ КОНСУЛЬТАЦІЮ</button>
                     <button class = "button button-next"> 
                         <img class = "button-image" src="{% static 'images/buttons/button_next.png' %}" alt="">
                     </button>
@@ -191,7 +191,7 @@
                 </div>
             </form>
             <div class = "buttons">
-                <button class = "button Apply-for-consultation">
+                <button class = "button Apply-for-consultation first-button">
                     НАДІСЛАТИ
                 </button>
                 <button class = "button button-next"> 
@@ -200,4 +200,7 @@
             </div>
         </div>
     </div>
+{% endblock %}
+{% block script %}
+    <script src = "{% static 'main/js/main.js' %}"></script>
 {% endblock %}
