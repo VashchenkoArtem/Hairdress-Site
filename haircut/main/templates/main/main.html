@@ -7,196 +7,399 @@
 
 {% block links %}
     <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/main_for_phone.css' %}">
 {% endblock %}
 
 {% block content %}
-    <img class = "bg-image" src="{% static 'images/bg_hair.png' %}" alt="">
-    <div class = "modal-hat-frame hidden">
-        <a href = "" class = "modal-coloration modal-url">ПІДБІР ФАРБУВАННЯ</a>
-        <a href = "" class = "modal-my-works modal-url">МОЇ РОБОТИ</a>
-        <a href = "" class = "modal-about-me modal-url">ПРО МЕНЕ</a>
-        <a href = "" class = "modal-contacts modal-url">КОНТАКТИ</a>
-        <a href = "" class = "modal-apply-for modal-url">ЗАМОВИТИ КОНСУЛЬТАЦІЮ</a>
-        <div class = "button-cross button-open-close">
-            <img class = "image-cross" src="{% static 'images/icons/cross.png' %}" alt="">
-        </div>
-    </div>
-    <div class = "frame-hat">
-        <div class = "hat">
-            <h1 class = "title-hat">Hair <span class = "grey-title-hat">Nool</span></h1>
-            <button class = "button-menu button-open-close">MENU</button>
-        </div>
-        <hr class = "horizontal-line">
-    </div>
-    <h1 class = "coloration">"Фарбування - це не просто зміна кольору.<br>Це трансформація!"</h1>
-    <h1 class = "ideal-hair-for-you">Ідеальне волосся<br> для тебе...</h1>
-    <div class = "frame-consultation">
-        <h1 class = "title-button-consultation">Професійний підбір фарбування онлайн</h1>
-        <div class = "buttons">
-            <button class = "button Apply-for-consultation first-button">ЗАМОВИТИ КОНСУЛЬТАЦІЮ</button>
-            <button class = "button button-next"> 
-                <img class = "button-image" src="{% static 'images/buttons/button_next.png' %}" alt="">
-            </button>
-        </div>
-    </div>
-    <div class = "main-frame">
-        <div class = "description-frame">
-            <div class = "frame-description-titles">
-                <h1 class = "main-title-description">Колір, що личить саме тобі</h1>
-                <h2 class = "coloration-text">Фарбування - не про тренди. Це про тебе.<br>Ми врахуємо тон шкіри, форму обличчя та особливості зовнішності,<br> щоб порадити ідеальний відтінок.</h2>
-            </div>
-            <div>
-                <img class = "image-people-first" src="{% static 'images/people_example/people_examples.png' %}" alt="">
+    <div class = "design-for-laptop hidden">
+        <img class = "bg-image" src="{% static 'images/bg_hair.png' %}" alt="">
+        <div class = "modal-hat-frame hidden">
+            <a href = "" class = "modal-coloration modal-url">ПІДБІР ФАРБУВАННЯ</a>
+            <a href = "" class = "modal-my-works modal-url">МОЇ РОБОТИ</a>
+            <a href = "" class = "modal-about-me modal-url">ПРО МЕНЕ</a>
+            <a href = "" class = "modal-contacts modal-url">КОНТАКТИ</a>
+            <a href = "" class = "modal-apply-for modal-url">ЗАМОВИТИ КОНСУЛЬТАЦІЮ</a>
+            <div class = "button-cross button-open-close">
+                <img class = "image-cross" src="{% static 'images/icons/cross.png' %}" alt="">
             </div>
         </div>
-        <div class = "choosing-color">
-            <div class = "description-choosing-color">
-                <h1 class = "title-choose-color">Підбір кольору</h1>
-                <h2 class = "description-choose-color">Щоб підібрати колір, який справді підкреслить вашу зовнішність потрібен аналіз.<br><br>Ми врахуємо:<br>Відтінок шкіри, Структуру та стан пасм, Колір очей</h2>
+        <div class = "frame-hat">
+            <div class = "hat">
+                <h1 class = "title-hat">Hair <span class = "grey-title-hat">Nool</span></h1>
+                <button class = "button-menu button-open-close">MENU</button>
             </div>
-            <div class = "choosing-color-steps">
-                <div class = "step">
-                    <h1 class = "number-of-step">01</h1>
-                    <h2 class = "title-step">Заявка</h2>
-                    <h3 class = "description-step">Заповніть коротку форму, додайте фото та деталі</h3>
-                </div>
-                <div class = "step">
-                    <h1 class = "number-of-step">02</h1>
-                    <h2 class = "title-step">Аналіз</h2>
-                    <h3 class = "description-step">Проводжу індивідуальний розбір та створюю пропозицію кольору</h3>
-                </div>
-                <div class = "step">
-                    <h1 class = "number-of-step">03</h1>
-                    <h2 class = "title-step">Перевтілення</h2>
-                    <h3 class = "description-step">Ви отримуєте обраний варіант та рекомендації</h3>
-                </div>
-            </div>
-            <div class = "buttons-choose-color">
-                <button class = "button button-green button-green-consultation ">ЗАМОВИТИ КОНСУЛЬТАЦІЮ</button>
-                <button class = "button button-green button-next"> <img class = "image-next" src="{% static 'images/buttons/green_button_next.png'%}" alt=""></button>
+            <hr class = "horizontal-line">
+        </div>
+        <h1 class = "coloration">"Фарбування - це не просто зміна кольору.<br>Це трансформація!"</h1>
+        <h1 class = "ideal-hair-for-you">Ідеальне волосся<br> для тебе...</h1>
+        <div class = "frame-consultation">
+            <h1 class = "title-button-consultation">Професійний підбір фарбування онлайн</h1>
+            <div class = "buttons">
+                <button class = "button Apply-for-consultation first-button">ЗАМОВИТИ КОНСУЛЬТАЦІЮ</button>
+                <button class = "button button-next"> 
+                    <img class = "button-image" src="{% static 'images/buttons/button_next.png' %}" alt="">
+                </button>
             </div>
         </div>
-        <div class = "reason-hair">
-            <img class = "reason-image" src="{% static 'images/hair.png' %}" alt="">
-            <div class = "reasons">
-                <h1 class = "why-2-days">Чому підбір займає<br> до 2 днів?</h1>
-                <h2 class = "days-title">Точність вимагає часу.</h2>
-                <h2 class = "days-description">Кожне фото ми уважно розглядаємо, підбираємо варіанти кольору та відтінку,<br>які будуть не просто красивими — а ідеальними саме для вас.<br><br>Цей процес займає до 48 годин, і він дійсно вартий очікування.</h2>
+        <div class = "main-frame">
+            <div class = "description-frame">
+                <div class = "frame-description-titles">
+                    <h1 class = "main-title-description">Колір, що личить саме тобі</h1>
+                    <h2 class = "coloration-text">Фарбування - не про тренди. Це про тебе.<br>Ми врахуємо тон шкіри, форму обличчя та особливості зовнішності,<br> щоб порадити ідеальний відтінок.</h2>
+                </div>
+                <div>
+                    <img class = "image-people-first" src="{% static 'images/people_example/people_examples.png' %}" alt="">
+                </div>
+            </div>
+            <div class = "choosing-color">
+                <div class = "description-choosing-color">
+                    <h1 class = "title-choose-color">Підбір кольору</h1>
+                    <h2 class = "description-choose-color">Щоб підібрати колір, який справді підкреслить вашу зовнішність потрібен аналіз.<br><br>Ми врахуємо:<br>Відтінок шкіри, Структуру та стан пасм, Колір очей</h2>
+                </div>
+                <div class = "choosing-color-steps">
+                    <div class = "step">
+                        <h1 class = "number-of-step">01</h1>
+                        <h2 class = "title-step">Заявка</h2>
+                        <h3 class = "description-step">Заповніть коротку форму, додайте фото та деталі</h3>
+                    </div>
+                    <div class = "step">
+                        <h1 class = "number-of-step">02</h1>
+                        <h2 class = "title-step">Аналіз</h2>
+                        <h3 class = "description-step">Проводжу індивідуальний розбір та створюю пропозицію кольору</h3>
+                    </div>
+                    <div class = "step">
+                        <h1 class = "number-of-step">03</h1>
+                        <h2 class = "title-step">Перевтілення</h2>
+                        <h3 class = "description-step">Ви отримуєте обраний варіант та рекомендації</h3>
+                    </div>
+                </div>
+                <div class = "buttons-choose-color">
+                    <button class = "button button-green button-green-consultation ">ЗАМОВИТИ КОНСУЛЬТАЦІЮ</button>
+                    <button class = "button button-green button-next"> <img class = "image-next" src="{% static 'images/buttons/green_button_next.png'%}" alt=""></button>
+                </div>
+            </div>
+            <div class = "reason-hair">
+                <img class = "reason-image" src="{% static 'images/hair.png' %}" alt="">
+                <div class = "reasons">
+                    <h1 class = "why-2-days">Чому підбір займає<br> до 2 днів?</h1>
+                    <h2 class = "days-title">Точність вимагає часу.</h2>
+                    <h2 class = "days-description">Кожне фото ми уважно розглядаємо, підбираємо варіанти кольору та відтінку,<br>які будуть не просто красивими — а ідеальними саме для вас.<br><br>Цей процес займає до 48 годин, і він дійсно вартий очікування.</h2>
+                </div>
+            </div>
+            <div class = "result">
+                <div class = "result-title">
+                    <h1 class = "result-h1">Результат, що вас здивує</h1>
+                    <h2 class = "result-description">Дивіться як виглядає перевтілення за індивідуальним підбором</h2>
+                </div>
+                <div class = "result-body">
+                    <div class = "result-text">
+                        <h1 class = "result-text-h1">Освітлення та м’яке моделювання обличчя через колір</h1>
+                        <h2 class = "result-text-description">Ми прибрали важкість темного відтінку, який робив риси суворішими.<br>Створили м’який контур через світлі пасма біля обличчя — це візуально<br>освіжає та відкриває погляд. Додали теплі акценти та об’ємне укладання, яке<br>підкреслює нову текстуру волосся. Зміна кольору відразу зробила вигляд<br>більш гармонійним і «дорогим».</h2>
+                    </div>
+                    <div class = "result-photos">
+                        <img class = "people-example" src="{% static 'images/people_example/people_example3.png'%}" alt="">
+                        <img class = "people-example" src="{% static 'images/people_example/people_example4.png'%}" alt="">
+                    </div>
+                    <div class = "result-buttons">
+                        <button class = 'button-circle button-left'>
+                            <img class = "button-next button-image" src="{% static 'images/buttons/button_left.png'%}" alt="">
+                        </button>
+                        <button class = 'button-circle button-right'>
+                            <img class = "button-next button-image" src="{% static 'images/buttons/button_right.png'%}" alt="">
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class = "my-bio">
+                <img class = "my-photo" src="{% static 'images/people_example/my_photo.png' %}" alt="">    
+                <div class = "my-bio-info">
+                    <div class = "my-bio-frame">
+                        <h1 class = "my-name">Привіт! Мене звати - Альона</h1>
+                        <h2 class = "my-work">Працюю у Дніпрі та онлайн.<br>Допомагаю знайти свій ідеальний відтінок, спираючись на знання, а не інтуіцію.</h2>
+                    </div>
+                    <h1 class = "my-expereance years-of-experience">Маю <span class = "highlighted count-of-years-exp">7+</span> років досвіду</h1>
+                    <h1 class = "my-expereance my-clients">Понад <span class = "highlighted my-clients-count">4К+</span> задоволених клієнтів</h1>
+                    <div class = "buttons">
+                        <button class = "button Apply-for-consultation first-button">ЗАМОВИТИ КОНСУЛЬТАЦІЮ</button>
+                        <button class = "button button-next"> 
+                            <img class = "button-image" src="{% static 'images/buttons/button_next.png' %}" alt="">
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class = "others-opinion">
+                <div class = "hat-opinion">
+                    <h1 class = "hat-opinion-title">Що говорять інші</h1>
+                    <h2 class = "hat-opinion-description">Реальні історії перевтілень, відгуки клієнток після підбору кольору та фарбування.<br>
+        Їхні враження — найкраще підтвердження якості моєї роботи</h2>
+                </div>
+                <div class = "opinion-container">
+                    <div class = "body-opinion">
+                        <div class = "opinion">
+                            <div class = "quotes">
+                                <img class = "quote" src="{% static 'images/quotes.png'%}" alt="">
+                            </div>
+                            <div class = "opinion-text">
+                                <h1 class = "opinion-review">Я довго не могла знайти відтінок, який би мені справді личив — або занадто<br>жовтий, або робив обличчя втомленим. <br><br>Альона провела детальний розбір, пояснила, чому мій теплий тон шкіри не <br>дружить з попелястим блондом, і запропонувала свій варіант. <br><br>Результат — це любов з першого погляду.<br>Волосся виглядає натурально, шкіра свіжа, і я отримую купу компліментів. Дуже <br>дякую за уважність і професійність!</h1>
+                            </div>
+                            <div class = "quotes second-qoute">
+                                <img class = "quote" src="{% static 'images/quotes.png'%}" alt="">
+                            </div>
+                        </div>
+                        <h1 class = "opinion-name">Катерина, місто Дніпро</h1>
+                    </div>
+                    <div class = "result-buttons">
+                        <button class = 'button-circle button-left'>
+                            <img class = "button-next button-image" src="{% static 'images/buttons/button_left.png'%}" alt="">
+                        </button>
+                        <button class = 'button-circle button-right'>
+                            <img class = "button-next button-image" src="{% static 'images/buttons/button_right.png'%}" alt="">
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class = "result">
-            <div class = "result-title">
-                <h1 class = "result-h1">Результат, що вас здивує</h1>
-                <h2 class = "result-description">Дивіться як виглядає перевтілення за індивідуальним підбором</h2>
-            </div>
-            <div class = "result-body">
-                <div class = "result-text">
-                    <h1 class = "result-text-h1">Освітлення та м’яке моделювання обличчя через колір</h1>
-                    <h2 class = "result-text-description">Ми прибрали важкість темного відтінку, який робив риси суворішими.<br>Створили м’який контур через світлі пасма біля обличчя — це візуально<br>освіжає та відкриває погляд. Додали теплі акценти та об’ємне укладання, яке<br>підкреслює нову текстуру волосся. Зміна кольору відразу зробила вигляд<br>більш гармонійним і «дорогим».</h2>
+        <div class = "review-frame">
+            <div class = 'blur-bg'></div>
+            <div class = "review">
+                <div class="review-hat">
+                    <h1 class = "review-hat-title">Зв'яжімося - і підберемо твій колір</h1>
+                    <h2 class = "review-hat-description">Залиш заявку або напиши мені напряму.<br>Відповім у найближчий час!</h2>
                 </div>
-                <div class = "result-photos">
-                    <img class = "people-example" src="{% static 'images/people_example/people_example3.png'%}" alt="">
-                    <img class = "people-example" src="{% static 'images/people_example/people_example4.png'%}" alt="">
+                <div class = "contact-icons">
+                    <a href="" class = "url-telegram url-icon">
+                        <img class = "url-icon" src="{% static 'images/icons/telegram.png' %}" alt="">
+                    </a>
+                    <a href="" class = "url-instagram url-icon">
+                        <img class = "url-icon" src="{% static 'images/icons/instagram.png' %}" alt="">
+                    </a>
+                    <a href="" class = "url-viber url-icon">
+                        <img class = "url-icon" src="{% static 'images/icons/viber.png' %}" alt="">
+                    </a>
                 </div>
-                <div class = "result-buttons">
-                    <button class = 'button-circle button-left'>
-                        <img class = "button-next button-image" src="{% static 'images/buttons/button_left.png'%}" alt="">
-                    </button>
-                    <button class = 'button-circle button-right'>
-                        <img class = "button-next button-image" src="{% static 'images/buttons/button_right.png'%}" alt="">
-                    </button>
-                </div>
-            </div>
-        </div>
-        <div class = "my-bio">
-            <img class = "my-photo" src="{% static 'images/people_example/my_photo.png' %}" alt="">    
-            <div class = "my-bio-info">
-                <div class = "my-bio-frame">
-                    <h1 class = "my-name">Привіт! Мене звати - Альона</h1>
-                    <h2 class = "my-work">Працюю у Дніпрі та онлайн.<br>Допомагаю знайти свій ідеальний відтінок, спираючись на знання, а не інтуіцію.</h2>
-                </div>
-                <h1 class = "my-expereance years-of-experience">Маю <span class = "highlighted count-of-years-exp">7+</span> років досвіду</h1>
-                <h1 class = "my-expereance my-clients">Понад <span class = "highlighted my-clients-count">4К+</span> задоволених клієнтів</h1>
+                <form action="">
+                <div class = "review-form">
+                        {% for field in form %}
+                            {% if field.field.widget.input_type == "file" %}
+                                <label for="id_photo" class = "field-image">
+                                    <img class = "icon-field" src="{% static 'images/icons/field.png'%}" alt="">
+                                    <h1 class = "title-field">Прикріпити фото</h1>
+                                </label>    
+                                <input type="file" id="id_photo"  accept="image/*" hidden>
+                            {% else %}
+                                {{ field }}
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </form>
                 <div class = "buttons">
-                    <button class = "button Apply-for-consultation first-button">ЗАМОВИТИ КОНСУЛЬТАЦІЮ</button>
+                    <button class = "button Apply-for-consultation first-button">
+                        НАДІСЛАТИ
+                    </button>
                     <button class = "button button-next"> 
                         <img class = "button-image" src="{% static 'images/buttons/button_next.png' %}" alt="">
                     </button>
                 </div>
             </div>
         </div>
-        <div class = "others-opinion">
-            <div class = "hat-opinion">
-                <h1 class = "hat-opinion-title">Що говорять інші</h1>
-                <h2 class = "hat-opinion-description">Реальні історії перевтілень, відгуки клієнток після підбору кольору та фарбування.<br>
-    Їхні враження — найкраще підтвердження якості моєї роботи</h2>
+    </div>
+    <div class = "design-for-phone hidden">
+        <div class = "frame-hat">
+            <div class = "hat">
+                <h1 class = "title-hat">Hair <span class = "green-title-hat">Nool</span></h1>
+                <button class = "button-menu button-open-close">MENU</button>
             </div>
-            <div class = "opinion-container">
-                <div class = "body-opinion">
-                    <div class = "opinion">
-                        <div class = "quotes">
-                            <img class = "quote" src="{% static 'images/quotes.png'%}" alt="">
-                        </div>
-                        <div class = "opinion-text">
-                            <h1 class = "opinion-review">Я довго не могла знайти відтінок, який би мені справді личив — або занадто<br>жовтий, або робив обличчя втомленим. <br><br>Альона провела детальний розбір, пояснила, чому мій теплий тон шкіри не <br>дружить з попелястим блондом, і запропонувала свій варіант. <br><br>Результат — це любов з першого погляду.<br>Волосся виглядає натурально, шкіра свіжа, і я отримую купу компліментів. Дуже <br>дякую за уважність і професійність!</h1>
-                        </div>
-                        <div class = "quotes second-qoute">
-                            <img class = "quote" src="{% static 'images/quotes.png'%}" alt="">
-                        </div>
-                    </div>
-                    <h1 class = "opinion-name">Катерина, місто Дніпро</h1>
-                </div>
-                <div class = "result-buttons">
-                    <button class = 'button-circle button-left'>
-                        <img class = "button-next button-image" src="{% static 'images/buttons/button_left.png'%}" alt="">
-                    </button>
-                    <button class = 'button-circle button-right'>
-                        <img class = "button-next button-image" src="{% static 'images/buttons/button_right.png'%}" alt="">
-                    </button>
+            <hr class = "horizontal-line">
+        </div>
+        <div class = "coloration-phone">
+            <h1 class = "coloration-part1">Фарбування -<br>це не просто зміна кольору</h1>
+            <h1 class = "coloration-part2">Це трансформація!</h1>
+        </div>
+        <div class = "about-me-start">
+            <div class = "blur-bg"></div>
+            <img src="{% static 'images/bg_phone.png' %}"class = "bg-phone" alt="">
+            <div class = "about-me-on-image">
+                <h1 class = "about-me-greetings">Привіт!</h1>
+                <h1 class = "about-me-start-description">Я - допомогла вже <span class = "about-me-start-count">4K+</span> дівчатам знайти свій ідеальний колір волосся.</h1>
+                <div class = "buttons-choose-color">
+                    <button class = "button button-green button-green-consultation ">ЗАМОВИТИ КОНСУЛЬТАЦІЮ</button>
+                    <button class = "button button-green button-next"> <img class = "image-next" src="{% static 'images/buttons/green_button_next.png'%}" alt=""></button>
                 </div>
             </div>
         </div>
-    </div>
-    <div class = "review-frame">
-        <div class = 'blur-bg'></div>
-        <div class = "review">
-            <div class="review-hat">
-                <h1 class = "review-hat-title">Зв'яжімося - і підберемо твій колір</h1>
-                <h2 class = "review-hat-description">Залиш заявку або напиши мені напряму.<br>Відповім у найближчий час!</h2>
-            </div>
-            <div class = "contact-icons">
-                <a href="" class = "url-telegram url-icon">
-                    <img class = "url-icon" src="{% static 'images/icons/telegram.png' %}" alt="">
-                </a>
-                <a href="" class = "url-instagram url-icon">
-                    <img class = "url-icon" src="{% static 'images/icons/instagram.png' %}" alt="">
-                </a>
-                <a href="" class = "url-viber url-icon">
-                    <img class = "url-icon" src="{% static 'images/icons/viber.png' %}" alt="">
-                </a>
-            </div>
-            <form action="">
-            <div class = "review-form">
-                    {% for field in form %}
-                        {% if field.field.widget.input_type == "file" %}
-                            <label for="id_photo" class = "field-image">
-                                <img class = "icon-field" src="{% static 'images/icons/field.png'%}" alt="">
-                                <h1 class = "title-field">Прикріпити фото</h1>
-                            </label>    
-                            <input type="file" id="id_photo"  accept="image/*" hidden>
-                        {% else %}
-                            {{ field }}
-                        {% endif %}
-                    {% endfor %}
+        <div class = "main-frame">
+            <div class = "description-frame">
+                <div class = "frame-description-titles">
+                    <h1 class = "main-title-description">Колір, що личить саме тобі</h1>
+                    <h2 class = "coloration-text">Фарбування - не про тренди. Це про тебе.<br><br>Ми врахуємо тон шкіри, форму обличчя та<br> особливості зовнішності, щоб порадити<br> ідеальний відтінок.</h2>
                 </div>
-            </form>
-            <div class = "buttons">
-                <button class = "button Apply-for-consultation first-button">
-                    НАДІСЛАТИ
-                </button>
-                <button class = "button button-next"> 
-                    <img class = "button-image" src="{% static 'images/buttons/button_next.png' %}" alt="">
-                </button>
+                <img src="{% static 'images/people_example/people_example_phone.png' %}" class = "people-example-phone" alt="">
+            </div>
+            <div class = "choosing-color-all">
+                <div class = "choosing-color">
+                    <h1 class = "">Підбір кольору</h1>
+                    <div class = "">
+                        <h1>Щоб підібрати колір, який справді<br>підкреслить вашу зовнішність, потрібен<br>аналіз.<br><br>Ми врахуємо:</h1>
+                    </div>
+                    <div>
+                        <div>
+                            <img src="{% static 'images/people_example/people_example_phone_1.png' %}" alt="">
+                            <h1>Відтінок шкіри</h1>
+                        </div>
+                        <div>
+                            <img src="{% static 'images/people_example/people_example_phone_2.png' %}" alt="">
+                            <h1>Структуру та стан пасм</h1>
+                        </div>
+                        <div>
+                            <img src="{% static 'images/people_example/people_example_phone_3.png' %}" alt="">
+                            <h1>Колір очей</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class = "choosing-color-steps">
+                    <div class = "step">
+                        <h1 class = "number-of-step">01</h1>
+                        <h2 class = "title-step">Заявка</h2>
+                        <h3 class = "description-step">Заповніть коротку форму, додайте фото та деталі</h3>
+                    </div>
+                    <div class = "step">
+                        <h1 class = "number-of-step">02</h1>
+                        <h2 class = "title-step">Аналіз</h2>
+                        <h3 class = "description-step">Проводжу індивідуальний розбір та створюю пропозицію кольору</h3>
+                    </div>
+                    <div class = "step">
+                        <h1 class = "number-of-step">03</h1>
+                        <h2 class = "title-step">Перевтілення</h2>
+                        <h3 class = "description-step">Ви отримуєте обраний варіант та рекомендації</h3>
+                    </div>
+                </div>
+                <div class = "buttons-choose-color">
+                    <button class = "button button-green button-green-consultation ">ЗАМОВИТИ КОНСУЛЬТАЦІЮ</button>
+                    <button class = "button button-green button-next"> <img class = "image-next" src="{% static 'images/buttons/green_button_next.png'%}" alt=""></button>
+                </div>
+            </div>
+            <div class = "reason-hair">
+                <img src="{% static 'images/hair.png' %}" alt="">
+                <div class = "reasons">
+                    <h1 class = "why-2-days">Чому підбір займає<br> до 2 днів?</h1>
+                    <h2 class = "days-title">Точність вимагає часу.</h2>
+                    <h2 class = "days-description">Кожне фото ми уважно розглядаємо, підбираємо варіанти кольору та відтінку,<br>які будуть не просто красивими — а ідеальними саме для вас.<br><br>Цей процес займає до 48 годин, і він дійсно вартий очікування.</h2>
+                    <div class = "buttons-choose-color">
+                        <button class = "button button-green button-green-consultation ">ЗАМОВИТИ КОНСУЛЬТАЦІЮ</button>
+                        <button class = "button button-green button-next"> <img class = "image-next" src="{% static 'images/buttons/green_button_next.png'%}" alt=""></button>
+                    </div>
+                </div>
+            </div>
+            <div class = "result">
+                <div class = "result-title">
+                    <h1 class = "result-h1">Результат, що вас здивує</h1>
+                    <h2 class = "result-description">Дивіться як виглядає перевтілення за індивідуальним підбором</h2>
+                </div>
+                <div class = "result-body">
+                    <div class = "result-photos">
+                        <img class = "people-example" src="{% static 'images/people_example/people_example3.png'%}" alt="">
+                        <img class = "people-example" src="{% static 'images/people_example/people_example4.png'%}" alt="">
+                    </div>
+                    <div class = "result-buttons">
+                        <button class = 'button-circle button-left'>
+                            <img class = "button-next button-image" src="{% static 'images/buttons/button_left.png'%}" alt="">
+                        </button>
+                        <button class = 'button-circle button-right'>
+                            <img class = "button-next button-image" src="{% static 'images/buttons/button_right.png'%}" alt="">
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class = "my-bio">
+                <img class = "my-photo" src="{% static 'images/people_example/my_photo.png' %}" alt="">    
+                <div class = "my-bio-info">
+                    <div class = "my-bio-frame">
+                        <h1 class = "my-name">Привіт! Мене звати - Альона</h1>
+                        <h2 class = "my-work">Працюю у Дніпрі та онлайн.<br>Допомагаю знайти свій ідеальний відтінок, спираючись на знання, а не інтуіцію.</h2>
+                    </div>
+                    <h1 class = "my-expereance years-of-experience"><span class = "highlighted count-of-years-exp">7+</span> років досвіду</h1>
+                    <h1 class = "my-expereance my-clients">Понад <span class = "highlighted my-clients-count">4 000</span> задоволених клієнтів</h1>
+                    <div class = "buttons">
+                        <button class = "button Apply-for-consultation first-button">ЗАМОВИТИ КОНСУЛЬТАЦІЮ</button>
+                        <button class = "button button-next"> 
+                            <img class = "button-image" src="{% static 'images/buttons/button_next.png' %}" alt="">
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class = "others-opinion">
+                <div class = "hat-opinion">
+                    <h1 class = "hat-opinion-title">Що говорять інші</h1>
+                    <h2 class = "hat-opinion-description">Реальні історії перевтілень, відгуки клієнток після підбору кольору та фарбування.<br>
+        Їхні враження — найкраще підтвердження якості моєї роботи</h2>
+                </div>
+                <div class = "opinion-container">
+                    <div class = "body-opinion">
+                        <div class = "opinion">
+                            <div class = "quotes">
+                                <img class = "quote" src="{% static 'images/quotes.png'%}" alt="">
+                            </div>
+                            <div class = "opinion-text">
+                                <h1 class = "opinion-review">Я довго не могла знайти відтінок, який би мені справді личив — або занадто<br>жовтий, або робив обличчя втомленим. <br><br>Альона провела детальний розбір, пояснила, чому мій теплий тон шкіри не <br>дружить з попелястим блондом, і запропонувала свій варіант. <br><br>Результат — це любов з першого погляду.<br>Волосся виглядає натурально, шкіра свіжа, і я отримую купу компліментів. Дуже <br>дякую за уважність і професійність!</h1>
+                            </div>
+                            <div class = "quotes second-qoute">
+                                <img class = "quote" src="{% static 'images/quotes.png'%}" alt="">
+                            </div>
+                        </div>
+                        <h1 class = "opinion-name">Катерина, місто Дніпро</h1>
+                    </div>
+                    <div class = "result-buttons">
+                        <button class = 'button-circle button-left'>
+                            <img class = "button-next button-image" src="{% static 'images/buttons/button_left.png'%}" alt="">
+                        </button>
+                        <button class = 'button-circle button-right'>
+                            <img class = "button-next button-image" src="{% static 'images/buttons/button_right.png'%}" alt="">
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class = "review-frame">
+            <div class = 'blur-bg'></div>
+            <div class = "review">
+                <div class="review-hat">
+                    <h1 class = "review-hat-title">Зв'яжімося - і підберемо твій колір</h1>
+                    <h2 class = "review-hat-description">Залиш заявку або напиши мені напряму в <span>instagram</span>.<br>Відповім у найближчий час!</h2>
+                </div>
+                <div class = "contact-icons">
+                    <a href="" class = "url-telegram url-icon">
+                        <img class = "url-icon" src="{% static 'images/icons/telegram.png' %}" alt="">
+                    </a>
+                    <a href="" class = "url-instagram url-icon">
+                        <img class = "url-icon" src="{% static 'images/icons/instagram.png' %}" alt="">
+                    </a>
+                    <a href="" class = "url-viber url-icon">
+                        <img class = "url-icon" src="{% static 'images/icons/viber.png' %}" alt="">
+                    </a>
+                </div>
+                <form action="">
+                <div class = "review-form">
+                        {% for field in form %}
+                            {% if field.field.widget.input_type == "file" %}
+                                <label for="id_photo" class = "field-image">
+                                    <img class = "icon-field" src="{% static 'images/icons/field.png'%}" alt="">
+                                    <h1 class = "title-field">Прикріпити фото</h1>
+                                </label>    
+                                <input type="file" id="id_photo"  accept="image/*" hidden>
+                            {% else %}
+                                {{ field }}
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </form>
+                <div class = "buttons">
+                    <button class = "button Apply-for-consultation first-button">
+                        НАДІСЛАТИ
+                    </button>
+                    <button class = "button button-next"> 
+                        <img class = "button-image" src="{% static 'images/buttons/button_next.png' %}" alt="">
+                    </button>
+                </div>
             </div>
         </div>
     </div>
