@@ -94,13 +94,15 @@
         width: 100%;
         position: absolute;
         z-index: -1;
+        height: calc(25vw + 30vh);
     }
     .about-me-start{
         margin-top: calc(5vw + 3vh);
+        position: relative;
     }
     .blur-bg{
         width: 100%;
-        height: calc(20vw + 30vh);
+        height: calc(25vw + 30vh);
         background-color: rgba(255, 255, 255, 0.05);
         position: absolute;
         z-index: 0;
@@ -129,5 +131,63 @@
         display: flex;
         flex-direction: column;
         gap: calc(5vw + 10vh);
+    }
+    .button-green-consultation{
+        width: calc(26vw + 25vh);
+        height: calc(2.5vw + 2vh);
+        color: white;
+        font-size: calc(0.7vw + 2vh);
+        font-style: medium;
+        font-family: "Inter", sans-serif;
+        font-weight: 400;
+        height: calc(4vw + 5vh);
+    }
+    .button{
+        background-color: rgba(32, 83, 68, 1);
+        border-radius: calc(2.6vw + 4.5vh);
+        border: calc(0.03vw + 0.05vh);
+        font-style: medium;
+        font-weight: 500;
+
+    }
+    .buttons-choose-color{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+
+    }
+    .button-next-phone{
+        width: calc(4vw + 5vh);
+        height: calc(4vw + 5vh);
+    }
+    .my-help{
+        display: flex;
+        flex-direction: column;
+        gap: calc(1vw + 2.2vh);
+    }
+    .main-frame{
+        margin-top: calc(5vw + 10vh);
+        display: flex;
+        flex-direction: column;
+    }
+    .description-frame{
+        display: flex;
+        flex-direction: column;
+        gap: calc(2vw + 4vh);
+        padding: 0px calc(0.5vw + 1.8vh);
+    }
+    .frame-description-titles{
+        display: flex;
+        flex-direction: column;
+        gap: calc(1vw + 1.5vh);
+    }
+    .main-title-description{
+        font-weight: 600;
+        font-size: calc(2vw + 3vh);
+    }
+    .coloration-text{
+        font-size: calc(1vw + 1.9vh);
+        font-weight: 400;
+        font-family: "Inter", sans-serif;
     }
 }
