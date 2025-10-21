@@ -46,7 +46,7 @@
     }
     .frame-hat{
         position: relative;
-        padding: calc(0.9vw + 1.7vh) calc(1vw + 1.9vh);
+        padding: 10px 16px;
         display: flex;
         flex-direction: column;
         gap: calc(0.5vw + 0.9vh);
@@ -57,7 +57,7 @@
         justify-content: space-between;
     }
     .title-hat{
-        font-size: calc(2vw + 2vh);
+        font-size: 25px;
         font-family: "Playfair", serif;
         color: rgba(26, 26, 26, 1);
     }
@@ -67,7 +67,7 @@
     }
     .button-menu{
         all: unset;
-        font-size: calc(1vw + 2vh);
+        font-size: 14px;
         color: rgba(26, 26, 26, 1);
     }
     .button-menu:hover{
@@ -77,16 +77,16 @@
     .coloration-phone{
         display: flex;
         flex-direction: column;
-        gap: calc(2vw + 4vh);
+        gap: 36px;
         align-items: center;
-        padding-top: calc(2vw + 1.5vh);
+        padding-top: 18px;
     }
     .coloration-part1{
-        font-size: calc(3vw + 2.5vh);
+        font-size: 30px;
     }
     .coloration-part2{
         color: rgba(32, 83, 68, 1);
-        font-size: calc(3vw + 2.5vh);
+        font-size:30px;
         text-align: end;
         width: 85%;
     }
@@ -94,15 +94,16 @@
         width: 100%;
         position: absolute;
         z-index: -1;
-        height: calc(25vw + 30vh);
+        height: 270px;
     }
     .about-me-start{
         margin-top: calc(5vw + 3vh);
         position: relative;
+        overflow-y: hidden;
     }
     .blur-bg{
         width: 100%;
-        height: calc(25vw + 30vh);
+        height: 270px;
         background-color: rgba(255, 255, 255, 0.05);
         position: absolute;
         z-index: 0;
@@ -114,12 +115,12 @@
     }
     .about-me-greetings{
         color: white;
-        font-size: calc(1.5vw + 3vh);
+        font-size: 24px;
         font-weight: 600;
     }
     .about-me-start-description{
         color: white;
-        font-size: calc(1vw + 2vh);
+        font-size: 16px;
         font-weight: 400;
         font-family: "Inter", serif;
     }
@@ -130,17 +131,16 @@
     .about-me-on-image{
         display: flex;
         flex-direction: column;
-        gap: calc(5vw + 10vh);
+        gap: 81px;
     }
     .button-green-consultation{
-        width: calc(26vw + 25vh);
-        height: calc(2.5vw + 2vh);
+        width: 296px;
+        height: 45px;
         color: white;
-        font-size: calc(0.7vw + 2vh);
+        font-size: 16px;
         font-style: medium;
         font-family: "Inter", sans-serif;
         font-weight: 400;
-        height: calc(4vw + 5vh);
     }
     .button{
         background-color: rgba(32, 83, 68, 1);
@@ -157,37 +157,139 @@
 
     }
     .button-next-phone{
-        width: calc(4vw + 5vh);
-        height: calc(4vw + 5vh);
+        width: 45px;
+        height: 45px;
     }
     .my-help{
         display: flex;
         flex-direction: column;
-        gap: calc(1vw + 2.2vh);
+        gap: 24px;
     }
     .main-frame{
-        margin-top: calc(5vw + 10vh);
+        margin-top: 81px;
         display: flex;
         flex-direction: column;
+        gap: 120px;
     }
     .description-frame{
         display: flex;
         flex-direction: column;
-        gap: calc(2vw + 4vh);
-        padding: 0px calc(0.5vw + 1.8vh);
+        gap: 30px;
+        padding: 0px 16px;
     }
     .frame-description-titles{
         display: flex;
         flex-direction: column;
-        gap: calc(1vw + 1.5vh);
+        gap: 20px;
     }
     .main-title-description{
         font-weight: 600;
-        font-size: calc(2vw + 3vh);
+        font-size: 26px;
     }
     .coloration-text{
-        font-size: calc(1vw + 1.9vh);
+        font-size: 16px;
         font-weight: 400;
         font-family: "Inter", sans-serif;
+    }
+    .choosing-color-all{
+        display: flex;
+        flex-direction: column;
+        gap: 60px;
+        padding: 8px 16px;
+    }
+    .choosing-color{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .choosing-color-title{
+        font-size: 26px;
+        font-weight: 600;
+    }
+    .choosing-color-description{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .choosing-color-details{
+        font-size: 16px;
+        font-family: 'Inter', sans-serif;
+        font-weight: 400;
+    }
+    .choosing-color-images{
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        width: 100%;
+        align-items: center;
+    }
+    .choosing-color-image-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    .choosing-image{
+        width: 84px;
+        height: 84px;
+    }
+    .choosing-title{
+        font-family: 'Inter', sans-serif;
+        font-size: 16px;
+        font-style: italic;
+        font-weight: 300;
+        color: rgba(26, 26, 26, 0.5);
+    }
+    .choosing-color-steps{
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+    .step{
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        background-color: rgba(32, 83, 68, 1);
+        border-radius: 10px;
+        padding: 16px 8px;
+    }
+    .number-of-step{
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 36px;
+        font-weight: 600;
+    }
+    .title-step{
+        color: white;
+        font-weight: 500;
+        font-style: medium;
+        font-size: 16px;
+        line-height: 130%;
+        font-family: 'Inter', sans-serif;
+    }
+    .description-step{
+        font-style: italic;
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 130%;
+        color: rgba(255, 255, 255, 0.5);
+    }
+    .button-consultation{
+        width: 310px;
+        height: 45px;
+        color: rgba(32, 83, 68, 1);
+        font-size: 16px;
+        font-style: medium;
+        font-family: "Inter", sans-serif;
+        font-weight: 400;
+        border-radius: 100px;
+        border: 1px solid rgba(32, 83, 68, 1);
+        background-color: rgba(249, 244, 233, 1);
+    }
+    .button-next{
+        border-radius: 100px;
+        border: 1px solid rgba(32, 83, 68, 1);
+        width: 45px;
+        height: 45px;
+        background-color: rgba(249, 244, 233, 1);
     }
 }
