@@ -78,8 +78,7 @@
         display: flex;
         flex-direction: column;
         gap: 36px;
-        align-items: center;
-        padding-top: 18px;
+        padding:  18px 16px;
     }
     .coloration-part1{
         font-size: 30px;
@@ -88,22 +87,23 @@
         color: rgba(32, 83, 68, 1);
         font-size:30px;
         text-align: end;
-        width: 85%;
+        width: 100%;
     }
     .bg-phone{
         width: 100%;
         position: absolute;
         z-index: -1;
-        height: 270px;
+        height: calc(30vw + 25vh);
     }
     .about-me-start{
         margin-top: calc(5vw + 3vh);
         position: relative;
         overflow-y: hidden;
+        height: calc(30vw + 25vh);
     }
     .blur-bg{
         width: 100%;
-        height: 270px;
+        height: calc(30vw + 25vh);
         background-color: rgba(255, 255, 255, 0.05);
         position: absolute;
         z-index: 0;
@@ -115,12 +115,12 @@
     }
     .about-me-greetings{
         color: white;
-        font-size: 24px;
+        font-size: calc(2vw + 3vh);
         font-weight: 600;
     }
     .about-me-start-description{
         color: white;
-        font-size: 16px;
+        font-size: calc(2vw + 1.5vh);
         font-weight: 400;
         font-family: "Inter", serif;
     }
@@ -134,10 +134,10 @@
         gap: 81px;
     }
     .button-green-consultation{
-        width: 296px;
-        height: 45px;
+        width: calc(20vw + 30vh);
+        height: calc(3vw + 5vh);
         color: white;
-        font-size: 16px;
+        font-size: calc(1vw + 1.8vh);
         font-style: medium;
         font-family: "Inter", sans-serif;
         font-weight: 400;
@@ -157,8 +157,8 @@
 
     }
     .button-next-phone{
-        width: 45px;
-        height: 45px;
+        width: calc(3vw + 5vh);
+        height: calc(3vw + 5vh);
     }
     .my-help{
         display: flex;
@@ -170,27 +170,25 @@
         display: flex;
         flex-direction: column;
         gap: 120px;
+        padding: 0px 16px;
     }
     .description-frame{
         display: flex;
         flex-direction: column;
         gap: 30px;
-        padding: 0px 16px;
         align-items: center;
     }
     .frame-description-titles{
         display: flex;
         flex-direction: column;
         gap: 20px;
-        align-items: flex-start;
-        width: 100%;
     }
     .main-title-description{
         font-weight: 600;
-        font-size: 26px;
+        font-size: calc(2vw + 3vh);
     }
     .coloration-text{
-        font-size: 16px;
+        font-size: calc(1vw + 1.8vh);
         font-weight: 400;
         font-family: "Inter", sans-serif;
     }
@@ -198,15 +196,17 @@
         display: flex;
         flex-direction: column;
         gap: 60px;
-        padding: 8px 16px;
+        padding: 8px 0px;
+        align-items: center;
     }
     .choosing-color{
         display: flex;
         flex-direction: column;
         gap: 20px;
+        width: calc(29vw + 30vh);
     }
     .choosing-color-title{
-        font-size: 26px;
+        font-size: calc(2.5vw + 3vh);
         font-weight: 600;
     }
     .choosing-color-description{
@@ -215,7 +215,7 @@
         gap: 20px;
     }
     .choosing-color-details{
-        font-size: 16px;
+        font-size: calc(1vw + 1.8vh);
         font-family: 'Inter', sans-serif;
         font-weight: 400;
     }
@@ -233,12 +233,12 @@
         gap: 10px;
     }
     .choosing-image{
-        width: 84px;
-        height: 84px;
+        width: calc(7vw + 10vh);
+        height: calc(7vw + 10vh);
     }
     .choosing-title{
         font-family: 'Inter', sans-serif;
-        font-size: 16px;
+        font-size: calc(1vw + 2vh);
         font-style: italic;
         font-weight: 300;
         color: rgba(26, 26, 26, 0.5);
@@ -255,6 +255,7 @@
         background-color: rgba(32, 83, 68, 1);
         border-radius: 10px;
         padding: 16px 8px;
+        width: calc(29vw + 30vh);
     }
     .number-of-step{
         color: rgba(255, 255, 255, 0.5);
@@ -277,8 +278,8 @@
         color: rgba(255, 255, 255, 0.5);
     }
     .button-consultation{
-        width: 310px;
-        height: 45px;
+        width: calc(20vw + 30vh);
+        height: calc(3vw + 5vh);
         color: rgba(32, 83, 68, 1);
         font-size: 16px;
         font-style: medium;
@@ -289,10 +290,9 @@
         background-color: rgba(249, 244, 233, 1);
     }
     .button-next{
-        border-radius: 100px;
-        border: 1px solid rgba(32, 83, 68, 1);
-        width: 45px;
-        height: 45px;
+        all: unset;
+        width: calc(3vw + 5vh);
+        height: calc(3vw + 5vh);
         background-color: rgba(249, 244, 233, 1);
     }
     .people-example-phone{
@@ -300,16 +300,16 @@
         gap: 0px;
     }
     .people-photo-example{
-        width: 190px;
+        width: calc(14vw + 15.7vh);
         z-index: 0;
         position: relative;
     }
     .before-and-after{
-        margin-left:10px;
+        margin-left:calc(1vw + 1.5vh);
         position: absolute;
-        top: 365px;
+        top: calc(23vw + 30vh);
         z-index: 1;
-        height: 39px;
+        height: calc(2vw + 5vh);
         background-color: rgba(255, 255, 255, 0.5);
         font-size: 16px;
         width: 86px;
@@ -320,5 +320,53 @@
         color: rgba(32, 83, 68, 1);
         font-family: "Inter", sans-serif;
         font-weight: 400;
+    }
+    .reason-hair{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+    }
+    .reason-hair-image{
+        width: calc(30vw + 29vh);
+        height: calc(30vw + 29vh);
+        border-radius: 16px;
+    }
+    .reasons{
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        width: fit-content;
+        padding: 47px 16px;
+        align-items: center;
+        background-color: white;
+        border-radius: 15px;
+        width: calc(30vw + 29vh);
+    }   
+    .why-2-days{
+        font-size: calc(2vw + 3vh);
+        font-weight: 600;
+        text-align: center;
+    }
+    .days-title{
+        font-size: calc(1vw + 1.8vh);
+        font-weight: 400;
+        font-family: "Inter", sans-serif;
+    }
+    .days-description{
+        font-size: calc(1vw + 1.5vh);
+        font-weight: 300;   
+        font-family: "Inter", sans-serif;
+        text-align: center;
+    }
+    .button-2{
+        font-size: calc(1vw + 1.5vh);
+        width: calc(16vw + 25vh);
+    }
+    .next-button,.image-next{
+        all: unset;
+        border-radius: 100px;
+        width: calc(3vw + 5vh);
+        height: calc(3vw + 5vh);
     }
 }
