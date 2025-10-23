@@ -176,11 +176,14 @@
         flex-direction: column;
         gap: 30px;
         padding: 0px 16px;
+        align-items: center;
     }
     .frame-description-titles{
         display: flex;
         flex-direction: column;
         gap: 20px;
+        align-items: flex-start;
+        width: 100%;
     }
     .main-title-description{
         font-weight: 600;
@@ -291,5 +294,31 @@
         width: 45px;
         height: 45px;
         background-color: rgba(249, 244, 233, 1);
+    }
+    .people-example-phone{
+        display: flex;
+        gap: 0px;
+    }
+    .people-photo-example{
+        width: 190px;
+        z-index: 0;
+        position: relative;
+    }
+    .before-and-after{
+        margin-left:10px;
+        position: absolute;
+        top: 365px;
+        z-index: 1;
+        height: 39px;
+        background-color: rgba(255, 255, 255, 0.5);
+        font-size: 16px;
+        width: 86px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 100px;
+        color: rgba(32, 83, 68, 1);
+        font-family: "Inter", sans-serif;
+        font-weight: 400;
     }
 }
