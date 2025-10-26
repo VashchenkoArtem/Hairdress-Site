@@ -12,7 +12,10 @@
 
 {% block content %}
     <div class = "design-for-laptop hidden">
-        <img class = "bg-image" src="{% static 'main/images/bg_hair.png' %}" alt="">
+        <div class= "background-image">
+            <img class = "bg-image" src="{% static 'main/images/bg_hair.svg' %}" alt="">
+            <h1 class = "coloration">"Фарбування - це не просто зміна кольору.<br>Це трансформація!"</h1>
+        </div>
         <div class = "modal-hat-frame hidden">
             <a href = "" class = "modal-coloration modal-url">ПІДБІР ФАРБУВАННЯ</a>
             <a href = "" class = "modal-my-works modal-url">МОЇ РОБОТИ</a>
@@ -20,7 +23,7 @@
             <a href = "" class = "modal-contacts modal-url">КОНТАКТИ</a>
             <a href = "" class = "modal-apply-for modal-url">ЗАМОВИТИ КОНСУЛЬТАЦІЮ</a>
             <div class = "button-cross button-open-close">
-                <img class = "image-cross" src="{% static 'main/images/icons/cross.png' %}" alt="">
+                <img class = "image-cross" src="{% static 'main/images/icons/cross.svg' %}" alt="">
             </div>
         </div>
         <div class = "frame-hat">
@@ -30,14 +33,14 @@
             </div>
             <hr class = "horizontal-line">
         </div>
-        <h1 class = "coloration">"Фарбування - це не просто зміна кольору.<br>Це трансформація!"</h1>
+        
         <h1 class = "ideal-hair-for-you">Ідеальне волосся<br> для тебе...</h1>
         <div class = "frame-consultation">
             <h1 class = "title-button-consultation">Професійний підбір фарбування онлайн</h1>
             <div class = "buttons">
                 <button class = "button Apply-for-consultation first-button">ЗАМОВИТИ КОНСУЛЬТАЦІЮ</button>
                 <button class = "button button-next"> 
-                    <img class = "button-image" src="{% static 'main/images/buttons/button_next.png' %}" alt="">
+                    <img class = "button-image" src="{% static 'main/images/buttons/button_next.svg' %}" alt="">
                 </button>
             </div>
         </div>
@@ -75,7 +78,7 @@
                 </div>
                 <div class = "buttons-choose-color">
                     <button class = "button button-green button-green-consultation ">ЗАМОВИТИ КОНСУЛЬТАЦІЮ</button>
-                    <button class = "button button-green button-next"> <img class = "image-next" src="{% static 'main/images/buttons/green_button_next.png'%}" alt=""></button>
+                    <button class = "button button-green button-next"> <img class = "image-next" src="{% static 'main/images/buttons/green_button_next.svg'%}" alt=""></button>
                 </div>
             </div>
             <div class = "reason-hair">
@@ -102,10 +105,10 @@
                     </div>
                     <div class = "result-buttons">
                         <button class = 'button-circle button-left'>
-                            <img class = "button-next button-image" src="{% static 'main/images/buttons/button_left.png'%}" alt="">
+                            <img class = "button-next button-image" src="{% static 'main/images/buttons/button_left.svg'%}" alt="">
                         </button>
                         <button class = 'button-circle button-right'>
-                            <img class = "button-next button-image" src="{% static 'main/images/buttons/button_right.png'%}" alt="">
+                            <img class = "button-next button-image" src="{% static 'main/images/buttons/button_right.svg'%}" alt="">
                         </button>
                     </div>
                 </div>
@@ -122,7 +125,7 @@
                     <div class = "buttons">
                         <button class = "button Apply-for-consultation first-button">ЗАМОВИТИ КОНСУЛЬТАЦІЮ</button>
                         <button class = "button button-next"> 
-                            <img class = "button-image" src="{% static 'main/images/buttons/button_next.png' %}" alt="">
+                            <img class = "button-image" src="{% static 'main/images/buttons/button_next.svg' %}" alt="">
                         </button>
                     </div>
                 </div>
@@ -137,30 +140,32 @@
                     <div class = "body-opinion">
                         <div class = "opinion">
                             <div class = "quotes">
-                                <img class = "quote" src="{% static 'main/images/quotes.png'%}" alt="">
+                                <img class = "quote" src="{% static 'main/images/quotes.svg'%}" alt="">
                             </div>
                             <div class = "opinion-text">
                                 <h1 class = "opinion-review">Я довго не могла знайти відтінок, який би мені справді личив — або занадто<br>жовтий, або робив обличчя втомленим. <br><br>Альона провела детальний розбір, пояснила, чому мій теплий тон шкіри не <br>дружить з попелястим блондом, і запропонувала свій варіант. <br><br>Результат — це любов з першого погляду.<br>Волосся виглядає натурально, шкіра свіжа, і я отримую купу компліментів. Дуже <br>дякую за уважність і професійність!</h1>
                             </div>
                             <div class = "quotes second-qoute">
-                                <img class = "quote" src="{% static 'main/images/quotes.png'%}" alt="">
+                                <img class = "quote" src="{% static 'main/images/quotes.svg'%}" alt="">
                             </div>
                         </div>
                         <h1 class = "opinion-name">Катерина, місто Дніпро</h1>
                     </div>
                     <div class = "result-buttons">
                         <button class = 'button-circle button-left'>
-                            <img class = "button-next button-image" src="{% static 'main/images/buttons/button_left.png'%}" alt="">
+                            <img class = "button-next button-image" src="{% static 'main/images/buttons/button_left.svg'%}" alt="">
                         </button>
                         <button class = 'button-circle button-right'>
-                            <img class = "button-next button-image" src="{% static 'main/images/buttons/button_right.png'%}" alt="">
+                            <img class = "button-next button-image" src="{% static 'main/images/buttons/button_right.svg'%}" alt="">
                         </button>
                     </div>
                 </div>
             </div>
         </div>
         <div class = "review-frame">
-            <div class = 'blur-bg'></div>
+            <div class = 'blur-bg'>
+                <img src="{% static 'main/images/bg.png'%}" class = "bg-image-hair"alt="">
+            </div>
             <div class = "review">
                 <div class="review-hat">
                     <h1 class = "review-hat-title">Зв'яжімося - і підберемо твій колір</h1>
@@ -168,13 +173,13 @@
                 </div>
                 <div class = "contact-icons">
                     <a href="" class = "url-telegram url-icon">
-                        <img class = "url-icon" src="{% static 'main/images/icons/telegram.png' %}" alt="">
+                        <img class = "url-icon" src="{% static 'main/images/icons/telegram.svg' %}" alt="">
                     </a>
                     <a href="" class = "url-instagram url-icon">
-                        <img class = "url-icon" src="{% static 'main/images/icons/instagram.png' %}" alt="">
+                        <img class = "url-icon" src="{% static 'main/images/icons/instagram.svg' %}" alt="">
                     </a>
                     <a href="" class = "url-viber url-icon">
-                        <img class = "url-icon" src="{% static 'main/images/icons/viber.png' %}" alt="">
+                        <img class = "url-icon" src="{% static 'main/images/icons/viber.svg' %}" alt="">
                     </a>
                 </div>
                 <form action="">
@@ -182,7 +187,7 @@
                         {% for field in form %}
                             {% if field.field.widget.input_type == "file" %}
                                 <label for="id_photo" class = "field-image">
-                                    <img class = "icon-field" src="{% static 'main/images/icons/field.png'%}" alt="">
+                                    <img class = "icon-field" src="{% static 'main/images/icons/field.svg'%}" alt="">
                                     <h1 class = "title-field">Прикріпити фото</h1>
                                 </label>    
                                 <input type="file" id="id_photo"  accept="image/*" hidden>
@@ -197,7 +202,7 @@
                         НАДІСЛАТИ
                     </button>
                     <button class = "button button-next"> 
-                        <img class = "button-image" src="{% static 'main/images/buttons/button_next.png' %}" alt="">
+                        <img class = "button-image" src="{% static 'main/images/buttons/button_next.svg' %}" alt="">
                     </button>
                 </div>
             </div>
@@ -217,14 +222,14 @@
         </div>
         <div class = "about-me-start">
             <div class = "blur-bg"></div>
-            <img src="{% static 'main/images/bg_phone.png' %}"class = "bg-phone" alt="">
+            <img src="{% static 'main/images/bg_phone.svg' %}"class = "bg-phone" alt="">
             <div class = "about-me-on-image">
                 <h1 class = "about-me-greetings">Привіт!</h1>
                 <div class = "my-help">
                     <h1 class = "about-me-start-description">Я - допомогла вже <span class = "about-me-start-count">4K+</span> дівчатам знайти свій ідеальний колір волосся.</h1>
                     <div class = "buttons-choose-color">
                         <button class = "button button-green button-green-consultation ">ЗАМОВИТИ КОНСУЛЬТАЦІЮ</button>
-                        <button class = "button button-green button-next-phone"> <img class = "image-next" src="{% static 'main/images/buttons/green_button.png'%}" alt=""></button>
+                        <button class = "button button-green button-next-phone"> <img class = "image-next" src="{% static 'main/images/buttons/green_button.svg'%}" alt=""></button>
                     </div>
                 </div>
             </div>
@@ -253,15 +258,15 @@
                         <h1 class = "choosing-color-details">Щоб підібрати колір, який справді<br>підкреслить вашу зовнішність, потрібен аналіз.<br><br>Ми враховуємо:</h1>
                         <div class = "choosing-color-images">
                             <div  class = "choosing-color-image-container">
-                                <img class = "choosing-image" src="{% static 'main/images/people_example/people_example_phone_1.png' %}" alt="">
+                                <img class = "choosing-image" src="{% static 'main/images/people_example/people_example_phone_1.svg' %}" alt="">
                                 <h1 class = "choosing-title">Відтінок шкіри</h1>
                             </div>
                             <div class = "choosing-color-image-container">
-                                <img class = "choosing-image" src="{% static 'main/images/people_example/people_example_phone_2.png' %}" alt="">
+                                <img class = "choosing-image" src="{% static 'main/images/people_example/people_example_phone_2.svg' %}" alt="">
                                 <h1 class = "choosing-title">Структуру та стан пасм</h1>
                             </div>
                             <div class = "choosing-color-image-container">
-                                <img class = "choosing-image" src="{% static 'main/images/people_example/people_example_phone_3.png' %}" alt="">
+                                <img class = "choosing-image" src="{% static 'main/images/people_example/people_example_phone_3.svg' %}" alt="">
                                 <h1 class = "choosing-title">Колір очей</h1>
                             </div>
                         </div>
@@ -286,7 +291,7 @@
                 </div>
                 <div class = "buttons-choose-color">
                     <button class = "button-consultation">ЗАМОВИТИ КОНСУЛЬТАЦІЮ</button>
-                    <button class = "button-next"> <img class = "image-next" src="{% static 'main/images/buttons/green_button_border.png'%}" alt=""></button>
+                    <button class = "button-next"> <img class = "image-next" src="{% static 'main/images/buttons/green_button_border.svg'%}" alt=""></button>
                 </div>
             </div>
             <div class = "reason-hair">
@@ -297,7 +302,7 @@
                     <h2 class = "days-description">Кожне фото ми уважно розглядаємо,<br> підбираємо варіанти кольору та<br>відтінку,<br>які будуть не просто красивими — а<br>ідеальними саме для вас.<br><br>Цей процес займає до 48 годин, і він дійсно вартий очікування.</h2>
                     <div class = "buttons-choose-color">
                         <button class = "button button-green button-green-consultation button-2 ">ЗАМОВИТИ КОНСУЛЬТАЦІЮ</button>
-                        <button class = "next-button"> <img class = "image-next" src="{% static 'main/images/buttons/green_button.png'%}" alt=""></button>
+                        <button class = "next-button"> <img class = "image-next" src="{% static 'main/images/buttons/green_button.svg'%}" alt=""></button>
                     </div>
                 </div>
             </div>
@@ -313,10 +318,10 @@
                     </div>
                     <div class = "result-buttons">
                         <button class = 'button-circle button-left'>
-                            <img class = "button-next button-image" src="{% static 'main/images/buttons/button_circle.png'%}" alt="">
+                            <img class = "button-next button-image" src="{% static 'main/images/buttons/button_circle.svg'%}" alt="">
                         </button>
                         <button class = 'button-circle button-right-circle'>
-                            <img class = "button-next button-image" src="{% static 'main/images/buttons/button_circle.png'%}" alt="">
+                            <img class = "button-next button-image" src="{% static 'main/images/buttons/button_circle.svg'%}" alt="">
                         </button>
                     </div>
                 </div>
@@ -332,7 +337,7 @@
                         <h1 class = "my-expereance my-clients">Понад <span class = "highlighted my-clients-count">4 000</span> задоволених клієнтів</h1>
                     <div class = "buttons-choose-color">
                         <button class = "button button-green button-green-consultation ">ЗАМОВИТИ КОНСУЛЬТАЦІЮ</button>
-                        <button class = "button button-green button-next-phone"> <img class = "image-next" src="{% static 'main/images/buttons/green_button.png'%}" alt=""></button>
+                        <button class = "button button-green button-next-phone"> <img class = "image-next" src="{% static 'main/images/buttons/green_button.svg'%}" alt=""></button>
                     </div>
                 </div>
             </div>
@@ -346,23 +351,23 @@
                     <div class = "body-opinion">
                         <div class = "opinion">
                             <div class = "quotes">
-                                <img class = "quote" src="{% static 'main/images/buttons/green_quotes.png'%}" alt="">
+                                <img class = "quote" src="{% static 'main/images/buttons/green_quotes.svg'%}" alt="">
                             </div>
                             <div class = "opinion-text">
                                 <h1 class = "opinion-review">Я довго не могла знайти відтінок, який<br> би мені справді личив — або занадто<br>жовтий, або робив обличчя втомленим. <br><br>Альона провела детальний розбір, пояснила, чому мій теплий тон шкіри не <br>дружить з попелястим блондом, і запропонувала свій варіант. <br><br>Результат — це любов з першого погляду.<br>Волосся виглядає натурально, шкіра свіжа, і я отримую купу компліментів. Дуже <br>дякую за уважність і професійність!</h1>
                             </div>
                             <div class = "quotes second-qoute">
-                                <img class = "quote" src="{% static 'main/images/buttons/green_quotes.png'%}" alt="">
+                                <img class = "quote" src="{% static 'main/images/buttons/green_quotes.svg'%}" alt="">
                             </div>
                         </div>
                         <h1 class = "opinion-name">Катерина, місто Дніпро</h1>
                     </div>
                     <div class = "result-buttons">
                         <button class = 'button-circle button-left'>
-                            <img class = "button-next button-image" src="{% static 'main/images/buttons/button_circle.png'%}" alt="">
+                            <img class = "button-next button-image" src="{% static 'main/images/buttons/button_circle.svg'%}" alt="">
                         </button>
                         <button class = 'button-circle button-right-circle'>
-                            <img class = "button-next button-image" src="{% static 'main/images/buttons/button_circle.png'%}" alt="">
+                            <img class = "button-next button-image" src="{% static 'main/images/buttons/button_circle.svg'%}" alt="">
                         </button>
                     </div>
                 </div>
@@ -370,7 +375,7 @@
         </div>
         <div class = "review-frame">
             <div class = 'blur-bg-hair'>
-                <img class = "bg-hair-image" src="{% static 'main/images/bg_phone_hair.png'%}" alt="">
+                <img class = "bg-hair-image" src="{% static 'main/images/bg_phone_hair.svg'%}" alt="">
             </div>
             <div class = "review">
                 <div class="review-hat">
@@ -378,13 +383,13 @@
                     <h2 class = "review-hat-description">Залиш заявку або напиши мені напряму в <span class = "review-hat-span">instagram</span>.Відповім у найближчий час!</h2>
                     <div class = "contact-icons">
                         <a href="" class = "url-telegram url-icon">
-                            <img class = "url-icon" src="{% static 'main/images/icons/phone_telegram.png' %}" alt="">
+                            <img class = "url-icon" src="{% static 'main/images/icons/phone_telegram.svg' %}" alt="">
                         </a>
                         <a href="" class = "url-instagram url-icon">
-                            <img class = "url-icon" src="{% static 'main/images/icons/phone_instagram.png' %}" alt="">
+                            <img class = "url-icon" src="{% static 'main/images/icons/phone_instagram.svg' %}" alt="">
                         </a>
                         <a href="" class = "url-viber url-icon">
-                            <img class = "url-icon" src="{% static 'main/images/icons/phone_viber.png' %}" alt="">
+                            <img class = "url-icon" src="{% static 'main/images/icons/phone_viber.svg' %}" alt="">
                         </a>
                     </div>
                 </div>
@@ -393,7 +398,7 @@
                         {% for field in form %}
                         {% if field.field.widget.input_type == "file" %}
                         <label for="id_photo" class = "field-image">
-                            <img class = "icon-field" src="{% static 'main/images/icons/field.png'%}" alt="">
+                            <img class = "icon-field" src="{% static 'main/images/icons/field.svg'%}" alt="">
                             <h1 class = "title-field">Прикріпити фото</h1>
                         </label>    
                         <input type="file" id="id_photo"  accept="image/*" hidden>
@@ -408,7 +413,7 @@
                         НАДІСЛАТИ
                     </button>
                     <button class = "button button-next-image"> 
-                        <img class = "button-image" src="{% static 'main/images/buttons/white_button.png' %}" alt="">
+                        <img class = "button-image" src="{% static 'main/images/buttons/white_button.svg' %}" alt="">
                     </button>
                 </div>
             </div>

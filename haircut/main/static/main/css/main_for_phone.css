@@ -96,17 +96,17 @@
         width: 100%;
         position: absolute;
         z-index: -1;
-        height: calc(30vw + 25vh);
+        height: calc(30vw + 28vh);
     }
     .about-me-start{
         margin-top: calc(5vw + 3vh);
         position: relative;
         overflow-y: hidden;
-        height: calc(30vw + 25vh);
+        height: calc(30vw + 28vh);
     }
     .blur-bg{
         width: 100%;
-        height: calc(30vw + 25vh);
+        height: calc(30vw + 28vh);
         background-color: rgba(255, 255, 255, 0.05);
         position: absolute;
         z-index: 0;
@@ -285,7 +285,7 @@
         width: calc(20vw + 30vh);
         height: calc(3vw + 5vh);
         color: rgba(32, 83, 68, 1);
-        font-size: 16px;
+        font-size: calc(1vw + 1.8vh);
         font-style: medium;
         font-family: "Inter", sans-serif;
         font-weight: 400;
@@ -537,6 +537,7 @@
     }
     .bg-hair-image{
         width: 100%;
+        height: 100%;
         z-index: -1;
     }
     .review{
