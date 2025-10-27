@@ -221,8 +221,9 @@
             <h1 class = "coloration-part2">Це трансформація!</h1>
         </div>
         <div class = "about-me-start">
-            <div class = "blur-bg"></div>
-            <img src="{% static 'main/images/bg_phone.svg' %}"class = "bg-phone" alt="">
+            <div class = "blur-bg">
+                <img src="{% static 'main/images/bg_phone.svg' %}"class = "bg-phone" alt="">
+            </div>
             <div class = "about-me-on-image">
                 <h1 class = "about-me-greetings">Привіт!</h1>
                 <div class = "my-help">
@@ -313,8 +314,8 @@
                 </div>
                 <div class = "result-body">
                     <div class = "result-photos">
-                        <img class = "people-example-result" src="{% static 'main/images/people_example/people_example3.png'%}" alt="">
-                        <img class = "people-example-result" src="{% static 'main/images/people_example/people_example4.png'%}" alt="">
+                        <img class = "people-example-result first-photo-result" src="{% static 'main/images/people_example/people_example3.png'%}" alt="">
+                        <img class = "people-example-result second-photo-result" src="{% static 'main/images/people_example/people_example4.png'%}" alt="">
                     </div>
                     <div class = "result-buttons">
                         <button class = 'button-circle button-left'>
@@ -374,9 +375,6 @@
             </div>
         </div>
         <div class = "review-frame">
-            <div class = 'blur-bg-hair'>
-                <img class = "bg-hair-image" src="{% static 'main/images/bg_phone_hair.svg'%}" alt="">
-            </div>
             <div class = "review">
                 <div class="review-hat">
                     <h1 class = "review-hat-title">Зв'яжімося - <br>і підберемо твій колір</h1>

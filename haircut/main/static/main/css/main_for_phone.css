@@ -80,41 +80,42 @@
     .coloration-phone{
         display: flex;
         flex-direction: column;
-        gap: 36px;
+        gap: calc(6vw + 5vh);
+        height: calc(18vw + 20vh);
         padding:  18px 16px;
     }
     .coloration-part1{
-        font-size: 30px;
+        font-size: calc(1.5vw + 3vh);
     }
     .coloration-part2{
         color: rgba(32, 83, 68, 1);
-        font-size:30px;
+        font-size:calc(1.5vw + 4vh);
         text-align: end;
         width: 100%;
+    }
+    .about-me-start{
+        position: relative;
+        overflow-y: hidden;
+        margin-top: calc(0.1vw + 0.2vh);
+    }
+    .blur-bg{
+        width: 100%;
+        height: calc(35vw + 28vh);
+        background-color: rgba(255, 255, 255, 0.05);
+        position: absolute;
+        z-index: -1;
     }
     .bg-phone{
         width: 100%;
         position: absolute;
+        height: calc(30vw + 29vh);
         z-index: -1;
-        height: calc(30vw + 28vh);
-    }
-    .about-me-start{
-        margin-top: calc(5vw + 3vh);
-        position: relative;
-        overflow-y: hidden;
-        height: calc(30vw + 28vh);
-    }
-    .blur-bg{
-        width: 100%;
-        height: calc(30vw + 28vh);
-        background-color: rgba(255, 255, 255, 0.05);
-        position: absolute;
-        z-index: 0;
     }
     .about-me-on-image{
         display: flex;
         flex-direction: column;
-        padding:calc(4vw + 2vh) calc(2vw + 1vh);
+        padding:calc(2.5vw + 1vh) calc(2vw + 1vh);
+        margin-top: calc(3vw + 4vh);
     }
     .about-me-greetings{
         color: white;
@@ -134,13 +135,13 @@
     .about-me-on-image{
         display: flex;
         flex-direction: column;
-        gap: 81px;
+        gap: calc(5vw + 5vh);
     }
     .button-green-consultation{
-        width: calc(20vw + 30vh);
-        height: calc(3vw + 5vh);
+        width: calc(20vw + 27vh);
+        height: calc(3vw + 4vh);
         color: white;
-        font-size: calc(1vw + 1.8vh);
+        font-size: calc(1vw + 1.7vh);
         font-style: medium;
         font-family: "Inter", sans-serif;
         font-weight: 400;
@@ -160,19 +161,19 @@
 
     }
     .button-next-phone{
-        width: calc(3vw + 5vh);
-        height: calc(3vw + 5vh);
+        width: calc(3vw + 4vh);
+        height: calc(3vw + 4vh);
     }
     .my-help{
         display: flex;
         flex-direction: column;
-        gap: 24px;
+        gap: calc(1vw + 1.2vh);
     }
     .main-frame{
-        margin-top: 81px;
+        margin-top: calc(10vw + 9vh);
         display: flex;
         flex-direction: column;
-        gap: 120px;
+        gap: calc(5vw + 7vh);
         padding: 0px 16px;
         align-items: center;
     }
@@ -185,14 +186,15 @@
     .frame-description-titles{
         display: flex;
         flex-direction: column;
-        gap: 20px;
+        gap: calc(1vw + 1vh);
+        width: calc(30vw + 29vh);
     }
     .main-title-description{
         font-weight: 600;
-        font-size: calc(2vw + 3vh);
+        font-size: calc(2vw + 2.5vh);
     }
     .coloration-text{
-        font-size: calc(1vw + 1.8vh);
+        font-size: calc(1vw + 1.3vh);
         font-weight: 400;
         font-family: "Inter", sans-serif;
     }
@@ -210,7 +212,7 @@
         width: calc(29vw + 30vh);
     }
     .choosing-color-title{
-        font-size: calc(2.5vw + 3vh);
+        font-size: calc(2.5vw + 2.5vh);
         font-weight: 600;
     }
     .choosing-color-description{
@@ -219,7 +221,7 @@
         gap: 20px;
     }
     .choosing-color-details{
-        font-size: calc(1vw + 1.8vh);
+        font-size: calc(1vw + 1.3vh);
         font-family: 'Inter', sans-serif;
         font-weight: 400;
     }
@@ -237,8 +239,8 @@
         gap: 10px;
     }
     .choosing-image{
-        width: calc(7vw + 10vh);
-        height: calc(7vw + 10vh);
+        width: calc(7vw + 8vh);
+        height: calc(7vw + 8vh);
     }
     .choosing-title{
         font-family: 'Inter', sans-serif;
@@ -282,10 +284,10 @@
         color: rgba(255, 255, 255, 0.5);
     }
     .button-consultation{
-        width: calc(20vw + 30vh);
-        height: calc(3vw + 5vh);
+        width: calc(20vw + 27vh);
+        height: calc(3vw + 4vh);
         color: rgba(32, 83, 68, 1);
-        font-size: calc(1vw + 1.8vh);
+        font-size: calc(1vw + 1.7vh);
         font-style: medium;
         font-family: "Inter", sans-serif;
         font-weight: 400;
@@ -295,8 +297,8 @@
     }
     .button-next{
         all: unset;
-        width: calc(3vw + 5vh);
-        height: calc(3vw + 5vh);
+        width: calc(3vw + 4vh);
+        height: calc(3vw + 4vh);
         background-color: rgba(249, 244, 233, 1);
     }
     .people-example-phone{
@@ -304,19 +306,19 @@
         gap: 0px;
     }
     .people-photo-example{
-        width: calc(14vw + 15.7vh);
+        width: calc(14vw + 15vh);
         z-index: 0;
         position: relative;
     }
     .before-and-after{
-        margin-left:calc(1vw + 1.5vh);
+        margin-left:calc(1vw + 1vh);
         position: absolute;
         top: calc(23vw + 30vh);
         z-index: 1;
-        height: calc(2vw + 5vh);
+        height: calc(2vw + 4vh);
         background-color: rgba(255, 255, 255, 0.5);
         font-size: 16px;
-        width: 86px;
+        width: calc(5vw + 7vh);
         display: flex;
         justify-content: center;
         align-items: center;
@@ -370,25 +372,24 @@
     .next-button,.image-next{
         all: unset;
         border-radius: 100px;
-        width: calc(3vw + 5vh);
-        height: calc(3vw + 5vh);
+        width: calc(3vw + 4vh);
+        height: calc(3vw + 4vh);
     }
     .result{
         display: flex;
         flex-direction: column;
         align-items: center;
-        width:100%;
         text-align: start;
-        gap: 24px;
+        gap: calc(1vw + 1.2vh);
     }
     .result-title{
         width: calc(29vw + 30vh);
         display: flex;
         flex-direction: column;
-        gap: 20px;
+        gap: calc(1vw + 1vh);
     }
     .result-h1{
-        font-size: calc(2.5vw + 3vh);
+        font-size: calc(2.5vw + 2.5vh);
     }
     .result-description{
         font-size: calc(1vw + 1.8vh);
@@ -399,29 +400,39 @@
         width: calc(29vw + 30vh);
         display: flex;
         flex-direction: column;
-        gap: 24px;
+        gap: calc(0.7vw + 0.7vh);
     }
     .result-photos{
         display: flex;
         flex-direction: column;
+        align-items: center;
         gap: 2px;
     }
+    .second-photo-result{
+        margin-left: auto;
+        margin-right: calc(1vw + 1vh);
+    }
+    .first-photo-result{
+        margin-right: auto;
+    }
     .people-example-result{
-        height: calc(30vw + 29vh);
-        width: calc(30vw + 29vh);
+        height: calc(25vw + 15vh);
+        width: calc(25vw + 15vh);
     }
     .result-buttons{
         width: calc(30vw + 29vh);
         display: flex;
-        justify-content: flex-end;
+        justify-content: center;
         align-items: center;   
         padding: 8px;
-        gap: 24px;
+        gap: calc(0.5vw + 0.5vh);
+        margin-right: calc(3vw + 5vh);
     }
     .button-circle{
         border: none;
         width: calc(3vw + 5vh);
-        height: calc(3vw + 5vh)
+        height: calc(3vw + 5vh);
+        background-color: rgba(240, 193, 193, 0) !important;
     }
     .button-right-circle{
         transform: rotate(180deg);
@@ -441,19 +452,19 @@
     .my-bio-info{
         display: flex;
         flex-direction: column;
-        gap: 48px;
+        gap: calc(1vw + 2.5vh);
     }
     .my-bio-frame{
         display: flex;
         flex-direction: column;
-        gap: 48px;
+        gap: calc(1vw + 2.5vh);
     }
     .my-name, .hat-opinion-title{
-        font-size: calc(2.5vw + 3vh);
+        font-size: calc(2.5vw + 2.5vh);
         font-weight: 600;
     }
     .my-work, .my-expereance, .hat-opinion-description{
-        font-size: calc(1vw + 1.8vh);
+        font-size: calc(1vw + 1.3vh);
         font-weight: 400;
         font-family: 'Inter', sans-serif;
     }
@@ -463,7 +474,8 @@
     }
     .highlighted{
         color: rgba(32, 83, 68, 1);
-        font-size: calc(3vw + 4vh);
+        font-size: calc(3vw + 3vh);
+        line-height: 100%;
     }
     .others-opinion{
         display: flex;
@@ -474,7 +486,7 @@
     .hat-opinion{
         display: flex;
         flex-direction: column;
-        gap: 20px;
+        gap: calc(1vw + 1vh);
     }
     .hat-opinion-description{
         font-size: calc(1vw + 1.7vh)!important;
@@ -482,7 +494,7 @@
     .opinion-container{
         display: flex;
         flex-direction: column;
-        gap: 30px;
+        gap: calc(1vw + 1vh);
     }
     .body-opinion{
         display: flex;
@@ -509,7 +521,7 @@
     }
     .opinion-review{
         text-align: center;
-        font-size: calc(1vw + 1.8vh);
+        font-size: calc(1vw + 1.3vh);
         font-weight: 300;
         font-family: 'Inter', sans-serif;
         color: rgba(26, 26, 26, 1);
@@ -525,40 +537,42 @@
     }
     .review-frame{
         margin-top: 120px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        background-image: url("../images/bg_phone_hair.svg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-top-right-radius: 30px;
     }
     .blur-bg-hair{
         width: 100%;
-        height: fit-content;
         position: absolute;
         z-index: -1;
     }
     .bg-hair-image{
         width: 100%;
-        height: 100%;
+        height: fit-content;
+        filter: brightness(80%);
         z-index: -1;
     }
     .review{
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: calc(30vw + 29vh);
         padding: 0px 16px;
-        padding-top: 70px;
-        gap: 22px;
+        padding-top: calc(2.5vw + 3vh);
+        gap: calc(1vw + 2.5vh);
+        padding-bottom: calc(2vw + 3vh);
+        height: 15%;
     }
     .review-hat{
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 20px;
+        gap: calc(1vw + 1vh);
     }
     .review-hat-title{
         text-align: center;
         color: white;
-        font-size: calc(3vw + 4vh);
+        font-size: calc(3vw + 3.5vh);
         font-weight: 600;
         font-style: initial ;
         line-height: 100%;
@@ -583,8 +597,8 @@
     }
 
     textarea, input, .field-image{
-        width: calc(30vw + 29vh);
-        height: calc(3vw + 5vh);
+        width: calc(25vw + 25vh);
+        height: calc(3vw + 3vh);
         border-radius: 100px;
         padding-left: 20px;
         font-size: calc(1vw + 1.5vh);
@@ -598,7 +612,7 @@
     .review-form{
         display: flex;
         flex-direction: column;
-        gap: 24px;
+        gap: calc(1vw + 1.5vh);
     }
     .title-field{
         font-size: calc(1vw + 1.5vh);
@@ -611,14 +625,14 @@
         align-items: center;
     }
     .input-form, #id_wishlist{
-        line-height:calc(3vw + 5vh) ;
+        line-height:calc(3vw + 3vh) ;
     }
     .buttons{
         display: flex;
     }
     .white-button{
-        width: calc(20vw + 25vh);
-        height: calc(3vw + 5vh);
+        width: calc(20vw + 20vh);
+        height: calc(3vw + 4vh);
         color: rgba(32, 83, 68, 1);
         font-size: calc(1vw + 1.8vh);
         font-style: medium;
@@ -629,8 +643,11 @@
         border: none;
     }
     .button-image{
-        width: calc(3vw + 5vh);
-        height: calc(3vw + 5vh);
+        width: calc(3vw + 4vh);
+        height: calc(3vw + 4vh);
+    }
+    textarea{
+        resize: none;
     }
     input:focus, textarea:focus {
     outline: none;
