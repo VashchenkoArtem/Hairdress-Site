@@ -158,7 +158,6 @@
         display: flex;
         justify-content: center;
         width: 100%;
-
     }
     .button-next-phone{
         width: calc(3vw + 4vh);
@@ -692,6 +691,7 @@
         line-height: 130%;
     }
     .red{
+        all: unset;
         color: rgba(172, 36, 36, 1);
     }
     .button-url-phone{
