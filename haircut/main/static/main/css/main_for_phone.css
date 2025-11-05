@@ -137,6 +137,10 @@
         flex-direction: column;
         gap: calc(5vw + 5vh);
     }
+    .button-green:hover{
+        background-color: rgb(22, 62, 50);
+        color: rgb(204, 204, 204);
+    }
     .button-green-consultation{
         width: calc(20vw + 27vh);
         height: calc(3vw + 4vh);
@@ -372,7 +376,29 @@
         font-size: calc(1vw + 1.5vh);
         width: calc(16vw + 25vh);
     }
-    .next-button,.image-next{
+    .image-next{
+        width: calc(1vw + 1.5vh);
+    }
+    .image-next:hover{
+        color: rgb(204, 204, 204);
+    }
+    .white-button-next{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px rgba(32, 83, 68, 1) solid;
+        border-radius: 100px;
+        width: calc(3vw + 4vh);
+        height: calc(3vw + 4vh);
+    }
+    .white-button-next:hover{
+        background-color: rgb(232, 232, 232);
+    }
+    .white-button-consultation:hover{
+        background-color: rgb(232, 232, 232);
+        color: rgb(22, 62, 50);
+    }
+    .next-button{
         all: unset;
         border-radius: 100px;
         width: calc(3vw + 4vh);
@@ -703,4 +729,5 @@
     .hide{
         display: none;
     }
+
 }
