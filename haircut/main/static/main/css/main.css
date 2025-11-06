@@ -590,7 +590,7 @@ body{
         justify-content: center;
         align-items: center;
         gap: calc(0.5vw + 0.7vh);
-        background-color: rgba(103, 111, 99, 0.2);
+        background-color: #676f6333;
         border-radius: 100px;
         border: rgba(63, 66, 62, 0.2) calc(0.03vw + 0.05vh) solid;
     }
@@ -609,7 +609,7 @@ body{
         border: rgba(78, 49, 33, 1) calc(0.03vw + 0.05vh) solid;
     }
     .hidden{
-        display: none;
+        display: none!important;
     }
     .image-cross{
         width: calc(1vw + 1vh);
@@ -622,5 +622,52 @@ body{
         border: none;
         box-shadow: none;
     }
-    
+    .modal-payload-frame{
+        display: flex;
+        width: calc(13.7vw + 24.5vh);
+        height: calc(8.3vw + 15vh);
+        background-color: rgba(103, 111, 99, 0.433);
+        display: flex;
+        flex-direction: column;
+        gap: calc(0.6vw + 0.9vh);
+        padding: calc(1.3vw + 2.3vh);
+        align-items: center;
+        justify-content: center;
+        border-radius: calc(0.5vw + 0.9vh);
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        margin-left: calc(1vw + 1vh);
+        transform: translate(-50%, -50%);
+        z-index: 11;
+    }
+    .method-of-pay{
+        font-size: calc(1.6vw + 2.8vh);
+        font-weight: 500;
+    }
+    .buttons-pay{
+        display: flex;
+        gap: calc(2.4vw + 4.2vh);
+    }
+    .button-of-pay{
+        all: unset;
+    }
+    .button-of-pay:hover{
+        cursor: pointer;
+    }
+    .image-of-button-of-pay{
+        width: calc(3.4vw + 6.1vh);
+    }
+    .blur-payload-bg{
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        background-color: rgba(0, 0, 0, 0.704);
+        top: 0px;
+        left: 0px;
+        z-index: 10;
+    }
+    .blur-payload-bg:hover{
+        cursor: pointer;
+    }
 }
