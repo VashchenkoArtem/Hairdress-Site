@@ -12,19 +12,20 @@ class MainPageView(FormView):
     template_name = "main/main.html"
     form_class = ReviewForm
 
+
 def create_invoice(request):
     url = "https://api.monobank.ua/api/merchant/invoice/create"
     headers = {
-        "X-Token": MONOBANK_TOKEN,
+        "X-Token": "uE8KtHYzs04Db24eO4yncDW3LVvYJUTxfrhEkb1lYW98",
         "Content-Type": "application/json"
     }
     data = {
-        "amount": 5000,  # сумма в копейках (50 грн)
-        "ccy": 980,      # код валюты UAH
+        "amount": 5000,
+        "ccy": 980,
         "merchantPaymInfo": {
             "reference": "ORDER-12345",
             "destination": "Оплата замовлення",
-            "comment": "Тестова оплата"
+            "comment": "Оплата консультації"
         }
     }
     response = requests.post(url, headers=headers, json=data)
