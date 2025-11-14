@@ -47,6 +47,11 @@ body{
 
 }
 @media (width > 767px){
+    .design-for-laptop{
+        display: flex;
+        flex-direction: column;
+        gap: calc(1vw + 1vh);
+    }
     .background-image{
         width:100%;
         display: flex;
@@ -57,7 +62,7 @@ body{
         top: 0px;
         left: 0px;
         z-index: 0;
-        height: calc(30vw + 50vh);
+        height: 100vh;
     }
     .frame-hat{
         position: relative;
@@ -101,7 +106,7 @@ body{
         font-weight: 400;
         font-style: italic;
         right: calc(15vw + 10vh);
-        top: 72%;
+        top: 81%;
     }
     .frame-consultation{
         position: absolute;
@@ -156,17 +161,18 @@ body{
         display: flex;
     }
     .main-frame{
-        margin-top: calc(31vw + 55vh);
+        margin-top: calc(31vw + 30vh);
+        gap: calc(5vw + 10vh);
         width: 100%;
         display: flex;
         flex-direction: column;
-        gap: calc(8vw + 2vh);
     }
     .description-frame{
         width: 100%;
-        justify-content: center;
+        height: 100vh;
         display: flex;
         align-items: center;
+        justify-content: center;
         flex-direction: column;
         gap: calc(1vw + 1vh);
     }
@@ -175,16 +181,19 @@ body{
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: calc(1vw + 0.7vh);
+        gap: calc(0.7vw + 0.7vh);
     }
     .main-title-description{
         font-weight: 500;
         text-align: center;
         font-style: medium;
-        font-size: calc(2vw + 4vh);
+        font-size: calc(2vw + 3vh);
+    }
+    .people-example-first{
+        height: calc(20vw + 22vh);
     }
     .coloration-text{
-        font-size: calc(1vw + 1.2vh);
+        font-size: calc(1vw + 1vh);
         font-weight: 500;
         text-align: center;
         font-family: 'Inter', sans-serif;
@@ -197,7 +206,9 @@ body{
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
         gap: calc(1.5vw + 3vh);
+        height: 100vh;
     }
     .description-choosing-color{
         display: flex;
@@ -273,9 +284,10 @@ body{
     .reason-hair{
         display: flex;
         gap: calc(0.5vw + 1vh);
+        height: 100vh;
     }
     .reason-image{
-        width: 45%;
+        width: 50%;
         height: 100%;
     }
     .reasons{
@@ -309,34 +321,35 @@ body{
         flex-direction: column;
         align-items: center;
         gap: calc(0.5vw + 1vh);
+        height: 100vh;
     }
     .result-title{
         display: flex;
         flex-direction: column;
-        gap: calc(0.5vw + 1vh);
         align-items: center;
     }
     .result-h1{
         font-weight: 500;
-        font-size: calc(2vw + 4vh);
+        font-size: calc(2vw + 3vh);
     }
     .result-description{
-        font-size: calc(0.9vw + 1.2vh);
+        font-size: calc(0.9vw + 1vh);
         font-family: 'Inter', sans-serif;
         font-weight: 400;
     }
     .result-body{
         display: flex;
         flex-direction: column;
-        gap: calc(1.1vw + 1vh);
+        gap: calc(0.55vw + 0.5vh);
+        align-items: center;
     }
     .result-text{
-        width: calc(50vw + 10vh);
         background-color: rgba(103, 111, 99, 1);
         padding: calc(0.9vw + 1vh);
         display: flex;
         flex-direction: column;
-        gap: calc(0.5vw + 1vh);
+        gap: calc(0.5vw + 0.4vh);
+        width: fit-content;
         border-radius: calc(0.3vw + 1vh);
     }
     .result-text-h1{
@@ -346,7 +359,7 @@ body{
         overflow-y: hidden;
     }
     .result-text-description{
-        font-size: calc(0.8vw + 1.2vh);   
+        font-size: calc(0.8vw + 0.7vh);   
         font-family: 'Inter', sans-serif;
         font-weight: 300;
         color: rgba(255, 255, 255, 0.5);
@@ -357,7 +370,7 @@ body{
         gap: calc(0.1vw + 0.2vh);
     }
     .people-example{
-        width: calc(25vw + 4.5vh);
+        width: calc(21vw + 4.5vh);
     }
     .button-circle{
         all: unset;
@@ -372,6 +385,7 @@ body{
         display: flex;
         gap: calc(1vw + 1vh);
         align-items: center;
+        height: 100vh;
     }
     .my-bio-info{
         width: 55%;
@@ -416,6 +430,7 @@ body{
         align-items: center;
         gap: calc(1.1vw + 1vh);
         padding: 2px;
+        height: 100vh;
     }
     .hat-opinion{
         display: flex;
@@ -444,7 +459,7 @@ body{
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: calc(1vw + 2vh) calc(5vw + 10vh) ;
+        padding: calc(1vw + 2vh) calc(1vw + 2vh) ;
         background-color: rgba(103, 111, 99, 1);
         margin: 0px calc(2vw + 2vh);
     }
@@ -460,7 +475,7 @@ body{
     }
     .opinion-review{
         text-align: center;
-        font-size: calc(1vw + 1.7vh);
+        font-size: calc(1vw + 1.2vh);
         font-weight: 300;
         font-family: 'Inter', sans-serif;
     }
@@ -475,7 +490,7 @@ body{
     }
     .review-frame{
         width: 100%;
-        height: 100%;
+        height: 100vh;
         margin-top: calc(8vw + 2vh);
         display: flex;
         flex-direction: column;

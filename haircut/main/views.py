@@ -44,6 +44,7 @@ class MainPageView(FormView):
         context["liqpay_data"] = data
         context["liqpay_signature"] = signature
         return context
+    
 def create_invoice(request):
     url = "https://api.monobank.ua/api/merchant/invoice/create"
     headers = {

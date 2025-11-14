@@ -13,7 +13,7 @@
 {% block content %}
     <div class = "design-for-laptop hidden">
         <div class= "background-image">
-            <img class = "bg-image" src="{% static 'main/images/bg_hair.svg' %}" alt="">
+            <img class = "bg-image" src="{% static 'main/images/bg_hair.png' %}" alt="">
             <h1 class = "coloration">"Фарбування - це не просто зміна кольору.<br>Це трансформація!"</h1>
         </div>
         <div class = "modal-hat-frame hidden">
@@ -33,7 +33,6 @@
             </div>
             <hr class = "horizontal-line">
         </div>
-        
         <h1 class = "ideal-hair-for-you">Ідеальне волосся<br> для тебе...</h1>
         <div class = "frame-consultation">
             <h1 class = "title-button-consultation">Професійний підбір фарбування онлайн</h1>
@@ -47,16 +46,17 @@
             </div>
         </div>
         <div class = "main-frame">
-            <div class = "description-frame">
+            <div class = "description-frame block">
                 <div class = "frame-description-titles">
                     <h1 class = "main-title-description">Колір, що личить саме тобі</h1>
                     <h2 class = "coloration-text">Фарбування - не про тренди. Це про тебе.<br>Ми врахуємо тон шкіри, форму обличчя та особливості зовнішності,<br> щоб порадити ідеальний відтінок.</h2>
                 </div>
-                <div>
-                    <img class = "image-people-first" src="{% static 'main/images/people_example/people_examples.png' %}" alt="">
+                <div class = "result-photos">
+                    <img class = "people-example-first" src = "{% static 'main/images/people_example/people_example13.svg'%}" alt="">
+                    <img class = "people-example-first" src = "{% static 'main/images/people_example/people_example14.svg'%}" alt="">
                 </div>
             </div>
-            <div class = "choosing-color">
+            <div class = "choosing-color block">
                 <div class = "description-choosing-color">
                     <h1 class = "title-choose-color">Підбір кольору</h1>
                     <h2 class = "description-choose-color">Щоб підібрати колір, який справді підкреслить вашу зовнішність потрібен аналіз.<br><br>Ми врахуємо:<br>Відтінок шкіри, Структуру та стан пасм, Колір очей</h2>
@@ -84,7 +84,7 @@
                     <button class = "button button-green button-next"> <img class = "image-next" src="{% static 'main/images/buttons/green_button_next.svg'%}" alt=""></button>
                 </div>
             </div>
-            <div class = "reason-hair">
+            <div class = "reason-hair block">
                 <img class = "reason-image" src="{% static 'main/images/hair.png' %}" alt="">
                 <div class = "reasons">
                     <h1 class = "why-2-days">Чому підбір займає<br> до 2 днів?</h1>
@@ -92,7 +92,7 @@
                     <h2 class = "days-description">Кожне фото ми уважно розглядаємо, підбираємо варіанти кольору та відтінку,<br>які будуть не просто красивими — а ідеальними саме для вас.<br><br>Цей процес займає до 48 годин, і він дійсно вартий очікування.</h2>
                 </div>
             </div>
-            <div class = "result">
+            <div class = "result block">
                 <div class = "result-title">
                     <h1 class = "result-h1">Результат, що вас здивує</h1>
                     <h2 class = "result-description">Дивіться як виглядає перевтілення за індивідуальним підбором</h2>
@@ -116,7 +116,7 @@
                     </div>
                 </div>
             </div>
-            <div class = "my-bio">
+            <div class = "my-bio block">
                 <img class = "my-photo" src="{% static 'main/images/people_example/my_photo.png' %}" alt="">    
                 <div class = "my-bio-info">
                     <div class = "my-bio-frame">
@@ -135,7 +135,7 @@
                     </div>
                 </div>
             </div>
-            <div class = "others-opinion">
+            <div class = "others-opinion block">
                 <div class = "hat-opinion">
                     <h1 class = "hat-opinion-title">Що говорять інші</h1>
                     <h2 class = "hat-opinion-description">Реальні історії перевтілень, відгуки клієнток після підбору кольору та фарбування.<br>
@@ -167,7 +167,7 @@
                 </div>
             </div>
         </div>
-        <div class = "review-frame">
+        <div class = "review-frame block">
             <div class = 'blur-bg'>
                 <img src="{% static 'main/images/bg.png'%}" class = "bg-image-hair"alt="">
             </div>
@@ -351,7 +351,7 @@
                 </form>
             </div>
             <div class = "reason-hair">
-                <img class = "reason-hair-image" src="{% static 'main/images/hair.png' %}" alt="">
+                <img class = "reason-hair-image" src="{% static 'main/images/hair_test.png' %}" alt="">
                 <div class = "reasons">
                     <h1 class = "why-2-days">Чому підбір займає<br> до 2 днів?</h1>
                     <h2 class = "days-title">Точність вимагає часу.</h2>
@@ -395,16 +395,11 @@
                     </div>
                         <h1 class = "my-expereance years-of-experience"><span class = "highlighted count-of-years-exp">7+</span> років досвіду</h1>
                         <h1 class = "my-expereance my-clients">Понад <span class = "highlighted my-clients-count">4 000</span> задоволених клієнтів</h1>
-                        
-                    <form method="POST" accept-charset="utf-8" target="_blank" action="https://www.liqpay.ua/api/3/checkout">
                         <div class = "buttons-choose-color">
-                            <input type="hidden" name="data" value="eyJ2ZXJzaW9uIjozLCJhY3Rpb24iOiJwYXkiLCJhbW91bnQiOiI1IiwiY3VycmVuY3kiOiJVQUgiLCJkZXNjcmlwdGlvbiI6ItCc0ZbQuSDRgtC+0LLQsNGAIiwicHVibGljX2tleSI6InNhbmRib3hfaTI5MzYwOTM3MDk5IiwibGFuZ3VhZ2UiOiJ1ayJ9" />
-                            <input type="hidden" name="signature" value="dKa/ubdJHgVu1fL1ZuOaiGeYpVc=" />
                             <button class = "button button-green button-green-consultation ">ЗАМОВИТИ КОНСУЛЬТАЦІЮ</button>
                             <button class = "button button-green button-next-phone"> <img class = "image-next" src="{% static 'main/images/buttons/green_button.svg'%}" alt=""></button>
                         </div>
-                    </form>
-                </div>
+                    </div>
             </div>
             <div class = "others-opinion">
                 <div class = "hat-opinion">
@@ -478,6 +473,22 @@
                         <img class = "button-image" src="{% static 'main/images/buttons/white_button.svg' %}" alt="">
                     </button>
                 </div>
+            </div>
+        </div>
+        <div class = "blur-payload-bg hidden"></div>
+        <div class = "modal-payload-frame hidden">
+            <h1 class = "method-of-pay">Спосіб оплати</h1>
+            <div class = "buttons-pay">
+                <button class = "button-of-pay mono-button">
+                    <img class = "image-of-button-of-pay"src="{% static 'main/images/buttons/mono.svg'%}" alt="">
+                </button>
+                <form method="POST" accept-charset="utf-8" target="_blank" action="https://www.liqpay.ua/api/3/checkout">
+                    <input type="hidden" name="data" value="{{ liqpay_data}}" />
+                    <input type="hidden" name="signature" value="{{ liqpay_signature}}"/>         
+                    <button class = "button-of-pay">
+                        <img class = "image-of-button-of-pay"src="{% static 'main/images/buttons/privat.svg'%}" alt="">
+                    </button>
+                </form>
             </div>
         </div>
     </div>

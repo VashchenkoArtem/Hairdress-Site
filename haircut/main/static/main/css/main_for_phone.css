@@ -204,7 +204,7 @@
     .choosing-color-all{
         display: flex;
         flex-direction: column;
-        gap: 60px;
+        gap: calc(1vw + 1.9vh);
         padding: 8px 0px;
         align-items: center;
     }
@@ -338,19 +338,19 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 24px;
+        gap: calc(1vw + 0.8vh);
     }
     .reason-hair-image{
         width: calc(30vw + 29vh);
-        height: calc(30vw + 29vh);
+        /* height: calc(30vw + 29vh); */
         border-radius: 16px;
     }
     .reasons{
         display: flex;
         flex-direction: column;
-        gap: 30px;
+        gap: calc(1vw + 1vh);
         width: fit-content;
-        padding: 47px 16px;
+        padding: 30px 16px;
         align-items: center;
         background-color: white;
         border-radius: 15px;
@@ -481,12 +481,12 @@
     .my-bio-info{
         display: flex;
         flex-direction: column;
-        gap: calc(1vw + 2.5vh);
+        gap: calc(1vw + 1vh);
     }
     .my-bio-frame{
         display: flex;
         flex-direction: column;
-        gap: calc(1vw + 2.5vh);
+        gap: calc(1vw + 1vh);
     }
     .my-name, .hat-opinion-title{
         font-size: calc(2.5vw + 2.5vh);
@@ -509,7 +509,7 @@
     .others-opinion{
         display: flex;
         flex-direction: column;
-        gap: 24px;
+        gap: calc(1vw + 0.7vh);
         width: calc(30vw + 29vh);
     }
     .hat-opinion{

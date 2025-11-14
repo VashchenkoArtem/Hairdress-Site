@@ -9,7 +9,7 @@ const phoneDesign = document.querySelector(".design-for-phone");
 const modalPhone = document.querySelector(".modal-frame-phone");
 const titlePhone = document.querySelector(".title-hat-phone");
 const modalPayload = document.querySelector(".modal-payload-frame");
-const modalPayloadBg = document.querySelector(".blur-payload-bg")
+const modalPayloadBg = document.querySelector(".blur-payload-bg");
 const buttons = document.querySelectorAll(".button");
 
 
@@ -55,9 +55,7 @@ modalPayloadBg.addEventListener("click", ()=>{
     modalPayload.classList.toggle("hidden");
     modalPayloadBg.classList.toggle("hidden");
 })
-
-document.querySelector(".mono-button").onclick = async () => {
-    const res = await fetch("/create-invoice/");
-    const data = await res.json();
-    window.open(data.pageUrl, "_blank");
-}
+document.querySelectorAll('.block')[1].scrollIntoView({
+  behavior: "smooth",
+  block: "start"
+});
