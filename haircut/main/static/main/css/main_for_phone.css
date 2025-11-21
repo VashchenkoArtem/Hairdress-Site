@@ -173,7 +173,6 @@
         gap: calc(1vw + 1.2vh);
     }
     .main-frame{
-        margin-top: calc(10vw + 9vh);
         display: flex;
         flex-direction: column;
         gap: calc(5vw + 7vh);

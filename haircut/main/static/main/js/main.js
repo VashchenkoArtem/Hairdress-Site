@@ -55,7 +55,99 @@ modalPayloadBg.addEventListener("click", ()=>{
     modalPayload.classList.toggle("hidden");
     modalPayloadBg.classList.toggle("hidden");
 })
-document.querySelectorAll('.block')[1].scrollIntoView({
-  behavior: "smooth",
-  block: "start"
+
+
+const blocks = document.querySelectorAll(".block");
+let currentIndex = 0;
+let isScrolling = false;
+
+function scrollToBlock(index) {
+    isScrolling = true;
+
+    blocks[index].scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
+
+    setTimeout(() => {
+        isScrolling = false;
+    }, 800);
+}
+
+window.addEventListener("wheel", (event) => {
+    if (isScrolling) return;
+
+    if (event.deltaY > 0) {
+        if (currentIndex < blocks.length - 1) {
+            currentIndex++;
+            scrollToBlock(currentIndex);
+        }
+    } else {
+        if (currentIndex > 0) {
+            currentIndex--;
+            scrollToBlock(currentIndex);
+        }
+    }
+});
+// Получаем все блоки внутри design-for-phone
+const phoneBlocks = document.querySelectorAll(".design-for-phone .block");
+let currentIndexPhone = 0;
+let isScrollingPhone = false;
+
+// Функция перелистывания
+function goToBlockPhone(index) {
+    if (!phoneBlocks[index]) return;
+
+    isScrollingPhone = true;
+    phoneBlocks[index].scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
+
+    setTimeout(() => {
+        isScrollingPhone = false;
+    }, 900); // время анимации
+}
+
+// Прокрутка колесом (для теста на ПК)
+window.addEventListener("wheel", (e) => {
+    if (isScrollingPhone) return;
+
+    // Проверяем, что мы на телефоне (ширина экрана < 768px)
+    if (window.innerWidth > 768) return;
+
+    if (e.deltaY > 0) {
+        if (currentIndexPhone < phoneBlocks.length - 1) {
+            currentIndexPhone++;
+            goToBlockPhone(currentIndexPhone);
+        }
+    } else {
+        if (currentIndexPhone > 0) {
+            currentIndexPhone--;
+            goToBlockPhone(currentIndexPhone);
+        }
+    }
+});
+
+let touchStartY = 0;
+
+window.addEventListener("touchstart", (e) => {
+    touchStartY = e.touches[0].clientY;
+});
+
+window.addEventListener("touchend", (e) => {
+    if (isScrollingPhone) return;
+
+    let touchEndY = e.changedTouches[0].clientY;
+    let diff = touchStartY - touchEndY;
+
+    if (diff > 30 && currentIndexPhone < phoneBlocks.length - 1) {
+        currentIndexPhone++;
+        goToBlockPhone(currentIndexPhone);
+    }
+
+    if (diff < -30 && currentIndexPhone > 0) {
+        currentIndexPhone--;
+        goToBlockPhone(currentIndexPhone);
+    }
 });
