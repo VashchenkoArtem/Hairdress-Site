@@ -10,6 +10,7 @@ from dotenv import load_dotenv
 from liqpay import LiqPay
 import base64
 import hashlib
+from .models import CommentModel
 # Create your views here
 load_dotenv(dotenv_path=os.path.join(os.path.dirname(__file__), '..', '.env'))
 public_key = os.getenv("LIQPAY_PUBLIC_KEY")
@@ -40,7 +41,7 @@ class MainPageView(FormView):
 
         data = base64.b64encode(json.dumps(payload, ensure_ascii=False).encode()).decode()
         signature = base64.b64encode(hashlib.sha1((PRIVATE_KEY + data + PRIVATE_KEY).encode()).digest()).decode()
-
+        context["first_comment"] = CommentModel.objects.first()
         context["liqpay_data"] = data
         context["liqpay_signature"] = signature
         return context

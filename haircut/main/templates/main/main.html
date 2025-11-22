@@ -103,14 +103,14 @@
                         <h2 class = "result-text-description">Ми прибрали важкість темного відтінку, який робив риси суворішими.<br>Створили м’який контур через світлі пасма біля обличчя — це візуально<br>освіжає та відкриває погляд. Додали теплі акценти та об’ємне укладання, яке<br>підкреслює нову текстуру волосся. Зміна кольору відразу зробила вигляд<br>більш гармонійним і «дорогим».</h2>
                     </div>
                     <div class = "result-photos">
-                        <img class = "people-example" src="{% static 'main/images/people_example/people_example3.png'%}" alt="">
-                        <img class = "people-example" src="{% static 'main/images/people_example/people_example4.png'%}" alt="">
+                        <img class = " first-people-example" src="{% static 'main/images/people_example/people_example3.png'%}" alt="">
+                        <img class = " second-people-example" src="{% static 'main/images/people_example/people_example4.png'%}" alt="">
                     </div>
                     <div class = "result-buttons">
-                        <button class = 'button-circle button-left'>
+                        <button class = 'button-circle button-left button-left-right'>
                             <img class = "button-next button-image" src="{% static 'main/images/buttons/button_left.svg'%}" alt="">
                         </button>
-                        <button class = 'button-circle button-right'>
+                        <button class = 'button-circle button-right button-left-right'>
                             <img class = "button-next button-image" src="{% static 'main/images/buttons/button_right.svg'%}" alt="">
                         </button>
                     </div>
@@ -148,13 +148,19 @@
                                 <img class = "quote" src="{% static 'main/images/quotes.svg'%}" alt="">
                             </div>
                             <div class = "opinion-text">
-                                <h1 class = "opinion-review">Я довго не могла знайти відтінок, який би мені справді личив — або занадто<br>жовтий, або робив обличчя втомленим. <br><br>Альона провела детальний розбір, пояснила, чому мій теплий тон шкіри не <br>дружить з попелястим блондом, і запропонувала свій варіант. <br><br>Результат — це любов з першого погляду.<br>Волосся виглядає натурально, шкіра свіжа, і я отримую купу компліментів. Дуже <br>дякую за уважність і професійність!</h1>
+                                <h1 class = "opinion-review">{{ first_comment.comment_text }}</h1>
                             </div>
                             <div class = "quotes second-qoute">
                                 <img class = "quote" src="{% static 'main/images/quotes.svg'%}" alt="">
                             </div>
                         </div>
-                        <h1 class = "opinion-name">Катерина, місто Дніпро</h1>
+                        {% if first_comment.author_city and first_comment.author_name %}
+                            <h1 class = "opinion-name">{{ first_comment.author_name }}, місто {{ first_comment.author_city }}</h1>
+                        {% elif first_comment.author_name %}
+                            <h1 class = "opinion-name">{{first_comment.author_name}}</h1>
+                        {% else %}
+                            <h1 class = "opinion-name">Анонім</h1>
+                        {% endif %}
                     </div>
                     <div class = "result-buttons">
                         <button class = 'button-circle button-left'>
@@ -376,14 +382,14 @@
                 </div>
                 <div class = "result-body">
                     <div class = "result-photos">
-                        <img class = "people-example-result first-photo-result" src="{% static 'main/images/people_example/people_example3.png'%}" alt="">
-                        <img class = "people-example-result second-photo-result" src="{% static 'main/images/people_example/people_example4.png'%}" alt="">
+                        <img class = "people-example-result first-photo-result first-people-example-phone" src="{% static 'main/images/people_example/people_example3.png'%}" alt="">
+                        <img class = "people-example-result second-photo-result second-people-example-phone" src="{% static 'main/images/people_example/people_example4.png'%}" alt="">
                     </div>
                     <div class = "result-buttons">
-                        <button class = 'button-circle button-left'>
+                        <button class = 'button-circle button-left-phone'>
                             <img class = "button-next button-image" src="{% static 'main/images/buttons/button_circle.svg'%}" alt="">
                         </button>
-                        <button class = 'button-circle button-right-circle'>
+                        <button class = 'button-circle button-right-circle button-right-phone'>
                             <img class = "button-next button-image" src="{% static 'main/images/buttons/button_circle.svg'%}" alt="">
                         </button>
                     </div>
@@ -417,7 +423,7 @@
                                 <img class = "quote" src="{% static 'main/images/buttons/green_quotes.svg'%}" alt="">
                             </div>
                             <div class = "opinion-text">
-                                <h1 class = "opinion-review">Я довго не могла знайти відтінок, який<br> би мені справді личив — або занадто<br>жовтий, або робив обличчя втомленим. <br><br>Альона провела детальний розбір, пояснила, чому мій теплий тон шкіри не <br>дружить з попелястим блондом, і запропонувала свій варіант. <br><br>Результат — це любов з першого погляду.<br>Волосся виглядає натурально, шкіра свіжа, і я отримую купу компліментів. Дуже <br>дякую за уважність і професійність!</h1>
+                                <h1 class = "opinion-review">{{ first_comment.comment_text }}</h1>
                             </div>
                             <div class = "quotes second-qoute">
                                 <img class = "quote" src="{% static 'main/images/buttons/green_quotes.svg'%}" alt="">
@@ -498,4 +504,5 @@
 {% endblock %}
 {% block script %}
     <script src = "{% static 'main/js/main.js' %}"></script>
+    <script src = "{% static 'main/js/check_arrow_button.js' %}"></script>
 {% endblock %}

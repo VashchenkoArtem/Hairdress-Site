@@ -686,4 +686,15 @@ body{
     .blur-payload-bg:hover{
         cursor: pointer;
     }
+    .second-people-example,.first-people-example{
+        width: calc(21vw + 4.5vh);
+        height: calc(21vw + 4.5vh);
+    }
+    .button-right:hover,.button-left:hover{
+        cursor: pointer;
+    }
+    .opinion-review{
+        max-width: calc(50vw + 22vh);
+        white-space: pre-line;
+    }
 }
