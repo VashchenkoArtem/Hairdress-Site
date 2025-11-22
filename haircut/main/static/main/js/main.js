@@ -89,12 +89,10 @@ window.addEventListener("wheel", (event) => {
         }
     }
 });
-// Получаем все блоки внутри design-for-phone
 const phoneBlocks = document.querySelectorAll(".design-for-phone .block");
 let currentIndexPhone = 0;
 let isScrollingPhone = false;
 
-// Функция перелистывания
 function goToBlockPhone(index) {
     if (!phoneBlocks[index]) return;
 
@@ -106,14 +104,12 @@ function goToBlockPhone(index) {
 
     setTimeout(() => {
         isScrollingPhone = false;
-    }, 900); // время анимации
+    }, 900);
 }
 
-// Прокрутка колесом (для теста на ПК)
 window.addEventListener("wheel", (e) => {
     if (isScrollingPhone) return;
 
-    // Проверяем, что мы на телефоне (ширина экрана < 768px)
     if (window.innerWidth > 768) return;
 
     if (e.deltaY > 0) {

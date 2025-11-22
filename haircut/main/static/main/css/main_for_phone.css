@@ -39,6 +39,10 @@
         color: rgba(26, 26, 26, 1);
         overflow-x: hidden;
     }
+    html, body {
+        margin: 0;
+        padding: 0;
+        }
     body{
         background-color: rgba(249, 244, 233, 1);
         display: flex;
@@ -50,6 +54,8 @@
     .frame-hat{
         position: relative;
         padding: 10px 16px;
+        height: 10vh;
+        width:100%;
         display: flex;
         flex-direction: column;
         gap: calc(0.5vw + 0.9vh);
@@ -81,8 +87,7 @@
         display: flex;
         flex-direction: column;
         gap: calc(6vw + 5vh);
-        height: calc(18vw + 20vh);
-        padding:  18px 16px;
+        padding:  0px 16px;
     }
     .coloration-part1{
         font-size: calc(1.5vw + 3vh);
@@ -96,7 +101,7 @@
     .about-me-start{
         position: relative;
         overflow-y: hidden;
-        margin-top: calc(0.1vw + 0.2vh);
+        height: 100dvh;
     }
     .blur-bg{
         width: 100%;
@@ -166,24 +171,21 @@
     .button-next-phone{
         width: calc(3vw + 4vh);
         height: calc(3vw + 4vh);
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     .my-help{
         display: flex;
         flex-direction: column;
         gap: calc(1vw + 1.2vh);
     }
-    .main-frame{
-        display: flex;
-        flex-direction: column;
-        gap: calc(5vw + 7vh);
-        padding: 0px 16px;
-        align-items: center;
-    }
     .description-frame{
         display: flex;
         flex-direction: column;
         gap: 30px;
         align-items: center;
+        margin-bottom: 10vh;
     }
     .frame-description-titles{
         display: flex;
@@ -203,9 +205,9 @@
     .choosing-color-all{
         display: flex;
         flex-direction: column;
-        gap: calc(1vw + 1.9vh);
-        padding: 8px 0px;
         align-items: center;
+        height: 200dvh;
+        justify-content: space-between;
     }
     .choosing-color{
         display: flex;
@@ -337,6 +339,8 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        height: 100dvh;
+        padding-top: 5vh;
         gap: calc(1vw + 0.8vh);
     }
     .reason-hair-image{
@@ -374,9 +378,6 @@
     .button-2{
         font-size: calc(1vw + 1.5vh);
         width: calc(16vw + 25vh);
-    }
-    .image-next{
-        width: calc(1vw + 1.5vh);
     }
     .image-next:hover{
         color: rgb(204, 204, 204);
@@ -506,15 +507,15 @@
         line-height: 100%;
     }
     .others-opinion{
-        display: flex;
-        flex-direction: column;
+        align-items: center;
         gap: calc(1vw + 0.7vh);
-        width: calc(30vw + 29vh);
+        width: 100%;
     }
     .hat-opinion{
         display: flex;
         flex-direction: column;
         gap: calc(1vw + 1vh);
+        width: calc(30vw + 29vh)
     }
     .hat-opinion-description{
         font-size: calc(1vw + 1.7vh)!important;
@@ -523,6 +524,7 @@
         display: flex;
         flex-direction: column;
         gap: calc(1vw + 1vh);
+        width: calc(30vw + 29vh);
     }
     .body-opinion{
         display: flex;
@@ -728,5 +730,19 @@
     .hide{
         display: none;
     }
-
+    .block-scroll{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100dvh;
+    }
+    .color-steps-with-buttons{
+        display: flex;
+        flex-direction: column;
+        gap: calc(1vw + 2vh);
+    }
+    .main-frame{
+        display: flex;
+        flex-direction: column;
+    }
 }

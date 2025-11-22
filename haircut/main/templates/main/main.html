@@ -293,8 +293,7 @@
                     </div>
                 </div>
             </div>
-
-            <div class = "description-frame block">
+            <div class = "description-frame block block-scroll">
                 <div class = "frame-description-titles">
                     <h1 class = "main-title-description">Колір, що личить саме тобі</h1>
                     <h2 class = "coloration-text">Фарбування - не про тренди. Це про тебе.<br><br>Ми врахуємо тон шкіри, форму обличчя та<br> особливості зовнішності, щоб порадити<br> ідеальний відтінок.</h2>
@@ -310,8 +309,8 @@
                     </div>
                 </div>
             </div>
-            <div class = "choosing-color-all block">
-                <div class = "choosing-color">
+            <div class = "choosing-color-all">
+                <div class = "choosing-color block">
                     <h1 class = "choosing-color-title">Підбір кольору</h1>
                     <div class = "choosing-color-description">
                         <h1 class = "choosing-color-details">Щоб підібрати колір, який справді<br>підкреслить вашу зовнішність, потрібен аналіз.<br><br>Ми враховуємо:</h1>
@@ -331,35 +330,37 @@
                         </div>
                     </div>
                 </div>
-                <div class = "choosing-color-steps">
-                    <div class = "step">
-                        <h1 class = "number-of-step">01</h1>
-                        <h2 class = "title-step">Заявка</h2>
-                        <h3 class = "description-step">Заповніть коротку форму, додайте фото та деталі</h3>
+                <div class = "block color-steps-with-buttons">
+                    <div class = "choosing-color-steps">
+                        <div class = "step">
+                            <h1 class = "number-of-step">01</h1>
+                            <h2 class = "title-step">Заявка</h2>
+                            <h3 class = "description-step">Заповніть коротку форму, додайте фото та деталі</h3>
+                        </div>
+                        <div class = "step">
+                            <h1 class = "number-of-step">02</h1>
+                            <h2 class = "title-step">Аналіз</h2>
+                            <h3 class = "description-step">Проводжу індивідуальний розбір та створюю пропозицію кольору</h3>
+                        </div>
+                        <div class = "step">
+                            <h1 class = "number-of-step">03</h1>
+                            <h2 class = "title-step">Перевтілення</h2>
+                            <h3 class = "description-step">Ви отримуєте обраний варіант та рекомендації</h3>
+                        </div>
                     </div>
-                    <div class = "step">
-                        <h1 class = "number-of-step">02</h1>
-                        <h2 class = "title-step">Аналіз</h2>
-                        <h3 class = "description-step">Проводжу індивідуальний розбір та створюю пропозицію кольору</h3>
-                    </div>
-                    <div class = "step">
-                        <h1 class = "number-of-step">03</h1>
-                        <h2 class = "title-step">Перевтілення</h2>
-                        <h3 class = "description-step">Ви отримуєте обраний варіант та рекомендації</h3>
-                    </div>
+                    <form method="POST" accept-charset="utf-8" target="_blank" action="https://www.liqpay.ua/api/3/checkout">
+                        <div class = "buttons-choose-color">
+                            <input type="hidden" name="data" value="eyJ2ZXJzaW9uIjozLCJhY3Rpb24iOiJwYXkiLCJhbW91bnQiOiI1IiwiY3VycmVuY3kiOiJVQUgiLCJkZXNjcmlwdGlvbiI6ItCc0ZbQuSDRgtC+0LLQsNGAIiwicHVibGljX2tleSI6InNhbmRib3hfaTI5MzYwOTM3MDk5IiwibGFuZ3VhZ2UiOiJ1ayJ9" />
+                            <input type="hidden" name="signature" value="dKa/ubdJHgVu1fL1ZuOaiGeYpVc=" />
+                            <button class = "button-consultation white-button-consultation">
+                                ЗАМОВИТИ КОНСУЛЬТАЦІЮ
+                            </button>
+                            <button class = "button-next white-button-next"> <img class = "image-next" src="{% static 'main/images/buttons/green_arrow.svg'%}" alt=""></button>
+                        </div>
+                    </form>
                 </div>
-                <form method="POST" accept-charset="utf-8" target="_blank" action="https://www.liqpay.ua/api/3/checkout">
-                    <div class = "buttons-choose-color">
-                        <input type="hidden" name="data" value="eyJ2ZXJzaW9uIjozLCJhY3Rpb24iOiJwYXkiLCJhbW91bnQiOiI1IiwiY3VycmVuY3kiOiJVQUgiLCJkZXNjcmlwdGlvbiI6ItCc0ZbQuSDRgtC+0LLQsNGAIiwicHVibGljX2tleSI6InNhbmRib3hfaTI5MzYwOTM3MDk5IiwibGFuZ3VhZ2UiOiJ1ayJ9" />
-                        <input type="hidden" name="signature" value="dKa/ubdJHgVu1fL1ZuOaiGeYpVc=" />
-                        <button class = "button-consultation white-button-consultation">
-                            ЗАМОВИТИ КОНСУЛЬТАЦІЮ
-                        </button>
-                        <button class = "button-next white-button-next"> <img class = "image-next" src="{% static 'main/images/buttons/green_arrow.svg'%}" alt=""></button>
-                    </div>
-                </form>
             </div>
-            <div class = "reason-hair block">
+            <div class = "reason-hair block block-scroll">
                 <img class = "reason-hair-image" src="{% static 'main/images/hair_test.png' %}" alt="">
                 <div class = "reasons">
                     <h1 class = "why-2-days">Чому підбір займає<br> до 2 днів?</h1>
@@ -375,7 +376,7 @@
                     </form>
                 </div>
             </div>
-            <div class = "result block">
+            <div class = "result block block-scroll">
                 <div class = "result-title">
                     <h1 class = "result-h1">Результат, що вас здивує</h1>
                     <h2 class = "result-description">Дивіться, як виглядає перевтілення за індивідуальним підбором.</h2>
@@ -395,7 +396,7 @@
                     </div>
                 </div>
             </div>
-            <div class = "my-bio block">
+            <div class = "my-bio block block-scroll">
                 <img class = "my-photo" src="{% static 'main/images/people_example/my_photo.png' %}" alt="">    
                 <div class = "my-bio-info">
                     <div class = "my-bio-frame">
@@ -410,7 +411,7 @@
                         </div>
                     </div>
             </div>
-            <div class = "others-opinion block">
+            <div class = "others-opinion block block-scroll">
                 <div class = "hat-opinion">
                     <h1 class = "hat-opinion-title">Що говорять інші</h1>
                     <h2 class = "hat-opinion-description">Реальні історії перевтілень, відгуки клієнток після підбору кольору та<br>фарбування.
@@ -442,7 +443,7 @@
                 </div>
             </div>
         </div>
-        <div class = "review-frame block">
+        <div class = "review-frame block block-scroll">
             <div class = "review">
                 <div class="review-hat">
                     <h1 class = "review-hat-title">Зв'яжімося - <br>і підберемо твій колір</h1>
