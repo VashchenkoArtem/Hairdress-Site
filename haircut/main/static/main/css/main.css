@@ -493,7 +493,6 @@ body{
     .review-frame{
         width: 100%;
         height: 100vh;
-        margin-top: calc(8vw + 2vh);
         display: flex;
         flex-direction: column;
         justify-content: center;

@@ -487,7 +487,7 @@
                 <button class = "button-of-pay mono-button">
                     <img class = "image-of-button-of-pay"src="{% static 'main/images/buttons/mono.svg'%}" alt="">
                 </button>
-                <form method="POST" accept-charset="utf-8" target="_blank" action="https://www.liqpay.ua/api/3/checkout">
+                <form method="POST" accept-harset="utf-8" target="_blank" action="https://www.liqpay.ua/api/3/checkout">
                     <input type="hidden" name="data" value="{{ liqpay_data}}" />
                     <input type="hidden" name="signature" value="{{ liqpay_signature}}"/>         
                     <button class = "button-of-pay">
@@ -502,5 +502,6 @@
     <script src = "{% static 'main/js/main.js' %}"></script>
     <script src = "{% static 'main/js/check_arrow_button.js' %}"></script>
     <script src = "{% static 'main/js/jquery-3.7.1.min.js'%}"></script>
-    <script src = "{% static 'main/js/check_comment.js' %}"></script>
+    <script src = "{% static 'mainc/js/check_comment.js' %}"></script>
+    <script src = "{% static 'form/js/mono.js'%}"></script>
 {% endblock %}

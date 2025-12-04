@@ -36,7 +36,9 @@ class MainPageView(FormView):
             "currency": "UAH",
             "description":"Оплата замовлення",
             "order_id": "order_1",
-            "language": "uk"
+            "language": "uk",
+            "result_url": "/",
+            "server_url": "/"
         }
 
         data = base64.b64encode(json.dumps(payload, ensure_ascii=False).encode()).decode()
@@ -95,3 +97,7 @@ def getNextOrPrevComment(request):
         "is_error": is_error,
         "all_comments": all_comments
     })
+
+class FormPageView(FormView):
+    template_name = "form/form.html"
+    form_class = ReviewForm
