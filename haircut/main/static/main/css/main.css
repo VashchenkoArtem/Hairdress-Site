@@ -464,7 +464,6 @@ body{
         margin: 0px calc(2vw + 2vh);
     }
     .quotes{
-        width: 100%;
         text-align: start;
     }
     .second-qoute{
@@ -473,10 +472,13 @@ body{
     .opinion-text{
         margin: calc(0.5vw + 1vh) calc(1vw + 2vh);
     }
+    .opinion{
+        display: flex;
+    }
     .opinion-review{
-        text-align: center;
         font-size: calc(1vw + 1.2vh);
         font-weight: 300;
+        overflow-y: scroll;
         font-family: 'Inter', sans-serif;
     }
     .quote{

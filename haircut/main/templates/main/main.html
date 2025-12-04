@@ -148,25 +148,20 @@
                                 <img class = "quote" src="{% static 'main/images/quotes.svg'%}" alt="">
                             </div>
                             <div class = "opinion-text">
-                                <h1 class = "opinion-review">{{ first_comment.comment_text }}</h1>
+                                <input type="hidden" id = 'commentId' value="{{ first_comment.id }}">
+                                <h1 class = "opinion-review" id = "opinionReview">{{ first_comment.comment_text }}</h1>
                             </div>
                             <div class = "quotes second-qoute">
                                 <img class = "quote" src="{% static 'main/images/quotes.svg'%}" alt="">
                             </div>
                         </div>
-                        {% if first_comment.author_city and first_comment.author_name %}
-                            <h1 class = "opinion-name">{{ first_comment.author_name }}, місто {{ first_comment.author_city }}</h1>
-                        {% elif first_comment.author_name %}
-                            <h1 class = "opinion-name">{{first_comment.author_name}}</h1>
-                        {% else %}
-                            <h1 class = "opinion-name">Анонім</h1>
-                        {% endif %}
+                        <h1 class = "opinion-name"><span id = "commentAuthor">{{ first_comment.author_name }}</span>, місто <span id = "commentAuthorCity">{{ first_comment.author_city }}</span></h1>
                     </div>
                     <div class = "result-buttons">
-                        <button class = 'button-circle button-left'>
+                        <button class = 'button-circle button-left' id = "buttonPrevComment">
                             <img class = "button-next button-image" src="{% static 'main/images/buttons/button_left.svg'%}" alt="">
                         </button>
-                        <button class = 'button-circle button-right'>
+                        <button class = 'button-circle button-right' id = "buttonNextComment">
                             <img class = "button-next button-image" src="{% static 'main/images/buttons/button_right.svg'%}" alt="">
                         </button>
                     </div>
@@ -433,10 +428,10 @@
                         <h1 class = "opinion-name">Катерина, місто Дніпро</h1>
                     </div>
                     <div class = "result-buttons">
-                        <button class = 'button-circle button-left'>
+                        <button class = 'button-circle button-left button-prev-comment'>
                             <img class = "button-next button-image" src="{% static 'main/images/buttons/button_circle.svg'%}" alt="">
                         </button>
-                        <button class = 'button-circle button-right-circle'>
+                        <button class = 'button-circle button-right-circle button-next-comment'>
                             <img class = "button-next button-image" src="{% static 'main/images/buttons/button_circle.svg'%}" alt="">
                         </button>
                     </div>
@@ -506,4 +501,6 @@
 {% block script %}
     <script src = "{% static 'main/js/main.js' %}"></script>
     <script src = "{% static 'main/js/check_arrow_button.js' %}"></script>
+    <script src = "{% static 'main/js/jquery-3.7.1.min.js'%}"></script>
+    <script src = "{% static 'main/js/check_comment.js' %}"></script>
 {% endblock %}

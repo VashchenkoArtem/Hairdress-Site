@@ -67,3 +67,24 @@ def create_invoice(request):
 @csrf_exempt
 def webhook_for_mono(request):
     payload = json.loads(request.body)
+
+def getNextOrPrevComment(request):
+    comment_id = int(request.GET.get('id'))
+    direction_arrow = request.GET.get('direction')
+    is_error = False
+    if comment_id <= len(CommentModel.objects.all()):
+        if direction_arrow == "next":
+            comment = CommentModel.objects.filter(id__gt= comment_id).order_by('id').first()
+        elif direction_arrow == "prev":
+            comment = CommentModel.objects.filter(id__lt= comment_id).order_by("-id").first()
+    else: 
+        comment = CommentModel.objects.first()
+        is_error = True
+    print(comment.id)
+    return JsonResponse({
+        "comment_id": comment.id,
+        "comment": comment.comment_text,
+        "comment_author": comment.author_name,
+        "comment_author_city": comment.author_city,
+        "is_error": is_error
+    })
