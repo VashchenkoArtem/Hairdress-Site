@@ -71,20 +71,27 @@ def webhook_for_mono(request):
 def getNextOrPrevComment(request):
     comment_id = int(request.GET.get('id'))
     direction_arrow = request.GET.get('direction')
+    all_comments = len(CommentModel.objects.all())
     is_error = False
-    if comment_id <= len(CommentModel.objects.all()):
+    print(comment_id)
+    if comment_id < all_comments:
         if direction_arrow == "next":
             comment = CommentModel.objects.filter(id__gt= comment_id).order_by('id').first()
-        elif direction_arrow == "prev":
-            comment = CommentModel.objects.filter(id__lt= comment_id).order_by("-id").first()
+        else: 
+            comment = CommentModel.objects.first()
+            is_error = True
+            print("first")
+    if direction_arrow == "prev" and comment_id <= all_comments + 1:
+        comment = CommentModel.objects.filter(id__lt= comment_id).order_by("-id").first()
     else: 
         comment = CommentModel.objects.first()
         is_error = True
-    print(comment.id)
+        print("else last")
     return JsonResponse({
         "comment_id": comment.id,
         "comment": comment.comment_text,
         "comment_author": comment.author_name,
         "comment_author_city": comment.author_city,
-        "is_error": is_error
+        "is_error": is_error,
+        "all_comments": all_comments
     })
