@@ -27,6 +27,7 @@
             </div>
         </div>
         <div class = "frame-hat block">
+
             <div class = "hat">
                 <h1 class = "title-hat">Hair <span class = "grey-title-hat">Nool</span></h1>
                 <button class = "button-menu button-open-close">MENU</button>
@@ -45,6 +46,7 @@
                     </button>
             </div>
         </div>
+        
         <div class = "main-frame scroll-wrapper">
             <section class = "description-frame block scroll">
                 <div class = "frame-description-titles">
@@ -178,13 +180,13 @@
                     <h2 class = "review-hat-description">Залиш заявку або напиши мені напряму.<br>Відповім у найближчий час!</h2>
                 </div>
                 <div class = "contact-icons">
-                    <a href="" class = "url-telegram url-icon">
+                    <a href="https://web.telegram.org/k/#@hairnool" target="_blank" class = "url-telegram url-icon">
                         <img class = "url-icon" src="{% static 'main/images/icons/telegram.svg' %}" alt="">
                     </a>
-                    <a href="" class = "url-instagram url-icon">
+                    <a href="https://www.instagram.com/hairnool?igsh=MXhqejZwY3d1bWdjcw==" target="_blank" class = "url-instagram url-icon">
                         <img class = "url-icon" src="{% static 'main/images/icons/instagram.svg' %}" alt="">
                     </a>
-                    <a href="" class = "url-viber url-icon">
+                    <a href="viber://add?number=%2B380631450099" target="_blank" class = "url-viber url-icon">
                         <img class = "url-icon" src="{% static 'main/images/icons/viber.svg' %}" alt="">
                     </a>
                 </div>
@@ -221,8 +223,8 @@
                     <img class = "image-of-button-of-pay"src="{% static 'main/images/buttons/mono.svg'%}" alt="">
                 </button>
                 <form method="POST" accept-charset="utf-8" target="_blank" action="https://www.liqpay.ua/api/3/checkout">
-                    <input type="hidden" name="data" value="{{ liqpay_data}}" />
-                    <input type="hidden" name="signature" value="{{ liqpay_signature}}"/>         
+                    <input type="hidden" name="data" value="{{ data}}" />
+                    <input type="hidden" name="signature" value="{{ signature}}"/>         
                     <button class = "button-of-pay">
                         <img class = "image-of-button-of-pay"src="{% static 'main/images/buttons/privat.svg'%}" alt="">
                     </button>
@@ -416,23 +418,24 @@
                     <div class = "body-opinion">
                         <div class = "opinion">
                             <div class = "quotes">
-                                <img class = "quote" src="{% static 'main/images/buttons/green_quotes.svg'%}" alt="">
+                                <img class = "quote" src="{% static 'main/images/quotes.svg'%}" alt="">
                             </div>
                             <div class = "opinion-text">
-                                <h1 class = "opinion-review">{{ first_comment.comment_text }}</h1>
+                                <input type="hidden" id = 'commentIdPhone' value="{{ first_comment.id }}">
+                                <h1 class = "opinion-review" id = "opinionReviewPhone">{{ first_comment.comment_text }}</h1>
                             </div>
                             <div class = "quotes second-qoute">
-                                <img class = "quote" src="{% static 'main/images/buttons/green_quotes.svg'%}" alt="">
+                                <img class = "quote" src="{% static 'main/images/quotes.svg'%}" alt="">
                             </div>
                         </div>
-                        <h1 class = "opinion-name">Катерина, місто Дніпро</h1>
+                        <h1 class = "opinion-name"><span id = "commentAuthorPhone">{{ first_comment.author_name }}</span>, місто <span id = "commentAuthorCityPhone">{{ first_comment.author_city }}</span></h1>
                     </div>
                     <div class = "result-buttons">
-                        <button class = 'button-circle button-left button-prev-comment'>
+                        <button class = 'button-circle button-left button-prev-comment' id = "buttonPrevCommentPhone">
                             <img class = "button-next button-image" src="{% static 'main/images/buttons/button_circle.svg'%}" alt="">
                         </button>
-                        <button class = 'button-circle button-right-circle button-next-comment'>
-                            <img class = "button-next button-image" src="{% static 'main/images/buttons/button_circle.svg'%}" alt="">
+                        <button class = 'button-circle button-right-circle button-next-comment' id = "buttonNextCommentPhone">
+                            <img class = "button-next button-image"  src="{% static 'main/images/buttons/button_circle.svg'%}" alt="">
                         </button>
                     </div>
                 </div>
@@ -444,10 +447,10 @@
                     <h1 class = "review-hat-title">Зв'яжімося - <br>і підберемо твій колір</h1>
                     <h2 class = "review-hat-description">Залиш заявку або напиши мені напряму в <span class = "review-hat-span">instagram</span>.Відповім у найближчий час!</h2>
                     <div class = "contact-icons">
-                        <a href="" class = "url-telegram url-icon">
+                        <a href="https://web.telegram.org/k/#@hairnool" class = "url-telegram url-icon">
                             <img class = "url-icon" src="{% static 'main/images/icons/phone_telegram.svg' %}" alt="">
                         </a>
-                        <a href="" class = "url-instagram url-icon">
+                        <a href="https://www.instagram.com/hairnool?igsh=MXhqejZwY3d1bWdjcw==" class = "url-instagram url-icon">
                             <img class = "url-icon" src="{% static 'main/images/icons/phone_instagram.svg' %}" alt="">
                         </a>
                         <a href="" class = "url-viber url-icon">
@@ -502,6 +505,7 @@
     <script src = "{% static 'main/js/main.js' %}"></script>
     <script src = "{% static 'main/js/check_arrow_button.js' %}"></script>
     <script src = "{% static 'main/js/jquery-3.7.1.min.js'%}"></script>
-    <script src = "{% static 'mainc/js/check_comment.js' %}"></script>
+    <script src = "{% static 'main/js/check_comment.js' %}"></script>
+    <script src = "{% static 'main/js/check_comment_phone.js' %}"></script>
     <script src = "{% static 'form/js/mono.js'%}"></script>
 {% endblock %}

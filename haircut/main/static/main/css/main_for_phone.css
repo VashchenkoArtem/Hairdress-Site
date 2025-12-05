@@ -591,7 +591,6 @@
         padding-top: calc(2.5vw + 3vh);
         gap: calc(1vw + 2.5vh);
         padding-bottom: calc(2vw + 3vh);
-        height: 15%;
     }
     .review-hat{
         display: flex;
