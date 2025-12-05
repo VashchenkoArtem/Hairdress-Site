@@ -79,7 +79,6 @@ def getNextOrPrevComment(request):
     else: 
         comment = CommentModel.objects.first()
         is_error = True
-        print("else last")
     return JsonResponse({
         "comment_id": comment.id,
         "comment": comment.comment_text,

@@ -409,7 +409,7 @@ body{
         font-weight: 500;
     }
     .my-work{
-        font-size: calc(0.6vw + 1vh);
+        font-size: calc(1vw + 1vh);
         font-weight: 400;
         font-family: 'Inter', sans-serif;
         text-align: center;
@@ -446,6 +446,7 @@ body{
     .hat-opinion-description{
         font-size: calc(1vw + 1vh);
         font-weight: 400;
+        font-family: 'Inter', sans-serif;
         text-align: center;
     }
     .opinion-container{
@@ -458,10 +459,12 @@ body{
         border-radius: calc(1vw + 1vh);
         display: flex;
         flex-direction: column;
+        justify-content: center;
         align-items: center;
         padding: calc(1vw + 2vh) calc(1vw + 2vh) ;
         background-color: rgba(103, 111, 99, 1);
         margin: 0px calc(2vw + 2vh);
+        height: calc(15vw + 30vh);
     }
     .quotes{
         text-align: start;
@@ -690,6 +693,7 @@ body{
     .second-people-example,.first-people-example{
         width: calc(21vw + 4.5vh);
         height: calc(21vw + 4.5vh);
+        border-radius: calc(0.3vw + 1vh);
     }
     .button-right:hover,.button-left:hover{
         cursor: pointer;
