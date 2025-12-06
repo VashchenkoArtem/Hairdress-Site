@@ -8,7 +8,7 @@ const laptopDesign = document.querySelector(".design-for-laptop");
 const phoneDesign = document.querySelector(".design-for-phone");
 const modalPhone = document.querySelector(".modal-frame-phone");
 const titlePhone = document.querySelector(".title-hat-phone");
-const modalPayload = document.querySelector(".modal-payload-frame");
+const modalPayload = document.querySelector(".consultation-form");
 const modalPayloadBg = document.querySelector(".blur-payload-bg");
 const buttons = document.querySelectorAll(".button");
 

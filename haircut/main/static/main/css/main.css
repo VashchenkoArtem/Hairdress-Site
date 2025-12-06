@@ -545,6 +545,7 @@ body{
         color: rgba(93, 61, 34, 0.7);
         border: none;
         line-height: calc(2vw + 2vh);
+        overflow-y: hidden;
         background-color: rgba(255, 255, 255, 0.6);
     }
     ::placeholder{
@@ -641,43 +642,6 @@ body{
         border: none;
         box-shadow: none;
     }
-    .modal-payload-frame{
-        display: flex;
-        width: calc(13.7vw + 24.5vh);
-        height: calc(8.3vw + 15vh);
-        background-color: rgb(231, 231, 231);
-        display: flex;
-        flex-direction: column;
-        gap: calc(0.6vw + 0.9vh);
-        padding: calc(1.3vw + 2.3vh);
-        align-items: center;
-        justify-content: center;
-        border-radius: calc(0.5vw + 0.9vh);
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        margin-left: calc(1vw + 1vh);
-        transform: translate(-50%, -50%);
-        z-index: 11;
-    }
-    .method-of-pay{
-        font-size: calc(1.6vw + 2.8vh);
-        font-weight: 500;
-        color: rgb(72, 72, 72);
-    }
-    .buttons-pay{
-        display: flex;
-        gap: calc(2.4vw + 4.2vh);
-    }
-    .button-of-pay{
-        all: unset;
-    }
-    .button-of-pay:hover{
-        cursor: pointer;
-    }
-    .image-of-button-of-pay{
-        width: calc(3.4vw + 6.1vh);
-    }
     .blur-payload-bg{
         width: 100%;
         height: 100%;
@@ -705,4 +669,137 @@ body{
     a:hover{
         cursor: pointer;
     }
+    .consultation-form{
+        display: flex;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transform: translate(-50%, -50%);
+        background-color: rgba(231, 231, 231, 1);
+        z-index: 11;
+        padding: calc(1vw + 1vh) calc(1.5vw + 2vh);
+        border-radius: calc(0.5vw + 0.5vh);
+    }
+    .header-form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .header-form-title{
+        font-size: calc(2vw + 3vh);
+        color: rgba(72, 72, 72, 1);
+    }
+    .header-form-attention{
+        font-size: calc(1vw + 1.5vh);
+        font-weight: 100;
+        color: rgba(72, 72, 72, 0.79);
+    }
+    .main-form{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: calc(1vw + 1.2vh);
+        height: calc(18vw + 30vh);
+    }
+    .laptop-form-step{
+        display: flex;
+        flex-direction: column;
+        gap: calc(0.5vw + 1vh);
+    }
+    .step-title-container{
+        display: flex;
+        width: calc(10vw + 20vh);
+        justify-content: space-between;
+    }
+    .step-title{
+        font-size: calc(1vw + 1.5vh);
+        font-family: "Inter", 'sans-serif';
+        color: rgba(72, 72, 72, 1);
+    }
+    .arrow-form{
+        width: calc(1vw + 1vh);
+    }
+    .arrow-form:hover{
+        cursor: pointer;
+    }
+    .payment-buttons{
+        display: flex;
+        width: calc(10vw + 20vh);
+        justify-content: space-around;
+    }
+    .payment-button, .payment-image{
+        width: calc(2vw + 5vh) ;
+    }
+    .form-fields-and-button{
+        display: flex;
+        flex-direction: column;
+        gap: calc(0.3vw + 0.6vh);
+        align-items: center;
+    }
+    .form-fields{
+        display: flex;
+        flex-direction: column;
+        gap: calc(0.4vw + 0.8vh);
+        align-items: center;
+    }
+    .input-form{
+        width: calc(8vw + 20vh);
+        border-radius: calc(0.5vw + 0.5vh);
+        height: calc(2vw + 1.2vh);
+        border: calc(0.03vw + 0.05vh) rgba(93, 61, 34, 1) solid;
+        display: flex;
+        align-items: center;
+        line-height: calc(2vw + 1.5vh);
+    }
+    .input-form:focus{
+        border: calc(0.03vw + 0.05vh) rgba(93, 61, 34, 1) solid;
+    }
+    .button-send{
+        width: calc(8vw + 16vh);
+        height: calc(2vw + 2vh);
+        border-radius: 1234px;
+        border: none;
+        background-color: rgba(200, 184, 168, 1);
+        font-size: calc(0.9vw + 1vh);
+        color: rgba(93, 61, 34, 1);
+        font-family: "Inter", "sans-serif";
+    }
+    .photos-container{
+        width: calc(20vw + 20vh);
+        height: calc(20vw + 20vh);
+        background-color: rgba(190, 190, 190, 0.7);
+        border-radius: calc(0.5vw + 0.5vh);
+    }
+    .main-content-form{
+        display: flex;
+        gap: calc(5vw + 5vh);
+        align-items: center;
+    }
+    .apply-photo-image{
+        width: calc(1vw + 1vh);
+    }
+    .apply-photo{
+        line-height: calc(2vw + 2vh);
+        font-size: calc(0.8vw + 1vh);
+        color: rgba(93, 61, 34, 0.7);
+        font-family: "Inter", sans-serif;
+    }
+    .input-image{
+        display: flex;
+        align-items: center;
+        gap: calc(0.2vw + 0.3vh);
+        padding-left: calc(0.3vw + 0.5vh);
+        background-color: rgba(255, 255, 255, 0.6);
+    }
+    .arrow-form {
+        transition: transform 0.4s ease;
+    }
+
+    .rotate {
+        transform: rotate(180deg);
+    }
+
 }

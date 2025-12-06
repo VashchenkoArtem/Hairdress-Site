@@ -216,19 +216,50 @@
             </div>
         </div>
         <div class = "blur-payload-bg hidden"></div>
-        <div class = "modal-payload-frame hidden">
-            <h1 class = "method-of-pay">Спосіб оплати</h1>
-            <div class = "buttons-pay">
-                <button class = "button-of-pay mono-button">
-                    <img class = "image-of-button-of-pay"src="{% static 'main/images/buttons/mono.svg'%}" alt="">
-                </button>
-                <form method="POST" accept-charset="utf-8" target="_blank" action="https://www.liqpay.ua/api/3/checkout">
-                    <input type="hidden" name="data" value="{{ data}}" />
-                    <input type="hidden" name="signature" value="{{ signature}}"/>         
-                    <button class = "button-of-pay">
-                        <img class = "image-of-button-of-pay"src="{% static 'main/images/buttons/privat.svg'%}" alt="">
-                    </button>
-                </form>
+        <div class = "consultation-form hidden">
+            <div class = "header-form">
+                <h1 class = "header-form-title">Замовлення консультації</h1>
+                <h2 class = "header-form-attention">Ця послуга є платною</h2>
+            </div>
+            <div class = "main-content-form">
+                <div class = "main-form">
+                    <div class = "first-step laptop-form-step">
+                        <div class = "step-title-container">
+                            <h1 class = "step-title">1: Оплата послуги</h1>
+                            <img class = "arrow-form first-arrow rotate" src="{% static 'main/images/buttons/arrow_form.svg'%}" alt="">
+                        </div>
+                        <div class = "payment-buttons hidden">
+                            <div class = "payment-button">
+                                <img class = "payment-image" src="{% static 'main/images/buttons/mono.svg' %}" alt="">
+                            </div>
+                            <div class = "payment-button">
+                                <img class = "payment-image" src="{% static 'main/images/buttons/privat.svg' %}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class = "second-step laptop-form-step">
+                        <div class = "step-title-container">
+                            <h1 class = "step-title">2: Заповнення форми</h1>
+                            <img class = "arrow-form second-arrow rotate" src="{% static 'main/images/buttons/arrow_form.svg'%}" alt="">
+                        </div>
+                        <form class = "form-fields-and-button hidden" enctype="multipart/form-data">
+                            <div class = "form-fields">
+                                <input type="text" class = "input-form" placeholder="Ім'я та прізвище">
+                                <input type="tel" class = "input-form" placeholder="Номер телефону">
+                                <input type="email" class = "input-form" placeholder="Пошта">
+                                <input type="file" id = "idPhoto" class = "input-form hidden" accept="*/" placeholder="Прикріпити фото">
+                                <label class = "input-form input-image" for = "idPhoto">
+                                    <img class = "apply-photo-image" src="{% static 'main/images/icons/field.svg'%}" alt="">
+                                    <span class = "apply-photo">Прикріпити фото</span>
+                                </label>
+                                <textarea type="text" class = "input-form" placeholder="Побажання до підбору"></textarea>
+                            </div>
+                            <button class = "button-send">НАДІСЛАТИ</button>
+                        </form>
+                    </div>
+                </div>
+                <div class = "photos-container">
+                </div>
             </div>
         </div>
     </div>
@@ -484,21 +515,6 @@
             </div>
         </div>
         <div class = "blur-payload-bg hidden"></div>
-        <div class = "modal-payload-frame hidden">
-            <h1 class = "method-of-pay">Спосіб оплати</h1>
-            <div class = "buttons-pay">
-                <button class = "button-of-pay mono-button">
-                    <img class = "image-of-button-of-pay"src="{% static 'main/images/buttons/mono.svg'%}" alt="">
-                </button>
-                <form method="POST" accept-harset="utf-8" target="_blank" action="https://www.liqpay.ua/api/3/checkout">
-                    <input type="hidden" name="data" value="{{ liqpay_data}}" />
-                    <input type="hidden" name="signature" value="{{ liqpay_signature}}"/>         
-                    <button class = "button-of-pay">
-                        <img class = "image-of-button-of-pay"src="{% static 'main/images/buttons/privat.svg'%}" alt="">
-                    </button>
-                </form>
-            </div>
-        </div>
     </div>
 {% endblock %}
 {% block script %}
@@ -508,4 +524,5 @@
     <script src = "{% static 'main/js/check_comment.js' %}"></script>
     <script src = "{% static 'main/js/check_comment_phone.js' %}"></script>
     <script src = "{% static 'form/js/mono.js'%}"></script>
+    <script src = "{% static 'main/js/open_form.js'%}"></script>
 {% endblock %}
