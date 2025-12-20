@@ -8,7 +8,6 @@ const secondPeoplePhone = document.querySelector(".second-people-example-phone")
 const firstPeoplePhone = document.querySelector(".first-people-example-phone");
 
 buttonRight.addEventListener('click', () => {
-    console.log("right click")
     if (firstPhoto.src.includes("people_example3")) {
         firstPhoto.src = "static/main/images/people_example/people_example_first.JPG";
         secondPhoto.src = "static/main/images/people_example/people_example_second1.JPG";
@@ -16,6 +15,21 @@ buttonRight.addEventListener('click', () => {
         firstPhoto.src = "static/main/images/people_example/people_example_third.jpg";
         secondPhoto.src = "static/main/images/people_example/people_example_fourth.jpg";
     }else if(firstPhoto.src.includes("people_example_third")){
+        firstPhoto.src = "static/main/images/people_example/people_example_fifth.jpg"
+        secondPhoto.src = "static/main/images/people_example/people_example_sixth.jpg"
+    }else if(firstPhoto.src.includes("people_example_fifth")){
+        firstPhoto.src = "static/main/images/people_example/people_example_seventh.jpg"
+        secondPhoto.src = "static/main/images/people_example/people_example_eight.jpg"
+    }else if (firstPhoto.src.includes("people_example_seventh")){
+        firstPhoto.src = "static/main/images/people_example/people_example_nine.jpg"
+        secondPhoto.src = "static/main/images/people_example/people_example_ten.jpg"
+    }else if (firstPhoto.src.includes("people_example_nine")){
+        firstPhoto.src = "static/main/images/people_example/people_example_eleven.jpg"
+        secondPhoto.src = "static/main/images/people_example/people_example_twelve.jpg"
+    }else if (firstPhoto.src.includes("people_example_eleven")){
+        firstPhoto.src = "static/main/images/people_example/people_example_thirteen.JPG"
+        secondPhoto.src = "static/main/images/people_example/people_example_fourteen.JPG"
+    }else if(firstPhoto.src.includes("people_example_thirteen")){
         firstPhoto.src = "static/main/images/people_example/people_example3.png";
         secondPhoto.src = "static/main/images/people_example/people_example4.png";
     }
