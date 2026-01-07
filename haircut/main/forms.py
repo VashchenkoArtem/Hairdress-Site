@@ -2,16 +2,16 @@ from django import forms
 
 class ReviewForm(forms.Form):
     name = forms.CharField(label = "",max_length=256, widget = forms.Textarea(attrs={
-        "class": "input-form",
+        "class": "input-form-laptop",
         "placeholder": "Ім'я та прізвище"
     }))
     phone_number = forms.CharField(label = "",widget = forms.Textarea(attrs={
-        "class": "input-form",
+        "class": "input-form-laptop",
         "type": "tel",
         "placeholder": "Номер телефону"
     }))
     email = forms.EmailField(label = "", widget = forms.EmailInput(attrs={
-        "class": "input-form",
+        "class": "input-form-laptop",
         "type": "email",
         "placeholder": "Пошта"
     }))

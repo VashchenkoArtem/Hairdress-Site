@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from main.views import MainPageView, create_invoice, getNextOrPrevComment, FormPageView, PayView, PayCallbackView
+from main.views import*
 
 
 urlpatterns = [
@@ -26,5 +26,5 @@ urlpatterns = [
     path('get-comment/', getNextOrPrevComment),
     path('payload-form/', FormPageView.as_view()),
     path("pay/", PayView.as_view(), name='pay_view'),
-    path("pay-callback", PayCallbackView.as_view(), name='pay_callback'),
+    path("pay-callback/",  liqpay_callback, name="liqpay_callback"),
 ]

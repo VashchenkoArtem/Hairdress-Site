@@ -1,3 +1,5 @@
+import base64
+import hashlib
 from django.http import JsonResponse
 from django.views.generic import FormView
 from .forms import ReviewForm
@@ -34,8 +36,9 @@ class MainPageView(FormView):
             'description': 'Payment for clothes',
             'order_id': str(uuid.uuid4()),
             'version': '3',
-            'sandbox': 0, # sandbox mode, set to 1 to enable it
-            'server_url': 'https://latonia-unvigorous-eula.ngrok-free.dev',
+            'sandbox': 1, # sandbox mode, set to 1 to enable it
+            'server_url': 'http://127.0.0.1:8000/pay-callback/',
+            'result_url': "http://127.0.0.1:8000/"
         }
         signature = liqpay.cnb_signature(params)
         data = liqpay.cnb_data(params)
@@ -44,7 +47,28 @@ class MainPageView(FormView):
         context["first_comment"] = CommentModel.objects.first()
         return context
 
-    
+@csrf_exempt
+def liqpay_callback(request):
+    data = request.POST.get("data")
+    signature = request.POST.get("signature")
+
+    expected_signature = base64.b64encode(
+        hashlib.sha1(
+            (private_key + data + private_key).encode()
+        ).digest()
+    ).decode()
+
+    if signature != expected_signature:
+        return HttpResponse("Invalid signature", status=400)
+
+    decoded_data = json.loads(base64.b64decode(data).decode())
+
+    if decoded_data.get("status") == "success":
+        order_id = decoded_data.get("order_id")
+        print("create")
+
+    return HttpResponse("OK")
+
 def create_invoice(request):
     url = "https://api.monobank.ua/api/merchant/invoice/create"
     headers = {
@@ -63,9 +87,6 @@ def create_invoice(request):
     response = requests.post(url, headers=headers, json=data)
     return JsonResponse(response.json())
 
-@csrf_exempt
-def webhook_for_mono(request):
-    payload = json.loads(request.body)
 
 def getNextOrPrevComment(request):
     comment_id = int(request.GET.get('id'))
@@ -97,16 +118,3 @@ class PayView(TemplateView):
 
 
 
-@method_decorator(csrf_exempt, name='dispatch')
-class PayCallbackView(View):
-    def post(self, request, *args, **kwargs):
-
-        liqpay = LiqPay('sandbox_i29360937099', 'sandbox_Azuio98ChlKkvhbefL03rOaxFBMytQ8d2m3t8Fvq')
-        data = request.POST.get('data')
-        signature = request.POST.get('signature')
-        sign = liqpay.str_to_sign('sandbox_Azuio98ChlKkvhbefL03rOaxFBMytQ8d2m3t8Fvq' + data + 'sandbox_Azuio98ChlKkvhbefL03rOaxFBMytQ8d2m3t8Fvq')
-        if sign == signature:
-            print('callback is valid')
-        response = liqpay.decode_data_from_str(data)
-        print('callback data', response)
-        return HttpResponse()

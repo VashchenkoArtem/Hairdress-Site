@@ -534,7 +534,7 @@ body{
         font-weight: 400;
         font-family: 'Inter', sans-serif;
     }
-    textarea,input{
+    textarea,input,.input-form-laptop{
         resize: none;
         height: calc(2vw + 2vh);
         width: calc(37vw + 20vh);
@@ -722,9 +722,6 @@ body{
     .arrow-form{
         width: calc(1vw + 1vh);
     }
-    .arrow-form:hover{
-        cursor: pointer;
-    }
     .payment-buttons{
         display: flex;
         width: calc(10vw + 20vh);
@@ -800,5 +797,19 @@ body{
 
     .rotate {
         transform: rotate(180deg);
+    }
+    .button-of-pay:hover{
+        cursor: pointer;
+    }
+    .second-step{
+        position: absolute;
+        top: calc(20vw + 15vh);
+    }
+    .button-send-modal-form{
+        position: absolute;
+        top: calc(23vw + 27vh);
+    }
+    .liqpay-button{
+        all: unset;
     }
 }
