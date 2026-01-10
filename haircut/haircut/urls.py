@@ -17,8 +17,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from main.views import*
-
-
+from django.conf.urls.static import static
+from .settings import MEDIA_URL, MEDIA_ROOT
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', MainPageView.as_view()),
@@ -27,4 +27,5 @@ urlpatterns = [
     path('payload-form/', FormPageView.as_view()),
     path("pay/", PayView.as_view(), name='pay_view'),
     path("pay-callback/",  liqpay_callback, name="liqpay_callback"),
-]
+    path("create-order/", create_order)
+] + static(MEDIA_URL, document_root=MEDIA_ROOT)

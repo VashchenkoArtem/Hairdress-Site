@@ -1,6 +1,6 @@
 import base64
 import hashlib
-from django.http import JsonResponse
+from django.http import HttpRequest, JsonResponse
 from django.views.generic import FormView
 from .forms import ReviewForm
 import requests
@@ -10,11 +10,12 @@ from django.http import HttpResponse
 import os
 from dotenv import load_dotenv
 from liqpay import LiqPay
-from .models import CommentModel
+from .models import CommentModel, OrderModel, PhotosModel
 from django.views.generic import TemplateView, View
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 import uuid
 from django.utils.decorators import method_decorator
+
 
 load_dotenv(dotenv_path=os.path.join(os.path.dirname(__file__), '..', '.env'))
 public_key = os.getenv("LIQPAY_PUBLIC_KEY")
@@ -25,7 +26,6 @@ mono_token = os.getenv("MONO_TOKEN")
 class MainPageView(FormView):
     template_name = "main/main.html"
     form_class = ReviewForm
-
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         liqpay = LiqPay('sandbox_i29360937099', 'sandbox_Azuio98ChlKkvhbefL03rOaxFBMytQ8d2m3t8Fvq')
@@ -36,9 +36,9 @@ class MainPageView(FormView):
             'description': 'Payment for clothes',
             'order_id': str(uuid.uuid4()),
             'version': '3',
-            'sandbox': 1, # sandbox mode, set to 1 to enable it
-            'server_url': 'http://127.0.0.1:8000/pay-callback/',
-            'result_url': "http://127.0.0.1:8000/"
+            'sandbox': 1,
+            'server_url': 'https://latonia-unvigorous-eula.ngrok-free.dev/pay-callback/',
+            'result_url': "https://latonia-unvigorous-eula.ngrok-free.dev/?status=success"
         }
         signature = liqpay.cnb_signature(params)
         data = liqpay.cnb_data(params)
@@ -46,12 +46,21 @@ class MainPageView(FormView):
         context['signature'] = signature
         context["first_comment"] = CommentModel.objects.first()
         return context
+    def get(self, request, *args, **kwargs):
+        response = super().get(request, *args, **kwargs)
+        order_id = request.COOKIES.get("order_id")
+        if order_id:
+            order = OrderModel.objects.get(id = order_id)
+            order.isPayload = True
+            order.save() 
+            response.delete_cookie("order_id")
+        return super().get(request, *args, **kwargs)
+        
 
 @csrf_exempt
 def liqpay_callback(request):
     data = request.POST.get("data")
     signature = request.POST.get("signature")
-
     expected_signature = base64.b64encode(
         hashlib.sha1(
             (private_key + data + private_key).encode()
@@ -60,14 +69,18 @@ def liqpay_callback(request):
 
     if signature != expected_signature:
         return HttpResponse("Invalid signature", status=400)
-
+    response = HttpResponse("OK")
     decoded_data = json.loads(base64.b64decode(data).decode())
+    # if decoded_data.get("status") == "success" or decoded_data.get("status") == "sandbox":
+    #     order_id = request.COOKIES.get("order_id")
+    #     print(order_id)
+    
+    return response
 
-    if decoded_data.get("status") == "success":
-        order_id = decoded_data.get("order_id")
-        print("create")
-
-    return HttpResponse("OK")
+def get_cookie(request: HttpRequest):
+    return JsonResponse({
+        "order_id": request.COOKIES.get("order_id")
+    })
 
 def create_invoice(request):
     url = "https://api.monobank.ua/api/merchant/invoice/create"
@@ -117,4 +130,38 @@ class PayView(TemplateView):
     template_name = 'billing/pay.html'
 
 
+@csrf_exempt
+def create_order(request):
+    origin = "http://127.0.0.1:8000"
 
+    if request.method == "OPTIONS":
+        response = HttpResponse()
+        response["Access-Control-Allow-Origin"] = origin
+        response["Access-Control-Allow-Methods"] = "POST, OPTIONS"
+        response["Access-Control-Allow-Headers"] = "Content-Type, X-CSRFToken"
+        response["Access-Control-Allow-Credentials"] = "true"
+        return response
+
+    if request.method != "POST":
+        response = JsonResponse({"error": "POST only"}, status=405)
+        response["Access-Control-Allow-Origin"] = origin
+        response["Access-Control-Allow-Credentials"] = "true"
+        return response
+
+    name = request.POST.get("name")
+    email = request.POST.get("email")
+    phone = request.POST.get("phone")
+    wish = request.POST.get("wish")
+    photos = request.FILES.getlist("photos")
+
+    order = OrderModel.objects.create(
+        username=name, email=email, phone_number=phone, wish=wish
+    )
+    for photo in photos:
+        PhotosModel.objects.create(order=order, file=photo)
+
+    response = JsonResponse({"orderId": order.id})
+    response["Access-Control-Allow-Origin"] = origin
+    response["Access-Control-Allow-Credentials"] = "true"
+
+    return response
