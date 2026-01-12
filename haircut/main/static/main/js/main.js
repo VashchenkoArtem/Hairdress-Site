@@ -11,7 +11,7 @@ const titlePhone = document.querySelector(".title-hat-phone");
 const modalPayload = document.querySelector(".consultation-form");
 const modalPayloadBg = document.querySelector(".blur-payload-bg");
 const buttons = document.querySelectorAll(".button");
-
+const successModal = document.querySelector(".modal-success")
 
 if (screenWidth < 768){
     phoneDesign.classList.remove("hidden");
@@ -52,8 +52,9 @@ buttons.forEach((button)=>{
     })
 })
 modalPayloadBg.addEventListener("click", ()=>{
-    modalPayload.classList.toggle("hidden");
-    modalPayloadBg.classList.toggle("hidden");
+    modalPayload.classList.add("hidden");
+    successModal.classList.add("hidden")
+    modalPayloadBg.classList.add("hidden");
 })
 
 
@@ -147,3 +148,8 @@ window.addEventListener("touchend", (e) => {
         goToBlockPhone(currentIndexPhone);
     }
 });
+
+if (document.cookie.includes("order_id")){
+    modalPayloadBg.classList.remove("hidden")
+    document.cookie = "order_id=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+}

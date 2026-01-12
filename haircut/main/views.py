@@ -15,6 +15,7 @@ from django.views.generic import TemplateView, View
 from django.shortcuts import redirect, render
 import uuid
 from django.utils.decorators import method_decorator
+from django.core.mail import send_mail
 
 
 load_dotenv(dotenv_path=os.path.join(os.path.dirname(__file__), '..', '.env'))
@@ -42,6 +43,8 @@ class MainPageView(FormView):
         }
         signature = liqpay.cnb_signature(params)
         data = liqpay.cnb_data(params)
+        if self.request.COOKIES.get("order_id"):
+            context['order'] = OrderModel.objects.get(id = self.request.COOKIES.get("order_id"))
         context['data'] = data
         context['signature'] = signature
         context["first_comment"] = CommentModel.objects.first()
@@ -71,16 +74,15 @@ def liqpay_callback(request):
         return HttpResponse("Invalid signature", status=400)
     response = HttpResponse("OK")
     decoded_data = json.loads(base64.b64decode(data).decode())
-    # if decoded_data.get("status") == "success" or decoded_data.get("status") == "sandbox":
-    #     order_id = request.COOKIES.get("order_id")
-    #     print(order_id)
+    send_mail(
+        subject = 
+        message = 
+        from_email = 
+        recipient_list = 
+        fail_silently =
+        )
     
     return response
-
-def get_cookie(request: HttpRequest):
-    return JsonResponse({
-        "order_id": request.COOKIES.get("order_id")
-    })
 
 def create_invoice(request):
     url = "https://api.monobank.ua/api/merchant/invoice/create"

@@ -14,10 +14,11 @@
                         <img class = "arrow-form second-arrow" src="{% static 'main/images/buttons/arrow_form.svg'%}" alt="">
                     </div>
                         <div class = "form-fields">
-                            <input type="text" class = "input-form modal-name input-modal-form" placeholder="Ім'я та прізвище" name = "name" required>
-                            <input type="tel" class = "input-form modal-phone input-modal-form" placeholder="Номер телефону" name = "phone" required>
-                            <input type="email" class = "input-form modal-email input-modal-form" placeholder="Пошта" name = "email" required>
-                            <input type="file" id = "idPhoto" class = "input-form modal-photos input-modal-form hidden" name = "photos" accept="*/" placeholder="Прикріпити фото" required>
+                            <input type="text" value = "{{ order.username }}" class = "input-form modal-name input-modal-form" placeholder="Ім'я та прізвище" name = "name" required>
+                            <input type="tel" value = "{{ order.phone_number }}" class = "input-form modal-phone input-modal-form" placeholder="Номер телефону" name = "phone" required>
+                            <input type="email" value = "{{ order.email }}" class = "input-form modal-email input-modal-form" placeholder="Пошта" name = "email" required>
+                            <input type="file" value = "{{ order.wish }}" id="idPhoto" class="input-form modal-photos input-modal-form hidden" name="photos" accept="image/*" multiple required
+                                >
                             <label class = "input-form input-image" for = "idPhoto">
                                 <img class = "apply-photo-image" src="{% static 'main/images/icons/field.svg'%}" alt="">
                                 <span class = "apply-photo">Прикріпити фото</span>
@@ -45,9 +46,19 @@
                     </form>
                 </div>
             </div>
-
         </div>
         <div class = "photos-container">
+            {% if order %}
+                {% for photo in order.files %}
+                    <img src="{{ photo }}" alt="">
+                {% endfor %}
+            {% endif %}
         </div>
     </div>
 </div>
+{% if order %}
+    <div class = "modal-success">
+        <h1 class = "modal-success-title">Дякуємо за замовлення!<br> Лист успішно надіслано на пошту мастеру!</h1>
+        <h2 class = "modal-success-description">*Вам також надіслано копію листа на вашу пошту</h2>
+    </div>
+{% endif %}
