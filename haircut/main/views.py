@@ -15,8 +15,8 @@ from django.views.generic import TemplateView, View
 from django.shortcuts import redirect, render
 import uuid
 from django.utils.decorators import method_decorator
-from django.core.mail import send_mail
-
+from django.core.mail import EmailMessage, EmailMultiAlternatives
+from django.template.loader import render_to_string
 
 load_dotenv(dotenv_path=os.path.join(os.path.dirname(__file__), '..', '.env'))
 public_key = os.getenv("LIQPAY_PUBLIC_KEY")
@@ -52,13 +52,43 @@ class MainPageView(FormView):
     def get(self, request, *args, **kwargs):
         response = super().get(request, *args, **kwargs)
         order_id = request.COOKIES.get("order_id")
+
+
         if order_id:
-            order = OrderModel.objects.get(id = order_id)
+            order = OrderModel.objects.get(id=order_id)
             order.isPayload = True
-            order.save() 
+            order.save()
+
+            photos = PhotosModel.objects.filter(order_id=order_id)
+            subject = f"Нове замовлення від {order.username}!"
+            text_content = (
+                f"Користувач {order.username} замовив консультацію.\n\n"
+                f"Контактні дані користувача:\n"
+                f"Номер телефону: {order.phone_number}\n"
+                f"Електронна пошта: {order.email}\n"
+                f"Побажання: {order.wish}"
+            )
+            html_content = render_to_string(
+                "main/email/email.html",
+                {
+                    "order": order
+                }
+            )
+            email = EmailMultiAlternatives(
+                subject=subject,
+                body=text_content, 
+                from_email="qrprojectdjangoteam2@gmail.com",
+                to=[order.email],
+            )
+            email.attach_alternative(html_content, "text/html")
+            for photo in photos:
+                email.attach_file(photo.file.path)
+            email.send(fail_silently=False)
             response.delete_cookie("order_id")
+
         return super().get(request, *args, **kwargs)
-        
+
+                
 
 @csrf_exempt
 def liqpay_callback(request):
@@ -74,14 +104,6 @@ def liqpay_callback(request):
         return HttpResponse("Invalid signature", status=400)
     response = HttpResponse("OK")
     decoded_data = json.loads(base64.b64decode(data).decode())
-    send_mail(
-        subject = 
-        message = 
-        from_email = 
-        recipient_list = 
-        fail_silently =
-        )
-    
     return response
 
 def create_invoice(request):
