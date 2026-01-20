@@ -459,7 +459,6 @@ body{
         border-radius: calc(1vw + 1vh);
         display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
         padding: calc(1vw + 2vh) calc(1vw + 2vh) ;
         background-color: rgba(103, 111, 99, 1);

@@ -151,5 +151,5 @@ window.addEventListener("touchend", (e) => {
 
 if (document.cookie.includes("order_id")){
     modalPayloadBg.classList.remove("hidden")
-    document.cookie = "order_id=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    document.cookie = "order_uuid=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
 }
