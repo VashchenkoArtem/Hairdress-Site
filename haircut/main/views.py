@@ -12,10 +12,10 @@ from dotenv import load_dotenv
 from liqpay import LiqPay
 from .models import CommentModel, OrderModel, PhotosModel
 from django.views.generic import TemplateView, View
-from django.shortcuts import redirect, render
-import uuid
 from django.core.mail import EmailMessage, EmailMultiAlternatives
 from django.template.loader import render_to_string
+
+
 load_dotenv(dotenv_path=os.path.join(os.path.dirname(__file__), '..', '.env'))
 public_key = os.getenv("LIQPAY_PUBLIC_KEY")
 private_key = os.getenv("LIQPAY_PRIVATE_KEY")
@@ -28,41 +28,8 @@ class MainPageView(FormView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-
-        order_uuid = self.request.COOKIES.get("order_uuid")
-        if order_uuid:
-            order = OrderModel.objects.get(uuid=order_uuid)
-        else:
-            order = OrderModel.objects.create(username="", email="")
-            order_uuid = str(order.uuid)
-        
-        order_id_for_liqpay = order_uuid.replace("-", "")
-
-        liqpay = LiqPay('sandbox_i29360937099', 'sandbox_Azuio98ChlKkvhbefL03rOaxFBMytQ8d2m3t8Fvq')
-        params = {
-            'action': 'pay',
-            'amount': '100',
-            'currency': 'USD',
-            'description': 'Payment for clothes',
-            'order_id': order_id_for_liqpay,
-            'version': '3',
-            'sandbox': 1,
-            'server_url': 'https://latonia-unvigorous-eula.ngrok-free.dev/pay-callback/',
-            'result_url': "https://latonia-unvigorous-eula.ngrok-free.dev/"
-        }
-
-        signature = liqpay.cnb_signature(params)
-        data = liqpay.cnb_data(params)
-        context['order'] = order
-        context['data'] = data
-        context['signature'] = signature
         context["first_comment"] = CommentModel.objects.first()
         return context
-    def get(self, request, *args, **kwargs):
-        response = super().get(request, *args, **kwargs)
-        if 'order' in self.get_context_data():
-            response.set_cookie("order_uuid", self.get_context_data()['order'].uuid, max_age=3600, httponly=True)
-        return response
 
 
                 
@@ -84,6 +51,7 @@ def liqpay_callback(request):
     response = HttpResponse("OK")
     decoded_data = json.loads(base64.b64decode(data).decode())
     order_uuid = decoded_data.get("order_id")
+    print(order_uuid)
     status = decoded_data.get("status")
     try:
         order = OrderModel.objects.get(uuid=order_uuid)
@@ -111,12 +79,13 @@ def liqpay_callback(request):
             subject=subject,
             body=text_content, 
             from_email="qrprojectdjangoteam2@gmail.com",
-            to=[order.email],
+            to=["artemvaschenko83@gmail.com", order.email],
         )
         email.attach_alternative(html_content, "text/html")
         for photo in photos:
             email.attach_file(photo.file.path)
         email.send(fail_silently=False)
+        print("email sent")
     return response
 
 
@@ -197,9 +166,24 @@ def create_order(request):
     )
     for photo in photos:
         PhotosModel.objects.create(order=order, file=photo)
+    liqpay = LiqPay('sandbox_i29360937099', 'sandbox_Azuio98ChlKkvhbefL03rOaxFBMytQ8d2m3t8Fvq')
+    params = {
+        'action': 'pay',
+        'amount': '100',
+        'currency': 'USD',
+        'description': 'Payment for clothes',
+        'order_id': str(order.uuid),
+        'version': '3',
+        'sandbox': 1,
+        'server_url': 'https://latonia-unvigorous-eula.ngrok-free.dev/pay-callback/',
+        'result_url': "https://latonia-unvigorous-eula.ngrok-free.dev/"
+    }
     response = JsonResponse({
         "status": "success",
-        "order_uuid": str(order.uuid)
+        "order_uuid": str(order.uuid),
+        "liqpay": {
+            "data": liqpay.cnb_data(params),
+            "signature": liqpay.cnb_signature(params),
+        }
     })
-    response.set_cookie("order_uuid", order.uuid, max_age = 3600, httponly = True)
     return response

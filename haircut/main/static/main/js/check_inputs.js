@@ -23,8 +23,6 @@ inputs.forEach((input) => {
         const inputPhotos = document.querySelector(".modal-photos").files;
 
         if (inputName && inputPhone && inputEmail && inputPhotos.length > 0) {
-            payloadStep.classList.remove("hidden");
-
             const formData = new FormData();
             formData.append("name", inputName);
             formData.append("email", inputEmail);
@@ -46,7 +44,10 @@ inputs.forEach((input) => {
                 }
             );
             const result = await response.json()
-            document.cookie = `order_id=${result.orderId};path=/`
+            document.getElementById("liqpayData").value = result.liqpay.data
+            document.getElementById("liqpaySignature").value = result.liqpay.signature
+            document.cookie = `order_uuid=${result.order_uuid};path=/`
+            payloadStep.classList.remove("hidden");
         }
     });
 });
