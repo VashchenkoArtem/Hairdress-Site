@@ -688,7 +688,7 @@ body{
         align-items: center;
     }
     .header-form-title{
-        font-size: calc(2vw + 3vh);
+        font-size: calc(1.5vw + 2vh);
         color: rgba(72, 72, 72, 1);
     }
     .header-form-attention{
@@ -766,7 +766,7 @@ body{
     .photos-container{
         display: flex;
         flex-wrap: wrap;
-        height: fit-content;
+        height: calc(20vw + 20vh);
         width: calc(20vw + 20vh);
         max-height: calc(20vw + 20vh);
         background-color: rgba(190, 190, 190, 0.7);
@@ -844,5 +844,16 @@ body{
         font-size: calc(1vw + 1vh);
         font-weight: 100;
         color: rgba(72, 72, 72, 0.79);
+    }
+    .header-form-reason{
+        color: rgba(104, 104, 104, 0.633);
+        font-size: calc(1vw + 1vh);
+        text-decoration: underline;
+    }
+    .header-form-attention{
+        display: flex;
+        align-items: center;
+        gap: calc(0.5vw + 0.6vh);
+
     }
 }
