@@ -48,6 +48,9 @@ inputs.forEach((input) => {
             document.getElementById("liqpaySignature").value = result.liqpay.signature
             document.cookie = `order_uuid=${result.order_uuid};path=/`
             payloadStep.classList.remove("hidden");
+            document.querySelector(".mono-button").addEventListener("click", () => {
+                window.location.href = result.mono.payment_url
+            })
         }
     });
 });

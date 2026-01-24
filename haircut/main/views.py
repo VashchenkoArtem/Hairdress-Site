@@ -89,24 +89,50 @@ def liqpay_callback(request):
     return response
 
 
-def create_invoice(request):
-    url = "https://api.monobank.ua/api/merchant/invoice/create"
-    headers = {
-        "X-Token": os.getenv("MONO_TOKEN"),
-        "Content-Type": "application/json"
-    }
-    data = {
-        "amount": 5000,
-        "ccy": 980,
-        "merchantPaymInfo": {
-            "reference": "ORDER-12345",
-            "destination": "Оплата замовлення",
-            "comment": "Оплата консультації"
-        }
-    }
-    response = requests.post(url, headers=headers, json=data)
-    return JsonResponse(response.json())
+@csrf_exempt
+def mono_callback(request):
+    data = json.loads(request.body)
 
+    invoice_id = data.get("invoiceId")
+    status = data.get("status")
+
+    try:
+        order = OrderModel.objects.get(mono_invoice_id=invoice_id)
+    except OrderModel.DoesNotExist:
+        return HttpResponse("Order not found", status=404)
+
+    if status == "success":
+        order.status = "paid"
+        order.save()
+    photos = PhotosModel.objects.filter(order_id=order.id)
+    subject = f"Нове замовлення від {order.username}!"
+    text_content = (
+        f"Користувач {order.username} замовив консультацію.\n\n"
+        f"Контактні дані користувача:\n"
+        f"Номер телефону: {order.phone_number}\n"
+        f"Електронна пошта: {order.email}\n"
+        f"Побажання: {order.wish}"
+    )
+    html_content = render_to_string(
+        "main/email/email.html",
+        {
+            "order": order
+        }
+    )
+    email = EmailMultiAlternatives(
+        subject=subject,
+        body=text_content, 
+        from_email="qrprojectdjangoteam2@gmail.com",
+        to=["artemvaschenko83@gmail.com", order.email],
+    )
+    email.attach_alternative(html_content, "text/html")
+    for photo in photos:
+        email.attach_file(photo.file.path)
+    email.send(fail_silently=False)
+    print("email sent")
+    print("success mono callback")
+
+    return HttpResponse("OK")
 
 def getNextOrPrevComment(request):
     comment_id = int(request.GET.get('id'))
@@ -136,6 +162,28 @@ class FormPageView(FormView):
 class PayView(TemplateView):
     template_name = 'billing/pay.html'
 
+def create_mono_invoice(order):
+    url = "https://api.monobank.ua/api/merchant/invoice/create"
+
+    headers = {
+        "X-Token": mono_token,
+        "Content-Type": "application/json"
+    }
+
+    payload = {
+        "amount": 10000,
+        "ccy": 980,
+        "merchantPaymInfo": {
+            "reference": str(order.uuid),
+            "destination": "Оплата консультації",
+            "comment": f"Замовлення {order.uuid}"
+        },
+        "redirectUrl": "https://latonia-unvigorous-eula.ngrok-free.dev/",
+        "webHookUrl": "https://latonia-unvigorous-eula.ngrok-free.dev/pay-callback-mono/"
+    }
+
+    response = requests.post(url, headers=headers, json=payload)
+    return response.json()
 
 @csrf_exempt
 def create_order(request):
@@ -178,9 +226,16 @@ def create_order(request):
         'server_url': 'https://latonia-unvigorous-eula.ngrok-free.dev/pay-callback/',
         'result_url': "https://latonia-unvigorous-eula.ngrok-free.dev/"
     }
+    # Mono
+    mono_response = create_mono_invoice(order)
+    order.mono_invoice_id = mono_response["invoiceId"]
+    order.save()
     response = JsonResponse({
         "status": "success",
         "order_uuid": str(order.uuid),
+        "mono": {
+            "payment_url": mono_response["pageUrl"]
+        },
         "liqpay": {
             "data": liqpay.cnb_data(params),
             "signature": liqpay.cnb_signature(params),

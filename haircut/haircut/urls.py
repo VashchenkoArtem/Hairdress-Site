@@ -22,10 +22,10 @@ from .settings import MEDIA_URL, MEDIA_ROOT
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', MainPageView.as_view()),
-    path('create-invoice/', create_invoice),
     path('get-comment/', getNextOrPrevComment),
     path('payload-form/', FormPageView.as_view()),
     path("pay/", PayView.as_view(), name='pay_view'),
     path("pay-callback/",  liqpay_callback, name="liqpay_callback"),
+    path("pay-callback-mono/", mono_callback, name="callback_mono"),
     path("create-order/", create_order)
 ] + static(MEDIA_URL, document_root=MEDIA_ROOT)

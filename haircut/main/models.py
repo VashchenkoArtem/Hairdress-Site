@@ -18,6 +18,7 @@ class OrderModel(models.Model):
         ('Canceled', 'Скасовано'),
     )
     uuid = models.UUIDField(default=uuid.uuid4, editable=False)
+    mono_invoice_id = models.CharField(max_length=64, blank=True, null=True)
     username = models.CharField(max_length = 256, null = True)
     phone_number = models.CharField(null = True, default="+380")
     email = models.EmailField(null=True)
