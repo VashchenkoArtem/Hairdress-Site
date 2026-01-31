@@ -13,6 +13,7 @@ const modalPayloadBg = document.querySelector(".blur-payload-bg");
 const buttons = document.querySelectorAll(".button");
 const successModal = document.querySelector(".modal-success")
 
+
 if (screenWidth < 768){
     phoneDesign.classList.remove("hidden");
     laptopDesign.classList.add("hidden");

@@ -1,0 +1,42 @@
+{% load static %}
+
+<div class = "review">
+    <div class="review-hat">
+        <h1 class = "review-hat-title">Зв'яжімося - <br>і підберемо твій колір</h1>
+        <h2 class = "review-hat-description">Залиш заявку або напиши мені напряму в <span class = "review-hat-span">instagram</span>.Відповім у найближчий час!</h2>
+        <div class = "contact-icons">
+            <a href="https://web.telegram.org/k/#@hairnool" class = "url-telegram url-icon">
+                <img class = "url-icon" src="{% static 'main/images/icons/phone_telegram.svg' %}" alt="">
+            </a>
+            <a href="https://www.instagram.com/hairnool?igsh=MXhqejZwY3d1bWdjcw==" class = "url-instagram url-icon">
+                <img class = "url-icon" src="{% static 'main/images/icons/phone_instagram.svg' %}" alt="">
+            </a>
+            <a href="" class = "url-viber url-icon">
+                <img class = "url-icon" src="{% static 'main/images/icons/phone_viber.svg' %}" alt="">
+            </a>
+        </div>
+    </div>
+    <form action="">
+        <div class = "review-form">
+            {% for field in form %}
+            {% if field.field.widget.input_type == "file" %}
+            <label for="id_photo" class = "field-image">
+                <img class = "icon-field" src="{% static 'main/images/icons/field.svg'%}" alt="">
+                <h1 class = "title-field">Прикріпити фото</h1>
+            </label>    
+            <input type="file" id="id_photo"  accept="image/*" hidden>
+            {% else %}
+            {{ field }}
+            {% endif %}
+            {% endfor %}
+        </div>
+    </form>
+    <div class = "buttons">
+        <button class = "white-button">
+            НАДІСЛАТИ
+        </button>
+        <button class = "button button-next-image"> 
+            <img class = "button-image" src="{% static 'main/images/buttons/white_button.svg' %}" alt="">
+        </button>
+    </div>
+</div>

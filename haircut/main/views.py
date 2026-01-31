@@ -178,8 +178,8 @@ def create_mono_invoice(order):
             "destination": "Оплата консультації",
             "comment": f"Замовлення {order.uuid}"
         },
-        "redirectUrl": "https://latonia-unvigorous-eula.ngrok-free.dev/",
-        "webHookUrl": "https://latonia-unvigorous-eula.ngrok-free.dev/pay-callback-mono/"
+        "redirectUrl": "https://yu-unabiding-vampishly.ngrok-free.dev/",
+        "webHookUrl": "https://yu-unabiding-vampishly.ngrok-free.dev/pay-callback-mono/"
     }
 
     response = requests.post(url, headers=headers, json=payload)
@@ -223,8 +223,8 @@ def create_order(request):
         'order_id': str(order.uuid),
         'version': '3',
         'sandbox': 1,
-        'server_url': 'https://latonia-unvigorous-eula.ngrok-free.dev/pay-callback/',
-        'result_url': "https://latonia-unvigorous-eula.ngrok-free.dev/"
+        'server_url': 'https://yu-unabiding-vampishly.ngrok-free.dev/pay-callback/',
+        'result_url': "https://yu-unabiding-vampishly.ngrok-free.dev/"
     }
     # Mono
     mono_response = create_mono_invoice(order)
