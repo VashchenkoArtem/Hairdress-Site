@@ -24,20 +24,18 @@ inputs.forEach((input) => {
         const inputEmail = document.querySelector(".modal-email").value.trim();
         const inputWish = document.querySelector(".modal-wish").value.trim();
         const inputPhotos = document.querySelector(".modal-photos").files;
-
+        
         if (inputName && inputPhone && inputEmail && inputPhotos.length > 0) {
             const formData = new FormData();
             formData.append("name", inputName);
             formData.append("email", inputEmail);
             formData.append("phone", inputPhone);
             formData.append("wish", inputWish);
-
             for (let i = 0; i < inputPhotos.length; i++) {
                 formData.append("photos", inputPhotos[i]);
             }
-
             const response = await fetch(
-                "https://yu-unabiding-vampishly.ngrok-free.dev/create-order/",
+                "https://latonia-unvigorous-eula.ngrok-free.dev/create-order/",
                 {
                     method: "POST",
                     headers: {
@@ -78,7 +76,7 @@ inputsPhone.forEach((input) => {
             }
 
             const response = await fetch(
-                "https://yu-unabiding-vampishly.ngrok-free.dev/create-order/",
+                "https://latonia-unvigorous-eula.ngrok-free.dev/create-order/",
                 {
                     method: "POST",
                     headers: {

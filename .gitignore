@@ -276,4 +276,3 @@ pyvenv.cfg
 pip-selfcheck.json
 
 # End of https://www.toptal.com/developers/gitignore/api/django,python,venv
-haircut_venv/

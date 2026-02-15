@@ -10,9 +10,10 @@ const modalPhone = document.querySelector(".modal-frame-phone");
 const titlePhone = document.querySelector(".title-hat-phone");
 const modalPayload = document.querySelector(".consultation-form");
 const modalPayloadBg = document.querySelector(".blur-payload-bg");
-const buttons = document.querySelectorAll(".button");
-const successModal = document.querySelector(".modal-success")
-
+const buttons = document.querySelectorAll(".button"); 
+const buttonWhy = document.querySelector(".header-form-attention")
+const modalReason = document.querySelector(".modal-reason")
+const modalReasonCross = document.querySelector(".modal-reason-cross")
 
 if (screenWidth < 768){
     phoneDesign.classList.remove("hidden");
@@ -54,11 +55,15 @@ buttons.forEach((button)=>{
 })
 modalPayloadBg.addEventListener("click", ()=>{
     modalPayload.classList.add("hidden");
-    successModal.classList.add("hidden")
+    modalReason.classList.add("hidden")
     modalPayloadBg.classList.add("hidden");
 })
-
-
+buttonWhy.addEventListener("click", () => {
+    modalReason.classList.remove("hidden")
+})
+modalReasonCross.addEventListener("click", () => {
+    modalReason.classList.add("hidden")
+})
 const blocks = document.querySelectorAll(".block");
 let currentIndex = 0;
 let isScrolling = false;
