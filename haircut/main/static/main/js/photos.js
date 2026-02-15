@@ -1,7 +1,8 @@
 const inputPhoto = document.getElementById("idPhoto");
 const inputPhotoPhone = document.getElementById("idPhotoPhone");
-const photosContainer = document.querySelector(".photos-container");
+const photosContainer = document.querySelector(".client-photos");
 const photosContainerPhone = document.querySelector(".photos-container-phone");
+
 if (inputPhoto){
     inputPhoto.addEventListener("change", ()=>{
         photosContainer.innerHTML = "";

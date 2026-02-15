@@ -17,9 +17,9 @@
                             <input type="text" value = "{{ order.username }}" class = "input-form modal-name input-modal-form" placeholder="Ім'я та прізвище" name = "name" required>
                             <input type="tel" value = "+380 " class = "input-form modal-phone input-modal-form" placeholder="Номер телефону" name = "phone" required>
                             <input type="email" value = "{{ order.email }}" class = "input-form modal-email input-modal-form" placeholder="Пошта" name = "email" required>
-                            <input type="file" value = "{{ order.wish }}" id="idPhotoLaptop" class="input-form modal-photos input-modal-form hidden" name="photos" accept="image/*" multiple required
+                            <input type="file" value = "{{ order.wish }}" id="idPhoto" class="input-form modal-photos input-modal-form hidden" name="photos" accept="image/*" multiple required
                                 >
-                            <label class = "input-form input-image" for = "idPhotoLaptop">
+                            <label class = "input-form input-image" for = "idPhoto">
                                 <img class = "apply-photo-image" src="{% static 'main/images/icons/field.svg'%}" alt="">
                                 <span class = "apply-photo">Прикріпити фото</span>
                             </label>
@@ -28,6 +28,7 @@
                 </div>
                 <button class = "button-send button-send-modal-form hidden" type = "submit">НАДІСЛАТИ</button>
             </form>
+            <div class = "line"></div>
             <div class = "second-step hidden laptop-form-step">
                 <div class = "step-title-container">
                     <h1 class = "step-title">2. Оплата послуги</h1>
@@ -41,18 +42,18 @@
                         <input type="hidden" id="liqpayData" name="data" value="" />
                         <input type="hidden" id="liqpaySignature" name="signature" value=""/>         
                         <button class = "button-of-pay liqpay-button">
-                            <img class = "payment-image"src="{% static 'main/images/buttons/privat.svg'%}" alt="">
+                            <label for="idPhoto">
+                                <img class = "payment-image" src="{% static 'main/images/buttons/privat.svg'%}" alt="">
+                            </label>
                         </button>
                     </form>
                 </div>
             </div>
         </div>
         <div class = "photos-container">
-            {% if order %}
-                {% for photo in order.files %}
-                    <img src="{{ photo }}" alt="">
-                {% endfor %}
-            {% endif %}
+            <div class = "client-photos">
+                <img id = "idPhoto" class="placeholder" src="{% static 'main/images/buttons/add_photo.png'%}">
+            </div>
         </div>
     </div>
 </div>

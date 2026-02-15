@@ -39,27 +39,27 @@ def liqpay_callback(request):
     data = request.POST.get("data")
     signature = request.POST.get("signature")
     if not data or not signature:
-        print("NO DATA OR SIGNATURE:", data, signature)
         return HttpResponse("Bad request", status=400)
+
     expected_signature = base64.b64encode(
-        hashlib.sha1(
-            (private_key + data + private_key).encode()
-        ).digest()
+        hashlib.sha1((private_key + data + private_key).encode()).digest()
     ).decode()
     if signature != expected_signature:
         return HttpResponse("Invalid signature", status=400)
-    response = HttpResponse("OK")
+
     decoded_data = json.loads(base64.b64decode(data).decode())
     order_uuid = decoded_data.get("order_id")
-    print(order_uuid)
     status = decoded_data.get("status")
+
     try:
         order = OrderModel.objects.get(uuid=order_uuid)
     except OrderModel.DoesNotExist:
         return HttpResponse("Order not found", status=404)
-    if order.status != "paid":
+    print(status)
+    if order.status != "paid" and status in ("success", "sandbox"):
         order.status = "paid"
         order.save()
+
         photos = PhotosModel.objects.filter(order_id=order.id)
         subject = f"Нове замовлення від {order.username}!"
         text_content = (
@@ -69,12 +69,7 @@ def liqpay_callback(request):
             f"Електронна пошта: {order.email}\n"
             f"Побажання: {order.wish}"
         )
-        html_content = render_to_string(
-            "main/email/email.html",
-            {
-                "order": order
-            }
-        )
+        html_content = render_to_string("main/email/email.html", {"order": order})
         email = EmailMultiAlternatives(
             subject=subject,
             body=text_content, 
@@ -85,9 +80,8 @@ def liqpay_callback(request):
         for photo in photos:
             email.attach_file(photo.file.path)
         email.send(fail_silently=False)
-        print("email sent")
-    return response
 
+    return HttpResponse("OK")
 
 @csrf_exempt
 def mono_callback(request):
@@ -101,36 +95,30 @@ def mono_callback(request):
     except OrderModel.DoesNotExist:
         return HttpResponse("Order not found", status=404)
 
-    if status == "success":
+    if order.status != "paid" and status in ("success", "sandbox"):
         order.status = "paid"
         order.save()
-    photos = PhotosModel.objects.filter(order_id=order.id)
-    subject = f"Нове замовлення від {order.username}!"
-    text_content = (
-        f"Користувач {order.username} замовив консультацію.\n\n"
-        f"Контактні дані користувача:\n"
-        f"Номер телефону: {order.phone_number}\n"
-        f"Електронна пошта: {order.email}\n"
-        f"Побажання: {order.wish}"
-    )
-    html_content = render_to_string(
-        "main/email/email.html",
-        {
-            "order": order
-        }
-    )
-    email = EmailMultiAlternatives(
-        subject=subject,
-        body=text_content, 
-        from_email="qrprojectdjangoteam2@gmail.com",
-        to=["artemvaschenko83@gmail.com", order.email],
-    )
-    email.attach_alternative(html_content, "text/html")
-    for photo in photos:
-        email.attach_file(photo.file.path)
-    email.send(fail_silently=False)
-    print("email sent")
-    print("success mono callback")
+
+        photos = PhotosModel.objects.filter(order_id=order.id)
+        subject = f"Нове замовлення від {order.username}!"
+        text_content = (
+            f"Користувач {order.username} замовив консультацію.\n\n"
+            f"Контактні дані користувача:\n"
+            f"Номер телефону: {order.phone_number}\n"
+            f"Електронна пошта: {order.email}\n"
+            f"Побажання: {order.wish}"
+        )
+        html_content = render_to_string("main/email/email.html", {"order": order})
+        email = EmailMultiAlternatives(
+            subject=subject,
+            body=text_content, 
+            from_email="qrprojectdjangoteam2@gmail.com",
+            to=["artemvaschenko83@gmail.com", order.email],
+        )
+        email.attach_alternative(html_content, "text/html")
+        for photo in photos:
+            email.attach_file(photo.file.path)
+        email.send(fail_silently=False)
 
     return HttpResponse("OK")
 
