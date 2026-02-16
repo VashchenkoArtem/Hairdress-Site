@@ -1,10 +1,10 @@
-const inputPhoto = document.getElementById("idPhoto");
+const inputsPhoto = document.querySelectorAll(".input-photo")
 const inputPhotoPhone = document.getElementById("idPhotoPhone");
 const photosContainer = document.querySelector(".client-photos");
 const photosContainerPhone = document.querySelector(".photos-container-phone");
-
-if (inputPhoto){
+inputsPhoto.forEach((inputPhoto) => {
     inputPhoto.addEventListener("change", ()=>{
+        console.log("asdasdd")
         photosContainer.innerHTML = "";
         const photosFiles = inputPhoto.files;
         Array.from(photosFiles).forEach(file => {
@@ -23,7 +23,7 @@ if (inputPhoto){
             reader.readAsDataURL(file);
         });
     })
-}
+})
 if (inputPhotoPhone){
     inputPhotoPhone.addEventListener("change", ()=>{
         photosContainerPhone.innerHTML = "";

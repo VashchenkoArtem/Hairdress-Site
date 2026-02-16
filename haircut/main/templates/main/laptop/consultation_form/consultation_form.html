@@ -20,15 +20,15 @@
                 <img class = "url-icon" src="{% static 'main/images/icons/viber.svg' %}" alt="">
             </a>
         </div>
-        <form action="">
+        <form action="" enctype="multipart/form-data">
         <div class = "review-form">
                 {% for field in form %}
                     {% if field.field.widget.input_type == "file" %}
-                        <label for="id_photo" class = "field-image">
+                        <label for="idPhoto" class = "field-image">
                             <img class = "icon-field" src="{% static 'main/images/icons/field.svg'%}" alt="">
                             <h1 class = "title-field">Прикріпити фото</h1>
                         </label>    
-                        <input type="file" id="id_photo"  accept="image/*" hidden>
+                        <input type="file" id="idPhoto" class = "input-photo input" accept="image/*" multiple hidden>
                     {% else %}
                         {{ field }}
                     {% endif %}

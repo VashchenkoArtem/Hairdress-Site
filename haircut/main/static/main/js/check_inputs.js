@@ -1,4 +1,4 @@
-const inputs = document.querySelectorAll(".input-modal-form");
+const inputs = document.querySelectorAll(".input");
 const payloadStep = document.querySelector(".second-step");
 const inputsPhone = document.querySelectorAll(".modal-input-phone");
 const payloadStepPhone = document.querySelector(".modal-payment-methods");
@@ -24,9 +24,15 @@ inputs.forEach((input) => {
         const inputEmail = document.querySelector(".modal-email").value.trim();
         const inputWish = document.querySelector(".modal-wish").value.trim();
         const inputPhotos = document.querySelector(".modal-photos").files;
-        
-        if (inputName && inputPhone && inputEmail && inputPhotos.length > 0) {
+
+        const name = document.getElementById("inputName").value.trim();
+        const phone = document.getElementById("inputPhone").value.trim();
+        const email = document.getElementById("inputEmail").value.trim();
+        const wish = document.getElementById("inputWishlist").value.trim();
+        const photos = document.getElementById("idPhoto").files;
+        if (inputName && inputPhone && inputEmail && inputPhotos.length > 0 || name && phone && email && photos.length > 0) {
             const formData = new FormData();
+            console.log("asdad")
             formData.append("name", inputName);
             formData.append("email", inputEmail);
             formData.append("phone", inputPhone);

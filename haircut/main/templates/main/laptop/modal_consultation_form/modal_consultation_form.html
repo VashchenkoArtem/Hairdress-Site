@@ -14,16 +14,16 @@
                         <img class = "arrow-form second-arrow" src="{% static 'main/images/buttons/arrow_form.svg'%}" alt="">
                     </div>
                         <div class = "form-fields">
-                            <input type="text" value = "{{ order.username }}" class = "input-form modal-name input-modal-form" placeholder="Ім'я та прізвище" name = "name" required>
-                            <input type="tel" value = "+380 " class = "input-form modal-phone input-modal-form" placeholder="Номер телефону" name = "phone" required>
-                            <input type="email" value = "{{ order.email }}" class = "input-form modal-email input-modal-form" placeholder="Пошта" name = "email" required>
-                            <input type="file" value = "{{ order.wish }}" id="idPhoto" class="input-form modal-photos input-modal-form hidden" name="photos" accept="image/*" multiple required
+                            <input type="text" id = "inputNameModal" value = "{{ order.username }}" class = "input-form modal-name input-modal-form input" placeholder="Ім'я та прізвище" name = "name" required>
+                            <input type="tel" id = "inputPhoneModal" value = "+380 " class = "input-form modal-phone input-modal-form input" placeholder="Номер телефону" name = "phone" required>
+                            <input type="email" id = "inputEmailModal" value = "{{ order.email }}" class = "input-form modal-email input input-modal-form" placeholder="Пошта" name = "email" required>
+                            <input type="file" id="idPhotoModal" class="input-form modal-photos input-modal-form hidden input-photo input" name="photos" accept="image/*" multiple required
                                 >
-                            <label class = "input-form input-image" for = "idPhoto">
+                            <label class = "input-form input-image" for = "idPhotoModal">
                                 <img class = "apply-photo-image" src="{% static 'main/images/icons/field.svg'%}" alt="">
                                 <span class = "apply-photo">Прикріпити фото</span>
                             </label>
-                            <textarea type="text" class = "input-form modal-wish" placeholder="Побажання до підбору"></textarea>
+                            <textarea type="text" id = "inputWishlistModal" class = "input-form modal-wish input" placeholder="Побажання до підбору"></textarea>
                         </div>
                 </div>
                 <button class = "button-send button-send-modal-form hidden" type = "submit">НАДІСЛАТИ</button>
