@@ -1,10 +1,9 @@
 const inputsPhoto = document.querySelectorAll(".input-photo")
-const inputPhotoPhone = document.getElementById("idPhotoPhone");
+const inputPhotoPhone = document.querySelectorAll("#idPhotoPhone");
 const photosContainer = document.querySelector(".client-photos");
 const photosContainerPhone = document.querySelector(".photos-container-phone");
 inputsPhoto.forEach((inputPhoto) => {
     inputPhoto.addEventListener("change", ()=>{
-        console.log("asdasdd")
         photosContainer.innerHTML = "";
         const photosFiles = inputPhoto.files;
         Array.from(photosFiles).forEach(file => {

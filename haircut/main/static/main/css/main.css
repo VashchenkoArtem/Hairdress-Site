@@ -47,6 +47,13 @@ body{
 
 }
 @media (width > 767px){
+    .design-for-laptop {
+        display: block;
+    }
+
+    .design-for-phone {
+        display: none;
+    }
     .design-for-laptop{
         display: flex;
         flex-direction: column;
@@ -283,11 +290,11 @@ body{
     }
     .reason-hair{
         display: flex;
+        align-items: center;
         gap: calc(0.5vw + 1vh);
         height: 100vh;
     }
     .reason-image{
-        width: 50%;
         height: 100%;
     }
     .reasons{

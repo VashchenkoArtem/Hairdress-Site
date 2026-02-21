@@ -39,6 +39,13 @@
         color: rgba(26, 26, 26, 1);
         overflow-x: hidden;
     }
+    .design-for-laptop {
+        display: none;
+    }
+
+    .design-for-phone {
+        display: block;
+    }
     html, body {
         margin: 0;
         padding: 0;

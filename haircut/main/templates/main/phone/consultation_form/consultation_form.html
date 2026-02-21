@@ -20,11 +20,11 @@
         <div class = "review-form">
             {% for field in form %}
             {% if field.field.widget.input_type == "file" %}
-            <label for="id_photo" class = "field-image">
+            <label for="idPhotoPhone" class = "field-image">
                 <img class = "icon-field" src="{% static 'main/images/icons/field.svg'%}" alt="">
                 <h1 class = "title-field">Прикріпити фото</h1>
             </label>    
-            <input type="file" id="id_photo"  accept="image/*" hidden>
+            <input type="file" id="idPhotoPhone"  accept="image/*" hidden>
             {% else %}
             {{ field }}
             {% endif %}
@@ -32,7 +32,7 @@
         </div>
     </form>
     <div class = "buttons">
-        <button class = "white-button">
+        <button class = "white-button button-consultation-form">
             НАДІСЛАТИ
         </button>
         <button class = "button button-next-image"> 
