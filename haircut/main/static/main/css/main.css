@@ -41,6 +41,7 @@
     color: white;
     scrollbar-width: none;
     overflow-y: scroll;
+    user-select: none;
 }
 body{
     background-color: rgba(26, 28, 25, 1);

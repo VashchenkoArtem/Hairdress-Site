@@ -14,6 +14,9 @@ const buttons = document.querySelectorAll(".button");
 const buttonWhy = document.querySelector(".header-form-attention")
 const modalReason = document.querySelector(".modal-reason")
 const modalReasonCross = document.querySelector(".modal-reason-cross")
+const buttonWhyPhone = document.querySelector(".header-form-reason-phone")
+const modalScreenPhone = document.querySelector(".modal-screen")
+const closeModalReasonPhone = document.querySelector(".modal-reason-cross-phone")
 
 if (screenWidth < 768){
     phoneDesign.classList.remove("hidden");
@@ -68,6 +71,15 @@ const blocks = document.querySelectorAll(".block");
 let currentIndex = 0;
 let isScrolling = false;
 
+buttonWhyPhone.addEventListener("click", () => {
+    modalScreenPhone.classList.remove("hidden")
+})
+modalScreenPhone.addEventListener("click", () => {
+    modalScreenPhone.classList.add("hidden")
+})
+closeModalReasonPhone.addEventListener("click", () => {
+    modalScreenPhone.classList.add("hidden")
+})
 function scrollToBlock(index) {
     isScrolling = true;
 

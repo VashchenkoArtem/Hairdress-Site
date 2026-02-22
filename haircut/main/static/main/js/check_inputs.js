@@ -32,7 +32,6 @@ inputs.forEach((input) => {
         const photos = document.getElementById("idPhoto").files;
         if (inputName && inputPhone && inputEmail && inputPhotos.length > 0 || name && phone && email && photos.length > 0) {
             const formData = new FormData();
-            console.log("asdad")
             formData.append("name", inputName);
             formData.append("email", inputEmail);
             formData.append("phone", inputPhone);
@@ -69,7 +68,6 @@ inputsPhone.forEach((input) => {
         const inputEmail = document.querySelector(".modal-phone-email").value.trim();
         const inputWish = document.querySelector(".modal-phone-wish").value.trim();
         const inputPhotos = document.querySelector(".modal-phone-photos").files;
-        console.log(inputPhotos)
         if (inputName && inputPhone && inputEmail && inputPhotos.length > 0) {
             const formData = new FormData();
             formData.append("name", inputName);
