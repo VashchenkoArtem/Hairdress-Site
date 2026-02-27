@@ -108,64 +108,6 @@ window.addEventListener("wheel", (event) => {
         }
     }
 });
-const phoneBlocks = document.querySelectorAll(".design-for-phone .block");
-let currentIndexPhone = 0;
-let isScrollingPhone = false;
-
-function goToBlockPhone(index) {
-    if (!phoneBlocks[index]) return;
-
-    isScrollingPhone = true;
-    phoneBlocks[index].scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-    });
-
-    setTimeout(() => {
-        isScrollingPhone = false;
-    }, 900);
-}
-
-window.addEventListener("wheel", (e) => {
-    if (isScrollingPhone) return;
-
-    if (window.innerWidth > 768) return;
-
-    if (e.deltaY > 0) {
-        if (currentIndexPhone < phoneBlocks.length - 1) {
-            currentIndexPhone++;
-            goToBlockPhone(currentIndexPhone);
-        }
-    } else {
-        if (currentIndexPhone > 0) {
-            currentIndexPhone--;
-            goToBlockPhone(currentIndexPhone);
-        }
-    }
-});
-
-let touchStartY = 0;
-
-window.addEventListener("touchstart", (e) => {
-    touchStartY = e.touches[0].clientY;
-});
-
-window.addEventListener("touchend", (e) => {
-    if (isScrollingPhone) return;
-
-    let touchEndY = e.changedTouches[0].clientY;
-    let diff = touchStartY - touchEndY;
-
-    if (diff > 30 && currentIndexPhone < phoneBlocks.length - 1) {
-        currentIndexPhone++;
-        goToBlockPhone(currentIndexPhone);
-    }
-
-    if (diff < -30 && currentIndexPhone > 0) {
-        currentIndexPhone--;
-        goToBlockPhone(currentIndexPhone);
-    }
-});
 
 if (document.cookie.includes("order_id")){
     modalPayloadBg.classList.remove("hidden")

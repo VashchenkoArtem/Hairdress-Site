@@ -45,6 +45,11 @@
 
     .design-for-phone {
         display: block;
+        min-height: 100vh;
+        
+        background-attachment: fixed;
+        background-size: cover;
+        transition: background 0.6s ease;
     }
     html, body {
         margin: 0;
@@ -108,7 +113,6 @@
     .about-me-start{
         position: relative;
         overflow-y: hidden;
-        height: 100dvh;
     }
     .blur-bg{
         width: 100%;
@@ -344,6 +348,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center !important;
         height: 100dvh;
         padding-top: 5vh;
         gap: calc(1vw + 0.8vh);
@@ -640,8 +645,8 @@
         color: rgba(0, 0, 0, 0.5);
         font-weight: 400;
         border: none;
+        line-height: calc(3vw + 3vh);
         background-color: rgba(255, 255, 255, 0.6);
-        
     }
     .review-form{
         display: flex;
@@ -739,7 +744,6 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        height: 100dvh;
     }
     .color-steps-with-buttons{
         display: flex;
@@ -749,6 +753,7 @@
     .main-frame{
         display: flex;
         flex-direction: column;
+        gap: calc(20vw + 25vh);
     }
     .consultation-form-phone{
         position: fixed;
@@ -878,6 +883,7 @@
     }
     .modal-reason-title{
         font-size: calc(1.5vw + 3vh);
+        color: rgba(72, 72, 72, 1);
     }
     .modal-reason-pretitle{
         color: rgba(72, 72, 72, 0.79);
@@ -898,6 +904,7 @@
     }
     .header-form-attention{
         display: flex;
+        color: rgba(72, 72, 72, 0.79);
         gap: calc(1vw + 5vh);
     }
     .header-form-reason{
