@@ -36,7 +36,7 @@
 
 @media (width < 767px){
     *{
-        color: rgba(26, 26, 26, 1);
+        color: rgba(249, 244, 233, 1);
         overflow-x: hidden;
     }
     .design-for-laptop {
@@ -51,7 +51,7 @@
         padding: 0;
         }
     body{
-        background-color: rgba(249, 244, 233, 1);
+        background-color:  rgba(26, 28, 25, 1);
         display: flex;
         flex-direction: column;
     }
@@ -75,10 +75,10 @@
     .title-hat{
         font-size: 25px;
         font-family: "Playfair", serif;
-        color: rgba(26, 26, 26, 1);
+        color: rgba(249, 244, 233, 1);
     }
     .green-title-hat{
-        color: rgba(32, 83, 68, 1);
+        color: rgb(54, 151, 122);
         font-family: "Cormorant", serif;
     }
     .button-menu,.button-menu-phone{
@@ -100,7 +100,7 @@
         font-size: calc(1.5vw + 3vh);
     }
     .coloration-part2{
-        color: rgba(32, 83, 68, 1);
+        color: rgb(54, 151, 122);
         font-size:calc(1.5vw + 4vh);
         text-align: end;
         width: 100%;
@@ -113,7 +113,6 @@
     .blur-bg{
         width: 100%;
         height: calc(35vw + 28vh);
-        background-color: rgba(255, 255, 255, 0.05);
         position: absolute;
         z-index: -1;
     }
@@ -314,7 +313,6 @@
         all: unset;
         width: calc(3vw + 4vh);
         height: calc(3vw + 4vh);
-        background-color: rgba(249, 244, 233, 1);
     }
     .people-example-phone{
         display: flex;
@@ -362,7 +360,7 @@
         width: fit-content;
         padding: 30px 16px;
         align-items: center;
-        background-color: white;
+        background-color: rgba(32, 83, 68, 1);
         border-radius: 15px;
         width: calc(30vw + 29vh);
     }   
@@ -384,7 +382,6 @@
     }
     .button-2{
         font-size: calc(1vw + 1.5vh);
-        width: calc(16vw + 25vh);
     }
     .image-next:hover{
         color: rgb(204, 204, 204);
@@ -394,6 +391,7 @@
         justify-content: center;
         align-items: center;
         border: 1px rgba(32, 83, 68, 1) solid;
+        background-color: rgba(249, 244, 233, 1);
         border-radius: 100px;
         width: calc(3vw + 4vh);
         height: calc(3vw + 4vh);
@@ -509,7 +507,7 @@
         padding-left: calc(1vw + 1vh);
     }
     .highlighted{
-        color: rgba(32, 83, 68, 1);
+        color: rgb(54, 151, 122);
         font-size: calc(3vw + 3vh);
         line-height: 100%;
     }
@@ -906,5 +904,8 @@
         font-size: calc(1.5vw + 2vh);
         color: rgba(72, 72, 72, 0.79);
         font-weight: 400;
+    }
+    #commentAuthorPhone, #commentAuthorCityPhone{
+        color: rgba(26, 26, 26, 1) !important;
     }
 }
