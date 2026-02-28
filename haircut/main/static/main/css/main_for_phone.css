@@ -33,7 +33,9 @@
   font-style: normal;
   font-display: swap;
 }
-
+html, body{
+    overflow: hidden;
+}
 @media (width < 767px){
     *{
         color: rgba(249, 244, 233, 1);
@@ -194,8 +196,8 @@
         display: flex;
         flex-direction: column;
         gap: 30px;
+        justify-content: space-evenly;
         align-items: center;
-        margin-bottom: 10vh;
     }
     .frame-description-titles{
         display: flex;
@@ -540,7 +542,7 @@
         display: flex;
         flex-direction: column;
         gap: 30px;
-        background-color: white;
+        background-color: rgba(32, 83, 68, 1);
         border-radius: 15px;
         padding: 20px 15px;
     }
@@ -564,7 +566,6 @@
         font-size: calc(1vw + 1.3vh);
         font-weight: 300;
         font-family: 'Inter', sans-serif;
-        color: rgba(26, 26, 26, 1);
     }
     .opinion-name{
         width: 100%;
@@ -572,11 +573,9 @@
         font-size: calc(2vw + 2vh);
         font-weight: 600;
         font-style: italic;
-        color: rgba(26, 26, 26, 1);
         padding-right: calc(0.1vw + 0.1vh);
     }
     .review-frame{
-        margin-top: 120px;
         background-image: url("../images/bg_phone_hair.svg");
         background-repeat: no-repeat;
         background-size: cover;
@@ -740,10 +739,14 @@
         display: none;
     }
     .block-scroll{
+        height: 100dvh;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+    }
+    .block{
+        height: 100dvh;
     }
     .color-steps-with-buttons{
         display: flex;
@@ -753,7 +756,6 @@
     .main-frame{
         display: flex;
         flex-direction: column;
-        gap: calc(20vw + 25vh);
     }
     .consultation-form-phone{
         position: fixed;
@@ -912,7 +914,18 @@
         color: rgba(72, 72, 72, 0.79);
         font-weight: 400;
     }
-    #commentAuthorPhone, #commentAuthorCityPhone{
-        color: rgba(26, 26, 26, 1) !important;
+    .phone-scroll-button{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        right: 0px;
+        right: calc(2vw + 2vh);
+        bottom: calc(2vw + 2vh);
+        width: calc(5vw + 2.5vh);
+        height: calc(5vw + 2.5vh);
+        line-height: 10;
+        border-radius: 123px;
+        z-index: 1000;
     }
-}
+} 

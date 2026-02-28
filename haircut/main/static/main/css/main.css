@@ -169,15 +169,14 @@ body{
         display: flex;
     }
     .main-frame{
-        margin-top: calc(31vw + 30vh);
-        gap: calc(5vw + 10vh);
+        margin-top: calc(26vw + 30vh);
         width: 100%;
         display: flex;
         flex-direction: column;
     }
     .description-frame{
         width: 100%;
-        height: 100vh;
+        height: 102.5vh;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -503,7 +502,7 @@ body{
     }
     .review-frame{
         width: 100%;
-        height: 100vh;
+        height: 102.5vh;
         display: flex;
         flex-direction: column;
         justify-content: center;

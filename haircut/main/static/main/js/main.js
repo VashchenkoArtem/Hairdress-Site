@@ -83,9 +83,9 @@ closeModalReasonPhone.addEventListener("click", () => {
 function scrollToBlock(index) {
     isScrolling = true;
 
-    blocks[index].scrollIntoView({
-        behavior: "smooth",
-        block: "start"
+    window.scrollTo({
+        top: index * window.innerHeight,
+        behavior: "smooth"
     });
 
     setTimeout(() => {
@@ -113,3 +113,41 @@ if (document.cookie.includes("order_id")){
     modalPayloadBg.classList.remove("hidden")
     document.cookie = "order_uuid=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
 }
+
+if (window.innerWidth < 768) {
+
+    let touchStartY = 0;
+
+    window.addEventListener("touchstart", (e) => {
+        touchStartY = e.touches[0].clientY;
+    }, { passive: true });
+
+    window.addEventListener("touchend", (e) => {
+        if (isScrolling) return;
+
+        const touchEndY = e.changedTouches[0].clientY;
+        const swipeDistance = touchStartY - touchEndY;
+
+        if (Math.abs(swipeDistance) < 80) return;
+
+        if (swipeDistance > 0) {
+            if (currentIndex < blocks.length - 1) {
+                currentIndex++;
+                scrollToBlock(currentIndex);
+            }
+        } else {
+            if (currentIndex > 0) {
+                currentIndex--;
+                scrollToBlock(currentIndex);
+            }
+        }
+
+    }, { passive: true });
+
+}
+document.querySelector(".phone-scroll-button").addEventListener("click", () => {
+    if (currentIndex > 0) {
+        currentIndex++;
+        scrollToBlock(currentIndex);
+    }
+})
