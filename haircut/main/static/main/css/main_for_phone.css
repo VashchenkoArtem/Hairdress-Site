@@ -118,7 +118,7 @@ html, body{
     }
     .blur-bg{
         width: 100%;
-        height: calc(35vw + 28vh);
+        height: calc(35vw + 30vh);
         position: absolute;
         z-index: -1;
     }
@@ -132,6 +132,7 @@ html, body{
         display: flex;
         flex-direction: column;
         padding:calc(2.5vw + 1vh) calc(2vw + 1vh);
+        height: calc(25vw + 25vh);
         margin-top: calc(3vw + 4vh);
     }
     .about-me-greetings{
@@ -229,11 +230,13 @@ html, body{
     }
     .choosing-color-title{
         font-size: calc(2.5vw + 2.5vh);
+        width: 100%;
         font-weight: 600;
     }
     .choosing-color-description{
         display: flex;
         flex-direction: column;
+        width: 100%;
         gap: 20px;
     }
     .choosing-color-details{
@@ -244,7 +247,6 @@ html, body{
     .choosing-color-images{
         display: flex;
         flex-direction: column;
-        gap: 24px;
         width: 100%;
         align-items: center;
     }
@@ -252,15 +254,14 @@ html, body{
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 10px;
     }
     .image-cross{
         width: 20px;
         height: 20px;
     }
     .choosing-image{
-        width: calc(7vw + 8vh);
-        height: calc(7vw + 8vh);
+        width: calc(15vw + 15vh);
+        height: calc(15vw + 15vh);
     }
     .choosing-title{
         font-family: 'Inter', sans-serif;
@@ -352,12 +353,11 @@ html, body{
         align-items: center;
         justify-content: center !important;
         height: 100dvh;
-        padding-top: 5vh;
         gap: calc(1vw + 0.8vh);
     }
     .reason-hair-image{
         width: calc(30vw + 29vh);
-        /* height: calc(30vw + 29vh); */
+        height: calc(22vw + 20vh);
         border-radius: 16px;
     }
     .reasons{
@@ -914,6 +914,13 @@ html, body{
         color: rgba(72, 72, 72, 0.79);
         font-weight: 400;
     }
+    .choosing-color {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding-left: calc(2vw + 1vh);
+    }
     .phone-scroll-button{
         display: flex;
         justify-content: center;
@@ -921,7 +928,7 @@ html, body{
         position: fixed;
         right: 0px;
         right: calc(2vw + 2vh);
-        bottom: calc(2vw + 2vh);
+        top: calc(5vw + 5vh);
         width: calc(5vw + 2.5vh);
         height: calc(5vw + 2.5vh);
         line-height: 10;

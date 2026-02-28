@@ -146,8 +146,9 @@ if (window.innerWidth < 768) {
 
 }
 document.querySelector(".phone-scroll-button").addEventListener("click", () => {
-    if (currentIndex > 0) {
+    if (currentIndex <= 7){
         currentIndex++;
         scrollToBlock(currentIndex);
+
     }
 })
