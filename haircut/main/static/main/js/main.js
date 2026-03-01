@@ -17,6 +17,7 @@ const modalReasonCross = document.querySelector(".modal-reason-cross")
 const buttonWhyPhone = document.querySelector(".header-form-reason-phone")
 const modalScreenPhone = document.querySelector(".modal-screen")
 const closeModalReasonPhone = document.querySelector(".modal-reason-cross-phone")
+const scrollButtonPhone = document.querySelector(".phone-scroll-button")
 
 if (screenWidth < 768){
     phoneDesign.classList.remove("hidden");
@@ -145,10 +146,23 @@ if (window.innerWidth < 768) {
     }, { passive: true });
 
 }
-document.querySelector(".phone-scroll-button").addEventListener("click", () => {
-    if (currentIndex <= 7){
+scrollButtonPhone.addEventListener("click", () => {
+    if (currentIndex <= 7 && !scrollButtonPhone.classList.value.includes("rotated")){
         currentIndex++;
-        scrollToBlock(currentIndex);
-
+        scrollToBlock(currentIndex)
+    }
+    if (currentIndex > 7 && !scrollButtonPhone.classList.value.includes("rotated")){
+        console.log(scrollButtonPhone.classList.value.includes("rotated"))
+        currentIndex++;
+        scrollButtonPhone.classList.add("rotated")
+    }
+    if (currentIndex == 1 && scrollButtonPhone.classList.value.includes("rotated")){
+        scrollButtonPhone.classList.remove("rotated")
+        currentIndex = currentIndex - 1;
+        scrollToBlock(currentIndex)
+    }
+    if (scrollButtonPhone.classList.value.includes("rotated")){
+        currentIndex = currentIndex - 1;
+        scrollToBlock(currentIndex)
     }
 })

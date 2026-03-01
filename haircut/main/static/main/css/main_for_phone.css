@@ -935,4 +935,11 @@ html, body{
         border-radius: 123px;
         z-index: 1000;
     }
+    .phone-scroll-button {
+        transition: transform 0.5s ease;
+    }
+
+    .rotated {
+        transform: rotate(-180deg);
+    }
 } 
