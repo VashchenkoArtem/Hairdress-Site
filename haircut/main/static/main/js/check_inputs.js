@@ -2,7 +2,7 @@ const inputs = document.querySelectorAll(".input");
 const payloadStep = document.querySelector(".second-step");
 const inputsPhone = document.querySelectorAll(".modal-input-phone");
 const payloadStepPhone = document.querySelector(".modal-payment-methods");
-
+const wishInput = document.querySelector(".modal-wish");
 function getCookie(name) {
     let cookieValue = null;
     if (document.cookie && document.cookie !== "") {
@@ -61,6 +61,25 @@ inputs.forEach((input) => {
     });
 });
 
+
+wishInput.addEventListener("change", async () => {
+    const orderUuid = getCookie("order_uuid");
+    const wishValue = wishInput.value.trim();
+
+    if (!orderUuid) return;
+
+    const formData = new FormData();
+    formData.append("order_uuid", orderUuid);
+    formData.append("wish", wishValue);
+
+    await fetch("https://latonia-unvigorous-eula.ngrok-free.dev/update-wish/", {
+        method: "POST",
+        headers: {
+            "X-CSRFToken": getCookie("csrftoken"),
+        },
+        body: formData,
+    });
+});
 inputsPhone.forEach((input) => {
     input.addEventListener("change", async () => {
         const inputName = document.querySelector(".modal-phone-name").value.trim();

@@ -14,7 +14,7 @@ from .models import CommentModel, OrderModel, PhotosModel
 from django.views.generic import TemplateView, View
 from django.core.mail import EmailMessage, EmailMultiAlternatives
 from django.template.loader import render_to_string
-
+from django.views.decorators.http import require_POST
 
 load_dotenv(dotenv_path=os.path.join(os.path.dirname(__file__), '..', '.env'))
 public_key = os.getenv("LIQPAY_PUBLIC_KEY")
@@ -230,3 +230,24 @@ def create_order(request):
         }
     })
     return response
+
+
+
+@csrf_exempt
+@require_POST
+def update_wish(request):
+    order_uuid = request.POST.get("order_uuid")
+    wish = request.POST.get("wish")
+
+    if not order_uuid:
+        return JsonResponse({"error": "No order uuid"}, status=400)
+
+    try:
+        order = OrderModel.objects.get(uuid=order_uuid)
+    except OrderModel.DoesNotExist:
+        return JsonResponse({"error": "Order not found"}, status=404)
+
+    order.wish = wish
+    order.save()
+
+    return JsonResponse({"status": "updated"})

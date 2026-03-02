@@ -934,4 +934,7 @@ body{
         top: calc(1vw + 1vh);
         cursor: pointer;
     }
+    button{
+        cursor: pointer;
+    }
 }

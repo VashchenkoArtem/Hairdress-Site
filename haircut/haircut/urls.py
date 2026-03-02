@@ -27,5 +27,6 @@ urlpatterns = [
     path("pay/", PayView.as_view(), name='pay_view'),
     path("pay-callback/",  liqpay_callback, name="liqpay_callback"),
     path("pay-callback-mono/", mono_callback, name="callback_mono"),
-    path("create-order/", create_order)
+    path("create-order/", create_order),
+    path("update-wish/", update_wish, name="update_wish"),
 ] + static(MEDIA_URL, document_root=MEDIA_ROOT)
