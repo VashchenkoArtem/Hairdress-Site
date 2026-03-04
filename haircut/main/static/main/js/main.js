@@ -166,3 +166,11 @@ scrollButtonPhone.addEventListener("click", () => {
         scrollToBlock(currentIndex)
     }
 })
+window.addEventListener("scroll", () => {
+    const newIndex = Math.round(window.scrollY / window.innerHeight);
+    currentIndex = newIndex;
+
+    if (currentIndex > 7) {
+        scrollButtonPhone.classList.add("rotated");
+    } else if (currentIndex == 0) {
+        scrollButtonPhone.classList.remove("rotated")}});

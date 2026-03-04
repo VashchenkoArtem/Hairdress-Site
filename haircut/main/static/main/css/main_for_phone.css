@@ -901,8 +901,8 @@ html, body{
         color: rgba(72, 72, 72, 1);
     }
     .blank-list{
-        font-size: calc(2vw + 1vh);
-        color: rgba(72, 72, 72, 0.69);
+        font-size: calc(2vw + 1.5vh);
+        color: rgba(72, 72, 72, 1);
     }
     .header-form-attention{
         display: flex;
@@ -928,7 +928,7 @@ html, body{
         position: fixed;
         right: 0px;
         right: calc(2vw + 2vh);
-        top: calc(5vw + 5vh);
+        bottom: 0px;
         width: calc(5vw + 2.5vh);
         height: calc(5vw + 2.5vh);
         line-height: 10;
@@ -941,5 +941,10 @@ html, body{
 
     .rotated {
         transform: rotate(-180deg);
+    }
+    .block-hat{
+        display: flex;
+        flex-direction: column;
+        gap: calc(1vw + 2vh);
     }
 } 
