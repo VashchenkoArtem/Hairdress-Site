@@ -35,6 +35,7 @@
 }
 html, body{
     overflow: hidden;
+    overflow-y: hidden;
 }
 @media (width < 767px){
     *{
@@ -100,7 +101,7 @@ html, body{
     .coloration-phone{
         display: flex;
         flex-direction: column;
-        gap: calc(6vw + 5vh);
+        gap: calc(3vw + 5vh);
         padding:  0px 16px;
     }
     .coloration-part1, .main-title-text{
@@ -125,10 +126,17 @@ html, body{
         z-index: -1;
     }
     .bg-phone{
-        width: 100%;
         position: absolute;
-        height: calc(30vw + 29vh);
-        z-index: -1;
+        width: 100%;
+        rotate: -90deg;
+        filter: brightness(80%);
+        z-index: -4;
+    }
+    .about-me-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex-grow: 1;
     }
     .about-me-on-image{
         display: flex;
@@ -183,8 +191,6 @@ html, body{
         justify-content: center;
         align-items: center;
         width: 100%;
-        flex-grow: 1; 
-        margin-bottom: calc(1vw + 2vh);
     }
     .button-next-phone{
         width: calc(3vw + 4vh);
@@ -273,7 +279,7 @@ html, body{
     .choosing-color-steps{
         display: flex;
         flex-direction: column;
-        gap: 24px;
+        gap: calc(1vw + 1vh);
     }
     .step{
         display: flex;
@@ -347,11 +353,15 @@ html, body{
         font-family: "Inter", sans-serif;
         font-weight: 400;
     }
+    .reason-hair-container{
+        display: flex;
+        flex-direction: column;
+        gap: calc(1vw + 1vh);
+    }
     .reason-hair{
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center !important;
         height: 100dvh;
         gap: calc(1vw + 0.8vh);
     }
@@ -457,8 +467,8 @@ html, body{
         margin-right: auto;
     }
     .people-example-result{
-        height: calc(25vw + 15vh);
-        width: calc(25vw + 15vh);
+        height: calc(25vw + 22vh);
+        width: calc(25vw + 22vh);
     }
     .result-buttons{
         width: calc(30vw + 29vh);
@@ -492,7 +502,6 @@ html, body{
         display: flex;
         flex-direction: column;
         width: calc(30vw + 29vh);
-        height: 60%;
         gap: calc(1vw + 1vh);
     }
     .my-bio-frame{
@@ -506,6 +515,7 @@ html, body{
     }
     .my-work, .my-expereance, .hat-opinion-description{
         font-size: calc(2vw + 1.5vh);
+        height: fit-content;
         font-weight: 400;
         font-family: 'Inter', sans-serif;
     }
@@ -534,7 +544,9 @@ html, body{
     .opinion-container{
         display: flex;
         flex-direction: column;
-        gap: calc(1vw + 1vh);
+        height: 72vh;
+        margin-top: 5vh;
+        justify-content: space-between;
         width: calc(30vw + 29vh);
     }
     .body-opinion{
@@ -743,7 +755,7 @@ html, body{
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
+        justify-content: space-evenly;
     }
     .block{
         height: 100dvh;
@@ -751,7 +763,6 @@ html, body{
     .color-steps-with-buttons{
         display: flex;
         flex-direction: column;
-        gap: calc(1vw + 2vh);
     }
     .main-frame{
         display: flex;
@@ -945,6 +956,20 @@ html, body{
         transform: rotate(-180deg);
     }
     .block-hat{
+        display: flex;
+        flex-direction: column;
+        gap: calc(1vw + 1vh);
+    }
+    .button-choose{
+        margin-top: calc(7vw + 6vh);
+    }
+    .coloration-hair-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        flex-grow: 1;
+    }
+    .hair-container{
         display: flex;
         flex-direction: column;
         gap: calc(1vw + 2vh);
