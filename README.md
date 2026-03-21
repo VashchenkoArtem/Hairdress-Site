@@ -1,0 +1,10 @@
+# Haircut
+![Static Badge](https://img.shields.io/badge/github-grey?style=for-the-badge&logo=github)
+![Static Badge](https://img.shields.io/badge/Python-3.12.3-blue?style=for-the-badge&logo=python)
+![Static Badge](https://img.shields.io/badge/Javascript-yellowgreen?style=for-the-badge&logo=javascript)
+![Static Badge](https://img.shields.io/badge/HTML-white?style=for-the-badge&logo=html5)
+![Static Badge](https://img.shields.io/badge/CSS-white?style=for-the-badge&logo=css&logoColor=blue)
+![Static Badge](https://img.shields.io/badge/django-success?style=for-the-badge&logo=django)
+![Static Badge](https://img.shields.io/badge/liqpay-brightgreen?style=for-the-badge&logo=base)![Static Badge](https://img.shields.io/badge/monobank-black?style=for-the-badge)
+![Static Badge](https://img.shields.io/badge/sqlite3-green?style=for-the-badge&logo=base)
+![Static Badge](https://img.shields.io/badge/jquery-4.0.0-white?style=for-the-badge&logo=jquery)
