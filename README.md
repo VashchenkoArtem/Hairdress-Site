@@ -17,7 +17,10 @@
 ### Haircut - site that helps users choose the perfect hairstyle for their hair type and lifestyle. Website for getting to know the company <a href = "https://www.instagram.com/hairnool?igsh=MXhqejZwY3d1bWdjcw==">HairNool</a>.
 
 ## Navigation
-
+- [Possibilites](#on-this-site-you-can)
+- [Links to design](#links)
+- [Installing](#how-to-install-and-run-the-project)
+- [Conclusion](#conclusion)
 ## On this site you can:
 
 - Get to know the capabilities of HairNool.
@@ -97,3 +100,10 @@ python3 manage.py runserver
 ```
 Congratulations! You have installed project successful!
 </details>
+
+## Conclusion
+The project is useful not only for HairNool, but also for me as a developer - it was my first order. Thanks to this site, I learned to work with real client requirements, plan the project structure and organize my workflow.
+
+I gained practical experience in developing web applications, in particular, using Django for the backend, as well as HTML, CSS and JavaScript to create a convenient and attractive interface. In addition, I learned how to integrate payment systems and work with databases.
+
+This project helped me better understand how commercial products are created and became an important step in my development as a developer.
