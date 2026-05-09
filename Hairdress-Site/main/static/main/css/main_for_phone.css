@@ -101,19 +101,25 @@ html, body{
     .coloration-phone{
         display: flex;
         flex-direction: column;
-        gap: calc(3vw + 5vh);
-        padding:  0px 16px;
+        padding:  0px 16px; 
+        flex-grow: 1;
     }
     .coloration-part1, .main-title-text{
         font-size: calc(1.5vw + 3vh);
-        width: 100%;
         text-align: start;
     }
+    .coloration-part1{
+        position: absolute;
+        top: calc(5vw + 5vh);
+        left: calc(2vw + 1.5vh);
+    }
     .coloration-part2{
-        color: rgb(54, 151, 122);
-        font-size:calc(1.5vw + 4vh);
-        text-align: end;
-        width: 100%;
+        position: absolute;
+        bottom: calc(9vw + 10vh);
+        left: calc(2vw + 1.5vh);
+        color: rgb(37, 106, 85);
+        font-size:calc(2vw + 4vh);
+        text-align: start;
     }
     .about-me-start{
         position: relative;
@@ -128,7 +134,7 @@ html, body{
     .bg-phone{
         position: absolute;
         width: 100%;
-        rotate: -90deg;
+        top: calc(10vw + 12vh);
         filter: brightness(80%);
         z-index: -4;
     }
@@ -961,17 +967,20 @@ html, body{
         gap: calc(1vw + 1vh);
     }
     .button-choose{
-        margin-top: calc(7vw + 6vh);
+        margin-top: calc(26vw + 26vh);
     }
     .coloration-hair-container{
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
         flex-grow: 1;
+        padding-bottom: calc(1vw + 1vh);
     }
     .hair-container{
         display: flex;
         flex-direction: column;
-        gap: calc(1vw + 2vh);
+        justify-content: space-between;
+        flex-grow: 1;
+        margin-top: calc(10vw + 5vh);
     }
 } 
